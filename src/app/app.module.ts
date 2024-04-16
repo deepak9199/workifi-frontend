@@ -14,7 +14,17 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { CoreModule } from './core/core.module';
 import { RegisterComponent } from './system/auth/register/register.component';
 import { RoleComponent } from './system/auth/role/role.component';
+// firebase
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { firebaseConfig } from './shared/_baseurl/firebaseconfig';
 
+// form animantion
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
+// toser
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +42,12 @@ import { RoleComponent } from './system/auth/role/role.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CoreModule
+    FormsModule,
+    BrowserAnimationsModule,
+    CoreModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFirestoreModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
     provideClientHydration()

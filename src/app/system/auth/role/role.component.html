@@ -15,18 +15,18 @@
                         <div class="user-type-options">
                             <div (click)="clickclient()" class="user-type-option">
                                 <input type="radio" id="clientRadio" name="userType" value="client" checked>
-                                <label for="clientRadio" onclick="updateButton('Join as a Client')">I'm a client, hiring
+                                <label for="clientRadio">I'm a client, hiring
                                     for a project</label>
                             </div>
                             <div (click)="clickfreelancer()" class="user-type-option">
                                 <input type="radio" id="freelancerRadio" name="userType" value="freelancer">
-                                <label for="freelancerRadio" onclick="updateButton('Apply as a Freelancer')">I'm a
+                                <label for="freelancerRadio">I'm a
                                     freelancer, looking for work</label>
                             </div>
                         </div>
-                        <div class="d-grid gap-2 mt-4">
-                            <a id="actionButton" class="ud-btn btn-thm default-box-shadow2" [routerLink]="['/signup']"
-                                role="button"> {{optionname}} <i class="fal fa-arrow-right-long"></i></a>
+                        <div (click)="routtosignup()" class="d-grid gap-2 mt-4">
+                            <a id="actionButton" class="ud-btn btn-thm default-box-shadow2" role="button">
+                                {{optionname}} <i class="fal fa-arrow-right-long"></i></a>
                         </div>
 
                         <div class="mt-4">

@@ -4,9 +4,9 @@ import { Observable, from, of } from 'rxjs';
 import { map, switchMap, catchError } from 'rxjs/operators';
 import 'firebase/compat/auth'; // Import Firebase Authentication
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { users } from '../model/user';
 import { TokenStorageService } from './token-storage.service';
 import { ToastrService } from 'ngx-toastr';
+import { users } from '../../model/user';
 
 @Injectable({
   providedIn: 'root'
