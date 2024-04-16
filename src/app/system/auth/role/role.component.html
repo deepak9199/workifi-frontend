@@ -1,0 +1,48 @@
+<div class="body_content">
+    <section class="our-register">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 m-auto wow fadeInUp" data-wow-delay="300ms">
+                    <div class="main-title text-center">
+                        <h2 class="title">Join as a client or freelancer</h2>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row wow fadeInRight" data-wow-delay="300ms">
+                <div class="col-xl-6 mx-auto">
+                    <div class="log-reg-form search-modal form-style1 bgc-white p50 p30-sm default-box-shadow1 bdrs12">
+                        <div class="user-type-options">
+                            <div (click)="clickclient()" class="user-type-option">
+                                <input type="radio" id="clientRadio" name="userType" value="client" checked>
+                                <label for="clientRadio" onclick="updateButton('Join as a Client')">I'm a client, hiring
+                                    for a project</label>
+                            </div>
+                            <div (click)="clickfreelancer()" class="user-type-option">
+                                <input type="radio" id="freelancerRadio" name="userType" value="freelancer">
+                                <label for="freelancerRadio" onclick="updateButton('Apply as a Freelancer')">I'm a
+                                    freelancer, looking for work</label>
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <a id="actionButton" class="ud-btn btn-thm default-box-shadow2" [routerLink]="['/signup']"
+                                role="button"> {{optionname}} <i class="fal fa-arrow-right-long"></i></a>
+                        </div>
+
+                        <div class="mt-4">
+                            <p class="text">Already have an account? <a class="text-thm" [routerLink]="['/login']">Log
+                                    In!</a>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a class="scrollToHome "><i class="fas fa-angle-up"></i></a>
+</div>

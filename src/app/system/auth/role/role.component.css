@@ -1,0 +1,30 @@
+.user-type-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.user-type-option {
+    margin-right: 20px;
+    /* Adjust spacing between options */
+}
+
+.user-type-option input[type="radio"] {
+    display: none;
+}
+
+.user-type-option label {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.user-type-option label:hover {
+    background-color: #e0e0e0;
+}
+
+.user-type-option input[type="radio"]:checked+label {
+    background-color: #007bff;
+    color: #fff;
+}
