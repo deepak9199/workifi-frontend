@@ -27,11 +27,12 @@ import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { DashBoardComponent } from './system/client/dash-board/dash-board.component';
 import { ManageProjectComponent } from './system/client/manage-project/manage-project.component';
-import { ProfieComponent } from './system/profie/profie.component';
 import { CreateProjectComponent } from './system/client/create-project/create-project.component';
 import { ClientFooterComponent } from './system/client/shared/client-footer/client-footer.component';
 import { ClientNavComponent } from './system/client/shared/client-nav/client-nav.component';
 import { ClientSideComponent } from './system/client/shared/client-side/client-side.component';
+import { ProposalsComponent } from './system/client/proposals/proposals.component';
+import { ProfileComponent } from './system/client/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,11 +48,12 @@ import { ClientSideComponent } from './system/client/shared/client-side/client-s
     RoleComponent,
     DashBoardComponent,
     ManageProjectComponent,
-    ProfieComponent,
     CreateProjectComponent,
     ClientFooterComponent,
     ClientNavComponent,
     ClientSideComponent,
+    ProposalsComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
