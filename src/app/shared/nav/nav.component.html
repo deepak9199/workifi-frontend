@@ -1,226 +1,231 @@
-<header class="header-nav nav-innerpage-style bg-transparent zi9 position-relative main-menu border-0">
-    <nav class="posr">
-        <div class="container posr menu_bdrt1">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-auto px-0">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="logos"><a class="header-logo logo2" [routerLink]="['/']"><img alt="Header Logo"
-                                    loading="lazy" width="133" height="40" decoding="async" data-nimg="1"
-                                    style="color:transparent" src="assets/img/logo/logo.png" /></a>
+<!-- normal -->
+<div *ngIf="!client">
+    <header class="header-nav nav-innerpage-style bg-transparent zi9 position-relative main-menu border-0">
+        <nav class="posr">
+            <div class="container posr menu_bdrt1">
+                <div class="row align-items-center justify-content-between">
+                    <div class="col-auto px-0">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div class="logos"><a class="header-logo logo2" [routerLink]="['/']"><img alt="Header Logo"
+                                        loading="lazy" width="133" height="40" decoding="async" data-nimg="1"
+                                        style="color:transparent" src="assets/img/logo/logo.png" /></a>
+                            </div>
+                            <ul class="ace-responsive-menu ui-navigation menu-without-paddingy ">
+                                <li class="visible_list menu-active home-menu-parent ">
+                                    <a class="list-item  ui-active"><span class="title"></span>
+                                    </a>
+                                </li>
+                                <li class="visible_list menu-active  "><a class="list-item  "><span class="title">Find
+                                            Talent</span> <span class="arrow "></span></a>
+                                    <ul class="sub-menu  ">
+                                        <li class="menu-active ">
+                                            <a><span class="title">Post a Job and hire a Pro</span><span
+                                                    class="arrow "></span></a>
+                                            <ul class="sub-menu">
+                                                <li class="">
+                                                    <a href="dev-it.php">Development and IT</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="design-creative.php">Design and creative</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="sales-and-marketing.php">Sales and Marketing</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="writing-translation.php">Writing and Translation</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="admin-customer-support.php">Admin & Customer Support</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="finance-accounting.php">Finance & Accounting</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="hr-training.php">HR & Training</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="legal.php">Legal</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="engineering-architecture.php">Engineering &
+                                                        Architecture</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="">Hire Freelancers</a>
+                                                </li>
+
+                                            </ul>
+                                        </li>
+                                        <li class="menu-active ">
+                                            <a><span class="title">Browse and Buy Projects</span><span
+                                                    class="arrow "></span></a>
+                                            <ul class="sub-menu">
+                                                <li class="">
+                                                    <a href="project-1.html">Logo Design</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="project-2.html">WordPress</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="project-3.html">Social Media Management</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="project-4.html">Video Editing</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="project-single.html">SEO</a>
+                                                </li>
+
+
+
+                                            </ul>
+                                        </li>
+                                        <li class="menu-active ">
+                                            <a><span class="title">Get advice from an industry expert</span><span
+                                                    class="arrow "></span></a>
+                                            <ul class="sub-menu">
+                                                <li class="">
+                                                    <a href="job-1.html">Web Programming</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="job-2.html">AI & Machine Learning</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="job-3.html">Marketing Strategy</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="job-single.html">Social Media Marketing</a>
+                                                </li>
+                                                <li class="">
+                                                    <a href="job-single.html">Website Builders & CMS</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="visible_list menu-active  "><a class="list-item  "><span class="title">Find
+                                            Work</span>
+                                        <span class="arrow "></span></a>
+                                    <ul class="sub-menu  ">
+                                        <li class="menu-active ">
+                                            <a><span class="title">Way to Earn</span><span class="title "></span></a>
+
+                                        </li>
+                                        <li class="menu-active ">
+                                            <a><span class="title">Find work for your skill</span><span
+                                                    class="title "></span></a>
+
+                                        </li>
+                                        <li class="menu-active ">
+                                            <a><span class="title">Win work with ads</span><span
+                                                    class="title "></span></a>
+
+                                        </li>
+                                        <li class="menu-active "><a href="become-seller.php"><span class="title">Join
+                                                    Freelancer Plus</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="visible_list menu-active  "><a class="list-item  "><span class="title">Why
+                                            Workifest</span>
+                                        <span class="arrow "></span></a>
+                                    <ul class="sub-menu  ">
+                                        <li class="menu-active ">
+                                            <a><span class="title">Success Story</span><span class="title "></span></a>
+
+                                        </li>
+                                        <li class="menu-active ">
+                                            <a><span class="title">Reviews</span><span class="title "></span></a>
+
+                                        </li>
+                                        <li class="menu-active ">
+                                            <a><span class="title">How to Hire</span><span class="title "></span></a>
+
+                                        </li>
+                                        <li class="menu-active "><a href="contact.php"><span class="title">How to find
+                                                    work</span></a>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                                <li class="visible_list menu-active  "><a class="list-item
+                                " href="contact.php"><span class="title">Enterprise</span></a></li>
+                            </ul>
                         </div>
-                        <ul class="ace-responsive-menu ui-navigation menu-without-paddingy ">
-                            <li class="visible_list menu-active home-menu-parent ">
-                                <a class="list-item  ui-active"><span class="title"></span>
-                                </a>
-                            </li>
-                            <li class="visible_list menu-active  "><a class="list-item  "><span class="title">Find
-                                        Talent</span> <span class="arrow "></span></a>
-                                <ul class="sub-menu  ">
-                                    <li class="menu-active ">
-                                        <a><span class="title">Post a Job and hire a Pro</span><span
-                                                class="arrow "></span></a>
-                                        <ul class="sub-menu">
-                                            <li class="">
-                                                <a href="dev-it.php">Development and IT</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="design-creative.php">Design and creative</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="sales-and-marketing.php">Sales and Marketing</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="writing-translation.php">Writing and Translation</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="admin-customer-support.php">Admin & Customer Support</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="finance-accounting.php">Finance & Accounting</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="hr-training.php">HR & Training</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="legal.php">Legal</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="engineering-architecture.php">Engineering & Architecture</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="">Hire Freelancers</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
-                                    <li class="menu-active ">
-                                        <a><span class="title">Browse and Buy Projects</span><span
-                                                class="arrow "></span></a>
-                                        <ul class="sub-menu">
-                                            <li class="">
-                                                <a href="project-1.html">Logo Design</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="project-2.html">WordPress</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="project-3.html">Social Media Management</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="project-4.html">Video Editing</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="project-single.html">SEO</a>
-                                            </li>
-
-
-
-                                        </ul>
-                                    </li>
-                                    <li class="menu-active ">
-                                        <a><span class="title">Get advice from an industry expert</span><span
-                                                class="arrow "></span></a>
-                                        <ul class="sub-menu">
-                                            <li class="">
-                                                <a href="job-1.html">Web Programming</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="job-2.html">AI & Machine Learning</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="job-3.html">Marketing Strategy</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="job-single.html">Social Media Marketing</a>
-                                            </li>
-                                            <li class="">
-                                                <a href="job-single.html">Website Builders & CMS</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="visible_list menu-active  "><a class="list-item  "><span class="title">Find
-                                        Work</span>
-                                    <span class="arrow "></span></a>
-                                <ul class="sub-menu  ">
-                                    <li class="menu-active ">
-                                        <a><span class="title">Way to Earn</span><span class="title "></span></a>
-
-                                    </li>
-                                    <li class="menu-active ">
-                                        <a><span class="title">Find work for your skill</span><span
-                                                class="title "></span></a>
-
-                                    </li>
-                                    <li class="menu-active ">
-                                        <a><span class="title">Win work with ads</span><span class="title "></span></a>
-
-                                    </li>
-                                    <li class="menu-active "><a href="become-seller.php"><span class="title">Join
-                                                Freelancer Plus</span></a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="visible_list menu-active  "><a class="list-item  "><span class="title">Why
-                                        Workifest</span>
-                                    <span class="arrow "></span></a>
-                                <ul class="sub-menu  ">
-                                    <li class="menu-active ">
-                                        <a><span class="title">Success Story</span><span class="title "></span></a>
-
-                                    </li>
-                                    <li class="menu-active ">
-                                        <a><span class="title">Reviews</span><span class="title "></span></a>
-
-                                    </li>
-                                    <li class="menu-active ">
-                                        <a><span class="title">How to Hire</span><span class="title "></span></a>
-
-                                    </li>
-                                    <li class="menu-active "><a href="contact.php"><span class="title">How to find
-                                                work</span></a>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <li class="visible_list menu-active  "><a class="list-item
-                            " href="contact.php"><span class="title">Enterprise</span></a></li>
-                        </ul>
                     </div>
-                </div>
-                <div class="col-auto px-0">
-                    <div class="d-flex align-items-center"><a class="login-info mr10-lg mr30"
-                            [routerLink]="['/login']">Sign
-                            in</a><a class="ud-btn btn-thm2 add-joining" [routerLink]="['/role']">Join</a></div>
-                </div>
-            </div>
-        </div>
-    </nav>
-</header>
-<div id="page" class="mobilie_header_nav stylehome1">
-
-    <div class="mobile-menu">
-        <div class="header bdrb1">
-            <div class="menu_and_widgets">
-                <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
-                    <a class="mobile_logo" href="home-2.php"><img alt="Header Logo" loading="lazy" width="133"
-                            height="40" decoding="async" data-nimg="1" style="color:transparent"
-                            src="assets/img/logo/logo.png" /></a>
-                    <div class="right-side text-end"><a href="login.php">join</a><a class="menubar ml30"
-                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                            aria-controls="offcanvasExample"><img alt="icon" loading="lazy" width="20" height="20"
-                                decoding="async" data-nimg="1" style="color:transparent"
-                                src="images/mobile-dark-nav-icon.svg" /></a>
+                    <div class="col-auto px-0">
+                        <div class="d-flex align-items-center"><a class="login-info mr10-lg mr30"
+                                [routerLink]="['/login']">Sign
+                                in</a><a class="ud-btn btn-thm2 add-joining" [routerLink]="['/role']">Join</a></div>
                     </div>
                 </div>
             </div>
-            <div class="posr">
-                <div class="mobile_menu_close_btn"><span class="far fa-times"></span>
+        </nav>
+    </header>
+    <div id="page" class="mobilie_header_nav stylehome1">
+
+        <div class="mobile-menu">
+            <div class="header bdrb1">
+                <div class="menu_and_widgets">
+                    <div class="mobile_menu_bar d-flex justify-content-between align-items-center">
+                        <a class="mobile_logo" href="home-2.php"><img alt="Header Logo" loading="lazy" width="133"
+                                height="40" decoding="async" data-nimg="1" style="color:transparent"
+                                src="assets/img/logo/logo.png" /></a>
+                        <div class="right-side text-end"><a href="login.php">join</a><a class="menubar ml30"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                                aria-controls="offcanvasExample"><img alt="icon" loading="lazy" width="20" height="20"
+                                    decoding="async" data-nimg="1" style="color:transparent"
+                                    src="images/mobile-dark-nav-icon.svg" /></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="posr">
+                    <div class="mobile_menu_close_btn"><span class="far fa-times"></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div class="search-modal">
-    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
-                            class="fal fa-xmark"></i></button>
-                </div>
-                <div class="modal-body">
-                    <div class="popup-search-field search_area"><input type="text" class="form-control border-0"
-                            placeholder="What service are you looking for today?" /><label><span
-                                class="far fa-magnifying-glass"></span></label><button class="ud-btn btn-thm"
-                            type="submit">Search</button></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="body_content">
-    <section class="categories_list_section overflow-hidden border-0">
-        <div class="container bgc-thm3">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="listings_category_nav_list_menu at-home4">
-                        <ul class="mb0 d-flex justify-content-center mx-auto ps-0">
-                            <li><a class="active" href="dev-it.php">Development & IT</a></li>
-                            <li><a class="" href="#">AI Services</a></li>
-                            <li><a class="" href="design-creative.php">Design & Creative</a></li>
-                            <li><a class="" href="sales-and-marketing.php">Sales & Marketing</a></li>
-                            <li><a class="" href="admin-customer-support.php">Admin & Customer Support</a></li>
-                            <li><a class="" href="writing-translation.php">Writting & Translation</a></li>
-                            <li><a class="" href="finance-accounting.php">Finance & Accounting</a></li>
-                            <li><a class="" href="#">More</a></li>
-
-                        </ul>
+    <div class="search-modal">
+        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i
+                                class="fal fa-xmark"></i></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="popup-search-field search_area"><input type="text" class="form-control border-0"
+                                placeholder="What service are you looking for today?" /><label><span
+                                    class="far fa-magnifying-glass"></span></label><button class="ud-btn btn-thm"
+                                type="submit">Search</button></div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="body_content">
+        <section class="categories_list_section overflow-hidden border-0">
+            <div class="container bgc-thm3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="listings_category_nav_list_menu at-home4">
+                            <ul class="mb0 d-flex justify-content-center mx-auto ps-0">
+                                <li><a class="active" href="dev-it.php">Development & IT</a></li>
+                                <li><a class="" href="#">AI Services</a></li>
+                                <li><a class="" href="design-creative.php">Design & Creative</a></li>
+                                <li><a class="" href="sales-and-marketing.php">Sales & Marketing</a></li>
+                                <li><a class="" href="admin-customer-support.php">Admin & Customer Support</a></li>
+                                <li><a class="" href="writing-translation.php">Writting & Translation</a></li>
+                                <li><a class="" href="finance-accounting.php">Finance & Accounting</a></li>
+                                <li><a class="" href="#">More</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 </div>

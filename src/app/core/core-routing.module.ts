@@ -6,8 +6,8 @@ import { RegisterComponent } from '../system/auth/register/register.component';
 import { RoleComponent } from '../system/auth/role/role.component';
 import { DashBoardComponent } from '../system/client/dash-board/dash-board.component';
 import { ManageProjectComponent } from '../system/client/manage-project/manage-project.component';
-import { CreateprojectComponent } from '../system/client/createproject/createproject.component';
 import { ProfieComponent } from '../system/profie/profie.component';
+import { CreateProjectComponent } from '../system/client/create-project/create-project.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'role', component: RoleComponent },
   { path: 'client/dashboard', component: DashBoardComponent },
   { path: 'client/manageproject', component: ManageProjectComponent },
-  { path: 'client/createproject', component: CreateprojectComponent },
+  { path: 'client/createproject', component: CreateProjectComponent },
   { path: 'profile', component: ProfieComponent },
 ];
 
