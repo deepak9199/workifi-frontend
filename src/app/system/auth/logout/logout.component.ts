@@ -23,6 +23,7 @@ export class LogoutComponent {
   }
   logout() {
     this.authService.logout();
+    this.trigertrefreshnavbar()
     this.router.navigate(['/']).then(() => {
       this.toster.success('Logout SuccessFully')
       this.loading = false
