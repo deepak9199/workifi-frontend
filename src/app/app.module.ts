@@ -25,6 +25,10 @@ import { FormsModule } from '@angular/forms';
 
 // toser
 import { ToastrModule } from 'ngx-toastr';
+import { DashBoardComponent } from './system/client/dash-board/dash-board.component';
+import { ManageProjectComponent } from './system/client/manage-project/manage-project.component';
+import { CreateprojectComponent } from './system/client/createproject/createproject.component';
+import { ProfieComponent } from './system/profie/profie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +41,11 @@ import { ToastrModule } from 'ngx-toastr';
     LoadingComponent,
     FooterComponent,
     RegisterComponent,
-    RoleComponent
+    RoleComponent,
+    DashBoardComponent,
+    ManageProjectComponent,
+    CreateprojectComponent,
+    ProfieComponent
   ],
   imports: [
     BrowserModule,

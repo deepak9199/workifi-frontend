@@ -4,6 +4,10 @@ import { HomeComponent } from '../system/home/home.component';
 import { LoginComponent } from '../system/auth/login/login.component';
 import { RegisterComponent } from '../system/auth/register/register.component';
 import { RoleComponent } from '../system/auth/role/role.component';
+import { DashBoardComponent } from '../system/client/dash-board/dash-board.component';
+import { ManageProjectComponent } from '../system/client/manage-project/manage-project.component';
+import { CreateprojectComponent } from '../system/client/createproject/createproject.component';
+import { ProfieComponent } from '../system/profie/profie.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,6 +15,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'role', component: RoleComponent },
+  { path: 'client/dashboard', component: DashBoardComponent },
+  { path: 'client/manageproject', component: ManageProjectComponent },
+  { path: 'client/createproject', component: CreateprojectComponent },
+  { path: 'profile', component: ProfieComponent },
 ];
 
 @NgModule({
