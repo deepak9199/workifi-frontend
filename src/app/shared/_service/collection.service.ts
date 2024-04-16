@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Observable } from 'rxjs';
-import { cart } from '../model/cart';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +43,7 @@ export class CollectionService {
     });
   }
 
-  updateDocument(collectionName: string, docId: string, data: cart): Observable<void> {
+  updateDocument(collectionName: string, docId: string, data: any): Observable<void> {
     return new Observable<void>(observer => {
       this.firestore.collection(collectionName).doc(docId).update(data)
         .then(() => {

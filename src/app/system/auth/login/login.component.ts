@@ -4,6 +4,8 @@ import { AuthService } from '../../../shared/_service/auth.service';
 import { SharedService } from '../../../shared/_service/shared.service';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
 import { Router } from '@angular/router';
+import { CollectionService } from '../../../shared/_service/collection.service';
+import { users } from '../../../model/user';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +14,13 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loading: boolean = false
-
   constructor(
-    private authService: AuthService, private router: Router,
+    private authService: AuthService,
+    private router: Router,
     private toster: ToastrService,
     private tokenstorage: TokenStorageService,
-    private sharedService: SharedService
+    private sharedService: SharedService,
+    private dataservice: CollectionService
   ) { }
 
   ngOnInit() {
@@ -51,12 +54,10 @@ export class LoginComponent {
           // console.log('User ID:', response.uid);
           // Redirect to dashboard or perform other actions
           this.loading = false
-          this.router.navigate(['/']).then(() => {
-            this.toster.success("Login SuccessFully")
-            this.tokenstorage.saveUser((response))
-            this.tokenstorage.saveToken(response.token)
-            this.trigertrefreshnavbar()
-          });
+          this.tokenstorage.saveUser((response))
+          this.tokenstorage.saveToken(response.token)
+          this.getusers(email)
+          this.toster.success("Login SuccessFully")
         } else {
           // Handle null response, possibly display an error message
           this.toster.error('Authentication failed')
@@ -73,5 +74,40 @@ export class LoginComponent {
 
   private trigertrefreshnavbar() {
     this.sharedService.triggerFunction();
+  }
+  // api call for workinghours
+  private getusers(email: string) {
+    this.dataservice.getData("users").subscribe({
+      next: (data: users[]) => {
+        if (data.length != 0) {
+          // console.log('call done')
+          let user: users[] = data.filter((user: users) => user.email === email)
+          if (user.length != 0) {
+            console.log(user[0].role)
+            if (user[0].role === 'client') {
+
+              this.router.navigate(['/client/dashboard']).then(() => {
+                this.trigertrefreshnavbar()
+              });
+            }
+            else {
+              // this.router.navigate(['/logout'])
+              console.log('login as freelancer')
+            }
+          }
+          else {
+            console.log('user not found')
+          }
+        }
+        else {
+          console.log("workinghours data not found")
+        }
+      },
+      error: (error) => {
+        console.error('Error fetching data:', error)
+      },
+      complete: () => {
+      },
+    });
   }
 }
