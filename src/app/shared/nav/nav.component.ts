@@ -19,13 +19,13 @@ export class NavComponent {
   ) { }
   ngOnInit() {
     this.gettrigertrefresh()
-    this.getusers()
+    this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
     this.islogin = this.ValidatorChecker(this.tokenstorage.getToken())
   }
   private gettrigertrefresh() {
     this.sharedservice.functionTriggerObservable.subscribe(() => {
       this.islogin = this.ValidatorChecker(this.tokenstorage.getToken())
-      this.getusers()
+      this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
     });
   }
   private ValidatorChecker(data: any) {
@@ -36,41 +36,5 @@ export class NavComponent {
       return true
     }
   }
-  // api call for workinghours
-  private getusers() {
-    this.dataservice.getData("users").subscribe({
-      next: (data: users[]) => {
-        if (data.length != 0) {
-          // console.log('call done')
-          if (this.islogin) {
-            let user: users[] = data.filter((user: users) => user.email === this.tokenstorage.getUser().userCredential.user.email)
-            if (user.length != 0) {
-              console.log(user[0].role)
-              if (user[0].role === 'client') {
-                this.client = true
-              }
-              else {
-                this.client = false
-              }
-            }
-            else {
-              console.log('user not found')
-            }
-          }
-          else {
-            this.client = false
-          }
 
-        }
-        else {
-          console.log("workinghours data not found")
-        }
-      },
-      error: (error) => {
-        console.error('Error fetching data:', error)
-      },
-      complete: () => {
-      },
-    });
-  }
 }

@@ -24,7 +24,11 @@ export class AuthService {
           return of(null);
         }
         return from(userCredential.user.getIdToken()).pipe(
-          map(token => ({ userCredential, token, uid: userCredential.user!.uid }))
+          switchMap(token => {
+            return this.getUserData(userCredential.user!.uid).pipe(
+              map(userrole => ({ userCredential, token, uid: userCredential.user!.uid, role: userrole }))
+            );
+          })
         );
       }),
       catchError(error => {
@@ -119,4 +123,20 @@ export class AuthService {
   getCurrentUser(): Observable<firebase.default.User | null> {
     return this.afAuth.authState;
   }
+  getUserData(uid: string): Observable<any[]> {
+    return this.firestore.collection('users').snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(action => {
+          var data = action.payload.doc.data() as any;
+          const id = action.payload.doc.id;
+          if (data.uid === uid) {
+            return data.role;
+          } else {
+            return null; // return null for non-matching uids
+          }
+        }).filter(role => role !== null); // filter out null values
+      })
+    );
+  }
+
 }
