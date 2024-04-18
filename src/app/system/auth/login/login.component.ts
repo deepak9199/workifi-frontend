@@ -84,7 +84,7 @@ export class LoginComponent {
         break;
       }
       case 'freelancer': {
-        this.router.navigate(['/freelancer/projectlistout']).then(() => {
+        this.router.navigate(['/freelancer/projectlist']).then(() => {
           this.trigertrefreshnavbar()
         });
         break

@@ -34,10 +34,7 @@ const routes: Routes = [
     }
   },
   {
-    path: 'client/profile', component: ProfileComponent, canActivate: [AuthGuard], data:
-    {
-      role: 'client'
-    }
+    path: 'profile', component: ProfileComponent
   },
   {
     path: 'client/proposals', component: ProposalsComponent, canActivate: [AuthGuard], data:

@@ -1,809 +1,761 @@
-<app-client-nav></app-client-nav>
-<div class="dashboard_content_wrapper">
-    <div class="dashboard dashboard_wrapper pr30 pr0-xl ">
-        <app-client-side></app-client-side>
-        <div class="dashboard__main pl0-md">
-            <div class="dashboard__content hover-bgc-color">
-                <div class="row pb40">
+<div class="container">
+    <div class="dashboard__content ">
+        <div class="row pb40">
 
-                    <div class="col-lg-9">
-                        <div class="dashboard_title_area">
-                            <h2>My Profile</h2>
+            <div class="col-lg-9">
+                <div class="dashboard_title_area">
+                    <h2>My Profile</h2>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                            <div class="bdrb1 pb15 mb25">
-                                <h5 class="list-title">Profile Details</h5>
-                            </div>
-                            <div class="col-xl-7">
-                                <div class="profile-box d-sm-flex align-items-center mb30">
-                                    <div class="profile-img mb20-sm"><img alt="profile" loading="lazy" width="71"
-                                            height="71" decoding="async" data-nimg="1" class="rounded-circle wa-xs"
-                                            style="color:transparent;height:71px;width:71px;object-fit:cover"
-                                            src="../assets/fl-1beae.png" /></div>
-                                    <div class="profile-content ml20 ml0-xs">
-                                        <div class="d-flex align-items-center my-3"><a class="tag-delt text-thm2"><span
-                                                    class="flaticon-delete text-thm2"></span></a><label><input
-                                                    type="file" accept=".png, .jpg, .jpeg" class="d-none" /><a
-                                                    class="upload-btn ml10">Upload Images</a></label></div>
-                                        <p class="text mb-0">Max file size is 1MB, Minimum dimension: 330x300 And
-                                            Suitable files are .jpg &amp; .png</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <form class="form-style1">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="mb20"><label
-                                                    class="heading-color ff-heading fw500 mb10">Username</label><input
-                                                    type="text" class="form-control" placeholder="i will" /></div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Email
-                                                    Address</label><input type="email" class="form-control"
-                                                    placeholder="i will" /></div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Phone
-                                                    Number</label><input type="text" class="form-control"
-                                                    placeholder="i will" /></div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20"><label
-                                                    class="heading-color ff-heading fw500 mb10">Tagline</label><input
-                                                    type="text" class="form-control" placeholder="i will" /></div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Hourly Rate</label>
-                                                    <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">$50</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">$60</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">$70</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">$80</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">$90</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">$100</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Gender</label>
-                                                    <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Male</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Female</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Other</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Specialization</label>
-                                                    <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Male</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Female</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Other</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Type</label>
-                                                    <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Type 1</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Type 2</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Type 3</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Country</label>
-                                                    <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">United
-                                                                                    States</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Canada</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">United
-                                                                                    Kingdom</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Australia</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Germany</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Japan</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">City</label>
-                                                    <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">New York</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Toronto</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">London</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Sydney</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Berlin</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Tokyo</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Language</label>
-                                                    <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">English</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">French</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">German</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Japanese</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Languages
-                                                        Level</label>
-                                                    <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Beginner</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Intermediate</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Advanced</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Fluent</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="mb10"><label
-                                                    class="heading-color ff-heading fw500 mb10">Introduce
-                                                    Yourself</label><textarea cols="30" rows="6"
-                                                    placeholder="Description"></textarea></div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="text-start"><a class="ud-btn btn-thm" href="contact.html">Save<i
-                                                        class="fal fa-arrow-right-long"></i></a></div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                            <div class="bdrb1 pb15 mb25">
-                                <h5 class="list-title">Skills</h5>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="row">
-                                    <form class="form-style1">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="mb20">
-                                                    <div class="form-style1"><label
-                                                            class="heading-color ff-heading fw500 mb10">Skills 1</label>
-                                                        <div class="bootselect-multiselect">
-                                                            <div class="dropdown bootstrap-select"><button type="button"
-                                                                    class="btn dropdown-toggle btn-light"
-                                                                    data-bs-toggle="dropdown">
-                                                                    <div class="filter-option">
-                                                                        <div class="filter-option-inner">
-                                                                            <div class="filter-option-inner-inner">
-                                                                                Designer</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </button>
-                                                                <div class="dropdown-menu ">
-                                                                    <div class="inner show"
-                                                                        style="max-height:300px;overflow-x:auto">
-                                                                        <ul class="dropdown-menu inner show">
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">Designer</span></a>
-                                                                            </li>
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">UI/UX</span></a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="mb20">
-                                                    <div class="form-style1"><label
-                                                            class="heading-color ff-heading fw500 mb10">Point</label>
-                                                        <div class="bootselect-multiselect">
-                                                            <div class="dropdown bootstrap-select"><button type="button"
-                                                                    class="btn dropdown-toggle btn-light"
-                                                                    data-bs-toggle="dropdown">
-                                                                    <div class="filter-option">
-                                                                        <div class="filter-option-inner">
-                                                                            <div class="filter-option-inner-inner">80
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </button>
-                                                                <div class="dropdown-menu ">
-                                                                    <div class="inner show"
-                                                                        style="max-height:300px;overflow-x:auto">
-                                                                        <ul class="dropdown-menu inner show">
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">80</span></a></li>
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">90</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="mb20">
-                                                    <div class="form-style1"><label
-                                                            class="heading-color ff-heading fw500 mb10">Skills 2</label>
-                                                        <div class="bootselect-multiselect">
-                                                            <div class="dropdown bootstrap-select"><button type="button"
-                                                                    class="btn dropdown-toggle btn-light"
-                                                                    data-bs-toggle="dropdown">
-                                                                    <div class="filter-option">
-                                                                        <div class="filter-option-inner">
-                                                                            <div class="filter-option-inner-inner">
-                                                                                Developer</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </button>
-                                                                <div class="dropdown-menu ">
-                                                                    <div class="inner show"
-                                                                        style="max-height:300px;overflow-x:auto">
-                                                                        <ul class="dropdown-menu inner show">
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">Developer</span></a>
-                                                                            </li>
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">Programmer</span></a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="mb20">
-                                                    <div class="form-style1"><label
-                                                            class="heading-color ff-heading fw500 mb10">Point</label>
-                                                        <div class="bootselect-multiselect">
-                                                            <div class="dropdown bootstrap-select"><button type="button"
-                                                                    class="btn dropdown-toggle btn-light"
-                                                                    data-bs-toggle="dropdown">
-                                                                    <div class="filter-option">
-                                                                        <div class="filter-option-inner">
-                                                                            <div class="filter-option-inner-inner">70
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </button>
-                                                                <div class="dropdown-menu ">
-                                                                    <div class="inner show"
-                                                                        style="max-height:300px;overflow-x:auto">
-                                                                        <ul class="dropdown-menu inner show">
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">70</span></a></li>
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">80</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="mb20">
-                                                    <div class="form-style1"><label
-                                                            class="heading-color ff-heading fw500 mb10">Skills 3</label>
-                                                        <div class="bootselect-multiselect">
-                                                            <div class="dropdown bootstrap-select"><button type="button"
-                                                                    class="btn dropdown-toggle btn-light"
-                                                                    data-bs-toggle="dropdown">
-                                                                    <div class="filter-option">
-                                                                        <div class="filter-option-inner">
-                                                                            <div class="filter-option-inner-inner">Video
-                                                                                Editor</div>
-                                                                        </div>
-                                                                    </div>
-                                                                </button>
-                                                                <div class="dropdown-menu ">
-                                                                    <div class="inner show"
-                                                                        style="max-height:300px;overflow-x:auto">
-                                                                        <ul class="dropdown-menu inner show">
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">Video
-                                                                                        Editor</span></a></li>
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">Programmer</span></a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="mb20">
-                                                    <div class="form-style1"><label
-                                                            class="heading-color ff-heading fw500 mb10">Point</label>
-                                                        <div class="bootselect-multiselect">
-                                                            <div class="dropdown bootstrap-select"><button type="button"
-                                                                    class="btn dropdown-toggle btn-light"
-                                                                    data-bs-toggle="dropdown">
-                                                                    <div class="filter-option">
-                                                                        <div class="filter-option-inner">
-                                                                            <div class="filter-option-inner-inner">75
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </button>
-                                                                <div class="dropdown-menu ">
-                                                                    <div class="inner show"
-                                                                        style="max-height:300px;overflow-x:auto">
-                                                                        <ul class="dropdown-menu inner show">
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">75</span></a></li>
-                                                                            <li class="selected active"><a
-                                                                                    class="dropdown-item "><span
-                                                                                        class="text">80</span></a></li>
-                                                                        </ul>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="text-start"><a class="ud-btn btn-thm"
-                                                        href="contact.html">Save<i
-                                                            class="fal fa-arrow-right-long"></i></a></div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                            <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
-                                <h5 class="list-title">Education</h5><a class="add-more-btn text-thm"><i
-                                        class="icon far fa-plus mr10"></i>Add Aducation</a>
-                            </div>
-                            <div class="position-relative">
-                                <div class="educational-quality">
-                                    <div class="m-circle text-thm">M</div>
-                                    <div class="wrapper mb40 position-relative">
-                                        <div class="del-edit">
-                                            <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                        class="flaticon-pencil"></span></a><a class="icon"
-                                                    id="delete"><span class="flaticon-delete"></span></a></div>
-                                        </div><span class="tag">2012 - 2014</span>
-                                        <h5 class="mt15">Bachlors in Fine Arts</h5>
-                                        <h6 class="text-thm">Modern College</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
-                                            tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
-                                                class="d-none d-lg-block" /> primis in faucibus.</p>
-                                    </div>
-                                    <div class="m-circle before-none text-thm">M</div>
-                                    <div class="wrapper mb30 position-relative">
-                                        <div class="del-edit">
-                                            <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                        class="flaticon-pencil"></span></a><a class="icon"
-                                                    id="delete"><span class="flaticon-delete"></span></a></div>
-                                        </div><span class="tag">2008 - 2012</span>
-                                        <h5 class="mt15">Computer Science</h5>
-                                        <h6 class="text-thm">Harvartd University</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
-                                            tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
-                                                class="d-none d-lg-block" /> primis in faucibus.</p>
-                                    </div>
-                                </div>
-                                <div class="text-start"><a class="ud-btn btn-thm">Save<i
-                                            class="fal fa-arrow-right-long"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                            <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
-                                <h5 class="list-title">Work &amp; Experience</h5><a class="add-more-btn text-thm"><i
-                                        class="icon far fa-plus mr10"></i>Add Experience</a>
-                            </div>
-                            <div class="position-relative">
-                                <div class="educational-quality">
-                                    <div class="m-circle text-thm">M</div>
-                                    <div class="wrapper mb40 position-relative">
-                                        <div class="del-edit">
-                                            <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                        class="flaticon-pencil"></span></a><a class="icon"
-                                                    id="delete"><span class="flaticon-delete"></span></a></div>
-                                        </div><span class="tag">2012 - 2014</span>
-                                        <h5 class="mt15">UX Designer</h5>
-                                        <h6 class="text-thm">Dropbox</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
-                                            tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
-                                                class="d-none d-lg-block" /> primis in faucibus.</p>
-                                    </div>
-                                    <div class="m-circle before-none text-thm">M</div>
-                                    <div class="wrapper mb30 position-relative">
-                                        <div class="del-edit">
-                                            <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                        class="flaticon-pencil"></span></a><a class="icon"
-                                                    id="delete"><span class="flaticon-delete"></span></a></div>
-                                        </div><span class="tag">2008 - 2012</span>
-                                        <h5 class="mt15">Art Director</h5>
-                                        <h6 class="text-thm">amazon</h6>
-                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a
-                                            ipsum tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
-                                                class="d-none d-lg-block" /> primis in faucibus.</p>
-                                    </div>
-                                </div>
-                                <div class="text-start"><a class="ud-btn btn-thm">Save<i
-                                            class="fal fa-arrow-right-long"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                            <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
-                                <h5 class="list-title">Awards</h5><a class="add-more-btn text-thm"><i
-                                        class="icon far fa-plus mr10"></i>Add Awards</a>
-                            </div>
-                            <div class="position-relative">
-                                <div class="educational-quality ps-0">
-                                    <div class="wrapper mb40 position-relative">
-                                        <div class="del-edit">
-                                            <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                        class="flaticon-pencil"></span></a><a class="icon"
-                                                    id="delete"><span class="flaticon-delete"></span></a></div>
-                                        </div><span class="tag">2012 - 2014</span>
-                                        <h5 class="mt15">UI UX Design</h5>
-                                        <h6 class="text-thm">Udemy</h6>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
-                                            tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
-                                                class="d-none d-lg-block" /> primis in faucibus.</p>
-                                    </div>
-                                    <div class="wrapper mb40 position-relative">
-                                        <div class="del-edit">
-                                            <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                        class="flaticon-pencil"></span></a><a class="icon"
-                                                    id="delete"><span class="flaticon-delete"></span></a></div>
-                                        </div><span class="tag">2008 - 2012</span>
-                                        <h5 class="mt15">App Design</h5>
-                                        <h6 class="text-thm">Google</h6>
-                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a
-                                            ipsum tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
-                                                class="d-none d-lg-block" /> primis in faucibus.</p>
-                                    </div>
-                                </div>
-                                <div class="text-start"><a class="ud-btn btn-thm" href="#">Save<i
-                                            class="fal fa-arrow-right-long"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                            <div class="bdrb1 pb15 mb25">
-                                <h5 class="list-title">Change password</h5>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="row">
-                                    <form class="form-style1">
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Old
-                                                        Password</label><input type="text" class="form-control"
-                                                        placeholder="********" /></div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="mb20"><label class="heading-color ff-heading fw500 mb10">New
-                                                        Password</label><input type="text" class="form-control"
-                                                        placeholder="********" /></div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <div class="mb20"><label
-                                                        class="heading-color ff-heading fw500 mb10">Confirm New
-                                                        Password</label><input type="text" class="form-control"
-                                                        placeholder="********" /></div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="text-start"><a class="ud-btn btn-thm"
-                                                        href="contact.html">Change Password<i
-                                                            class="fal fa-arrow-right-long"></i></a></div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                            <div class="col-lg-7">
-                                <div class="row">
-                                    <div class="bdrb1 pb15 mb25">
-                                        <h5 class="list-title">Change password</h5>
-                                    </div>
-                                    <form class="form-style1">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h6>Close account</h6>
-                                                <p class="text">Warning: If you close your account, you will be
-                                                    unsubscribed from all your 5 courses, and will lose access forever.
-                                                </p>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <div class="mb20"><label
-                                                        class="heading-color ff-heading fw500 mb10">Enter
-                                                        Password</label><input type="text" class="form-control"
-                                                        placeholder="********" /></div>
-                                                <div class="text-start"><a class="ud-btn btn-thm"
-                                                        href="contact.html">Change Password<i
-                                                            class="fal fa-arrow-right-long"></i></a></div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <app-client-footer></app-client-footer>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb25">
+                        <h5 class="list-title">Profile Details</h5>
+                    </div>
+                    <div class="col-xl-7">
+                        <div class="profile-box d-sm-flex align-items-center mb30">
+                            <div class="profile-img mb20-sm"><img alt="profile" loading="lazy" width="71" height="71"
+                                    decoding="async" data-nimg="1" class="rounded-circle wa-xs"
+                                    style="color:transparent;height:71px;width:71px;object-fit:cover"
+                                    src="../assets/fl-1beae.png" /></div>
+                            <div class="profile-content ml20 ml0-xs">
+                                <div class="d-flex align-items-center my-3"><a class="tag-delt text-thm2"><span
+                                            class="flaticon-delete text-thm2"></span></a><label><input type="file"
+                                            accept=".png, .jpg, .jpeg" class="d-none" /><a
+                                            class="upload-btn ml10">Upload Images</a></label></div>
+                                <p class="text mb-0">Max file size is 1MB, Minimum dimension: 330x300 And
+                                    Suitable files are .jpg &amp; .png</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <form class="form-style1">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label
+                                            class="heading-color ff-heading fw500 mb10">Username</label><input
+                                            type="text" class="form-control" placeholder="i will" /></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Email
+                                            Address</label><input type="email" class="form-control"
+                                            placeholder="i will" /></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Phone
+                                            Number</label><input type="text" class="form-control"
+                                            placeholder="i will" /></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label
+                                            class="heading-color ff-heading fw500 mb10">Tagline</label><input
+                                            type="text" class="form-control" placeholder="i will" /></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1"><label
+                                                class="heading-color ff-heading fw500 mb10">Hourly Rate</label>
+                                            <div class="bootselect-multiselect">
+                                                <div class="dropdown bootstrap-select"><button type="button"
+                                                        class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown">
+                                                        <div class="filter-option">
+                                                            <div class="filter-option-inner">
+                                                                <div class="filter-option-inner-inner">Select
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="dropdown-menu ">
+                                                        <div class="inner show"
+                                                            style="max-height:300px;overflow-x:auto">
+                                                            <ul class="dropdown-menu inner show">
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">$50</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">$60</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">$70</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">$80</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">$90</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">$100</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1"><label
+                                                class="heading-color ff-heading fw500 mb10">Gender</label>
+                                            <div class="bootselect-multiselect">
+                                                <div class="dropdown bootstrap-select"><button type="button"
+                                                        class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown">
+                                                        <div class="filter-option">
+                                                            <div class="filter-option-inner">
+                                                                <div class="filter-option-inner-inner">Select
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="dropdown-menu ">
+                                                        <div class="inner show"
+                                                            style="max-height:300px;overflow-x:auto">
+                                                            <ul class="dropdown-menu inner show">
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Male</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Female</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Other</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1"><label
+                                                class="heading-color ff-heading fw500 mb10">Specialization</label>
+                                            <div class="bootselect-multiselect">
+                                                <div class="dropdown bootstrap-select"><button type="button"
+                                                        class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown">
+                                                        <div class="filter-option">
+                                                            <div class="filter-option-inner">
+                                                                <div class="filter-option-inner-inner">Select
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="dropdown-menu ">
+                                                        <div class="inner show"
+                                                            style="max-height:300px;overflow-x:auto">
+                                                            <ul class="dropdown-menu inner show">
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Male</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Female</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Other</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1"><label
+                                                class="heading-color ff-heading fw500 mb10">Type</label>
+                                            <div class="bootselect-multiselect">
+                                                <div class="dropdown bootstrap-select"><button type="button"
+                                                        class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown">
+                                                        <div class="filter-option">
+                                                            <div class="filter-option-inner">
+                                                                <div class="filter-option-inner-inner">Select
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="dropdown-menu ">
+                                                        <div class="inner show"
+                                                            style="max-height:300px;overflow-x:auto">
+                                                            <ul class="dropdown-menu inner show">
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span class="text">Type
+                                                                            1</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span class="text">Type
+                                                                            2</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span class="text">Type
+                                                                            3</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1"><label
+                                                class="heading-color ff-heading fw500 mb10">Country</label>
+                                            <div class="bootselect-multiselect">
+                                                <div class="dropdown bootstrap-select"><button type="button"
+                                                        class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown">
+                                                        <div class="filter-option">
+                                                            <div class="filter-option-inner">
+                                                                <div class="filter-option-inner-inner">Select
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="dropdown-menu ">
+                                                        <div class="inner show"
+                                                            style="max-height:300px;overflow-x:auto">
+                                                            <ul class="dropdown-menu inner show">
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span class="text">United
+                                                                            States</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Canada</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span class="text">United
+                                                                            Kingdom</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Australia</span></a>
+                                                                </li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Germany</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Japan</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1"><label
+                                                class="heading-color ff-heading fw500 mb10">City</label>
+                                            <div class="bootselect-multiselect">
+                                                <div class="dropdown bootstrap-select"><button type="button"
+                                                        class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown">
+                                                        <div class="filter-option">
+                                                            <div class="filter-option-inner">
+                                                                <div class="filter-option-inner-inner">Select
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="dropdown-menu ">
+                                                        <div class="inner show"
+                                                            style="max-height:300px;overflow-x:auto">
+                                                            <ul class="dropdown-menu inner show">
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span class="text">New
+                                                                            York</span></a>
+                                                                </li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Toronto</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">London</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Sydney</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Berlin</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Tokyo</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1"><label
+                                                class="heading-color ff-heading fw500 mb10">Language</label>
+                                            <div class="bootselect-multiselect">
+                                                <div class="dropdown bootstrap-select"><button type="button"
+                                                        class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown">
+                                                        <div class="filter-option">
+                                                            <div class="filter-option-inner">
+                                                                <div class="filter-option-inner-inner">Select
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="dropdown-menu ">
+                                                        <div class="inner show"
+                                                            style="max-height:300px;overflow-x:auto">
+                                                            <ul class="dropdown-menu inner show">
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">English</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">French</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">German</span></a></li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Japanese</span></a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1"><label
+                                                class="heading-color ff-heading fw500 mb10">Languages
+                                                Level</label>
+                                            <div class="bootselect-multiselect">
+                                                <div class="dropdown bootstrap-select"><button type="button"
+                                                        class="btn dropdown-toggle btn-light" data-bs-toggle="dropdown">
+                                                        <div class="filter-option">
+                                                            <div class="filter-option-inner">
+                                                                <div class="filter-option-inner-inner">Select
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </button>
+                                                    <div class="dropdown-menu ">
+                                                        <div class="inner show"
+                                                            style="max-height:300px;overflow-x:auto">
+                                                            <ul class="dropdown-menu inner show">
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Beginner</span></a>
+                                                                </li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Intermediate</span></a>
+                                                                </li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Advanced</span></a>
+                                                                </li>
+                                                                <li class="selected active"><a
+                                                                        class="dropdown-item "><span
+                                                                            class="text">Fluent</span></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="mb10"><label class="heading-color ff-heading fw500 mb10">Introduce
+                                            Yourself</label><textarea cols="30" rows="6"
+                                            placeholder="Description"></textarea></div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="text-start"><a class="ud-btn btn-thm" href="contact.html">Save<i
+                                                class="fal fa-arrow-right-long"></i></a></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb25">
+                        <h5 class="list-title">Skills</h5>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <form class="form-style1">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="mb20">
+                                            <div class="form-style1"><label
+                                                    class="heading-color ff-heading fw500 mb10">Skills 1</label>
+                                                <div class="bootselect-multiselect">
+                                                    <div class="dropdown bootstrap-select"><button type="button"
+                                                            class="btn dropdown-toggle btn-light"
+                                                            data-bs-toggle="dropdown">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">
+                                                                        Designer</div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu ">
+                                                            <div class="inner show"
+                                                                style="max-height:300px;overflow-x:auto">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">Designer</span></a>
+                                                                    </li>
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">UI/UX</span></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="mb20">
+                                            <div class="form-style1"><label
+                                                    class="heading-color ff-heading fw500 mb10">Point</label>
+                                                <div class="bootselect-multiselect">
+                                                    <div class="dropdown bootstrap-select"><button type="button"
+                                                            class="btn dropdown-toggle btn-light"
+                                                            data-bs-toggle="dropdown">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">80
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu ">
+                                                            <div class="inner show"
+                                                                style="max-height:300px;overflow-x:auto">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">80</span></a></li>
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">90</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="mb20">
+                                            <div class="form-style1"><label
+                                                    class="heading-color ff-heading fw500 mb10">Skills 2</label>
+                                                <div class="bootselect-multiselect">
+                                                    <div class="dropdown bootstrap-select"><button type="button"
+                                                            class="btn dropdown-toggle btn-light"
+                                                            data-bs-toggle="dropdown">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">
+                                                                        Developer</div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu ">
+                                                            <div class="inner show"
+                                                                style="max-height:300px;overflow-x:auto">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">Developer</span></a>
+                                                                    </li>
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">Programmer</span></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="mb20">
+                                            <div class="form-style1"><label
+                                                    class="heading-color ff-heading fw500 mb10">Point</label>
+                                                <div class="bootselect-multiselect">
+                                                    <div class="dropdown bootstrap-select"><button type="button"
+                                                            class="btn dropdown-toggle btn-light"
+                                                            data-bs-toggle="dropdown">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">70
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu ">
+                                                            <div class="inner show"
+                                                                style="max-height:300px;overflow-x:auto">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">70</span></a></li>
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">80</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="mb20">
+                                            <div class="form-style1"><label
+                                                    class="heading-color ff-heading fw500 mb10">Skills 3</label>
+                                                <div class="bootselect-multiselect">
+                                                    <div class="dropdown bootstrap-select"><button type="button"
+                                                            class="btn dropdown-toggle btn-light"
+                                                            data-bs-toggle="dropdown">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">Video
+                                                                        Editor</div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu ">
+                                                            <div class="inner show"
+                                                                style="max-height:300px;overflow-x:auto">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">Video
+                                                                                Editor</span></a></li>
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">Programmer</span></a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="mb20">
+                                            <div class="form-style1"><label
+                                                    class="heading-color ff-heading fw500 mb10">Point</label>
+                                                <div class="bootselect-multiselect">
+                                                    <div class="dropdown bootstrap-select"><button type="button"
+                                                            class="btn dropdown-toggle btn-light"
+                                                            data-bs-toggle="dropdown">
+                                                            <div class="filter-option">
+                                                                <div class="filter-option-inner">
+                                                                    <div class="filter-option-inner-inner">75
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </button>
+                                                        <div class="dropdown-menu ">
+                                                            <div class="inner show"
+                                                                style="max-height:300px;overflow-x:auto">
+                                                                <ul class="dropdown-menu inner show">
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">75</span></a></li>
+                                                                    <li class="selected active"><a
+                                                                            class="dropdown-item "><span
+                                                                                class="text">80</span></a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="text-start"><a class="ud-btn btn-thm" href="contact.html">Save<i
+                                                    class="fal fa-arrow-right-long"></i></a></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                        <h5 class="list-title">Education</h5><a class="add-more-btn text-thm"><i
+                                class="icon far fa-plus mr10"></i>Add Aducation</a>
+                    </div>
+                    <div class="position-relative">
+                        <div class="educational-quality">
+                            <div class="m-circle text-thm">M</div>
+                            <div class="wrapper mb40 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2012 - 2014</span>
+                                <h5 class="mt15">Bachlors in Fine Arts</h5>
+                                <h6 class="text-thm">Modern College</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
+                                    tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
+                                        class="d-none d-lg-block" /> primis in faucibus.</p>
+                            </div>
+                            <div class="m-circle before-none text-thm">M</div>
+                            <div class="wrapper mb30 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2008 - 2012</span>
+                                <h5 class="mt15">Computer Science</h5>
+                                <h6 class="text-thm">Harvartd University</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
+                                    tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
+                                        class="d-none d-lg-block" /> primis in faucibus.</p>
+                            </div>
+                        </div>
+                        <div class="text-start"><a class="ud-btn btn-thm">Save<i
+                                    class="fal fa-arrow-right-long"></i></a></div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                        <h5 class="list-title">Work &amp; Experience</h5><a class="add-more-btn text-thm"><i
+                                class="icon far fa-plus mr10"></i>Add Experience</a>
+                    </div>
+                    <div class="position-relative">
+                        <div class="educational-quality">
+                            <div class="m-circle text-thm">M</div>
+                            <div class="wrapper mb40 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2012 - 2014</span>
+                                <h5 class="mt15">UX Designer</h5>
+                                <h6 class="text-thm">Dropbox</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
+                                    tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
+                                        class="d-none d-lg-block" /> primis in faucibus.</p>
+                            </div>
+                            <div class="m-circle before-none text-thm">M</div>
+                            <div class="wrapper mb30 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2008 - 2012</span>
+                                <h5 class="mt15">Art Director</h5>
+                                <h6 class="text-thm">amazon</h6>
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a
+                                    ipsum tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
+                                        class="d-none d-lg-block" /> primis in faucibus.</p>
+                            </div>
+                        </div>
+                        <div class="text-start"><a class="ud-btn btn-thm">Save<i
+                                    class="fal fa-arrow-right-long"></i></a></div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                        <h5 class="list-title">Awards</h5><a class="add-more-btn text-thm"><i
+                                class="icon far fa-plus mr10"></i>Add Awards</a>
+                    </div>
+                    <div class="position-relative">
+                        <div class="educational-quality ps-0">
+                            <div class="wrapper mb40 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2012 - 2014</span>
+                                <h5 class="mt15">UI UX Design</h5>
+                                <h6 class="text-thm">Udemy</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
+                                    tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
+                                        class="d-none d-lg-block" /> primis in faucibus.</p>
+                            </div>
+                            <div class="wrapper mb40 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2008 - 2012</span>
+                                <h5 class="mt15">App Design</h5>
+                                <h6 class="text-thm">Google</h6>
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a
+                                    ipsum tellus. Interdum et malesuada fames ac ante ipsum<!-- --> <br
+                                        class="d-none d-lg-block" /> primis in faucibus.</p>
+                            </div>
+                        </div>
+                        <div class="text-start"><a class="ud-btn btn-thm" href="#">Save<i
+                                    class="fal fa-arrow-right-long"></i></a></div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb25">
+                        <h5 class="list-title">Change password</h5>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <form class="form-style1">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Old
+                                                Password</label><input type="text" class="form-control"
+                                                placeholder="********" /></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="mb20"><label class="heading-color ff-heading fw500 mb10">New
+                                                Password</label><input type="text" class="form-control"
+                                                placeholder="********" /></div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Confirm New
+                                                Password</label><input type="text" class="form-control"
+                                                placeholder="********" /></div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="text-start"><a class="ud-btn btn-thm" href="contact.html">Change
+                                                Password<i class="fal fa-arrow-right-long"></i></a></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
