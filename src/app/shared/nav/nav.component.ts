@@ -18,6 +18,7 @@ export class NavComponent {
     private dataservice: CollectionService
   ) { }
   ngOnInit() {
+
     this.gettrigertrefresh()
     // this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
     this.islogin = this.ValidatorChecker(this.tokenstorage.getToken())
@@ -36,5 +37,25 @@ export class NavComponent {
       return true
     }
   }
+  isrole(data: string): boolean {
 
+    if (this.ValidatorChecker(this.tokenstorage.getUser())) {
+      let role: string = this.tokenstorage.getUser().role[0]
+      if (role === data) {
+        return true
+      }
+      else {
+        return false
+      }
+    }
+    else {
+      if (data === 'deafult') {
+        return true
+      }
+      else {
+        return false
+      }
+    }
+
+  }
 }
