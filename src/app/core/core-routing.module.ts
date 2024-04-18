@@ -12,6 +12,8 @@ import { LogoutComponent } from '../system/auth/logout/logout.component';
 import { FreelancerProjectListComponent } from '../system/freelancer/freelancer-project-list/freelancer-project-list.component';
 import { FreelancerSubmitProposalComponent } from '../system/freelancer/freelancer-submit-proposal/freelancer-submit-proposal.component';
 import { AuthGuard } from '../shared/_guards/guard';
+import { ProposalToFreelancerComponent } from '../system/client/proposal-to-freelancer/proposal-to-freelancer.component';
+import { FreelancerListComponent } from '../system/client/freelancer-list/freelancer-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -38,6 +40,18 @@ const routes: Routes = [
   },
   {
     path: 'client/proposals', component: ProposalsComponent, canActivate: [AuthGuard], data:
+    {
+      role: 'client'
+    }
+  },
+  {
+    path: 'client/freelancerlist', component: FreelancerListComponent, canActivate: [AuthGuard], data:
+    {
+      role: 'client'
+    }
+  },
+  {
+    path: 'client/proposalstofreelancer', component: ProposalToFreelancerComponent, canActivate: [AuthGuard], data:
     {
       role: 'client'
     }
