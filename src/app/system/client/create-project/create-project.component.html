@@ -28,482 +28,228 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Project
-                                                    Title</label><input type="text" class="form-control"
-                                                    placeholder="i will" /></div>
+                                                    Title</label><input type="text" class="form-control" id="title"
+                                                    name="title" [(ngModel)]="formcreateproject.title"
+                                                    placeholder="Enter Project Title" /></div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Category</label>
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Category</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item active selected"><span
-                                                                                    class="text">Select</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Graphics &amp;
-                                                                                    Design</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Digital
-                                                                                    Marketing</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Writing &amp;
-                                                                                    Translation</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Video &amp;
-                                                                                    Animation</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Music &amp;
-                                                                                    Audio</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Programming &amp;
-                                                                                    Tech</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Business</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Lifestyle</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Trending</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select id="category" name="category"
+                                                            [(ngModel)]="formcreateproject.category"
+                                                            class="form-control">
+
+                                                            <option value="" selected disabled>Select
+                                                            </option>
+                                                            <option value="Graphics & Design">Graphics & Design</option>
+                                                            <option value="Digital Marketing">Digital Marketing</option>
+                                                            <option value="Writing & Translation">Writing & Translation
+                                                            </option>
+                                                            <option value="Video & Animation">Video & Animation</option>
+                                                            <option value="Music & Audio">Music & Audio</option>
+                                                            <option value="Programming & Tech">Programming & Tech
+                                                            </option>
+                                                            <option value="Business">Business</option>
+                                                            <option value="Lifestyle">Lifestyle</option>
+                                                            <option value="Trending">Trending</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Freelancer
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Freelancer
                                                         Type</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item active selected"><span
-                                                                                    class="text">Select</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Full Time</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Part Time</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Project
-                                                                                    Based</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Other</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select id="freelancertype" name="freelancertype"
+                                                            [(ngModel)]="formcreateproject.freelancertype"
+                                                            class="form-control">
+
+                                                            <option value="" selected disabled>Select
+                                                            </option>
+                                                            <option value="full-time">Full Time</option>
+                                                            <option value="part-time">Part Time</option>
+                                                            <option value="project-based">Project Based</option>
+                                                            <option value="other">Other</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Price type</label>
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Price
+                                                        type</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item active selected"><span
-                                                                                    class="text">Select</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Low($)</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Mid($$)</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">High($$$)</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select [(ngModel)]="formcreateproject.pricetype" id="pricetype"
+                                                            name="pricetype" class="form-control">
+                                                            <option value="low">$ Low</option>
+                                                            <option value="mid">$$ Mid</option>
+                                                            <option value="high">$$$ High</option>
+                                                        </select>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col-sm-6">
                                             <div class="mb20"><label
                                                     class="heading-color ff-heading fw500 mb10">Cost</label><input
+                                                    [(ngModel)]="formcreateproject.cost" id="cost" name="cost"
                                                     type="email" class="form-control" placeholder="$" /></div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Project
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Project
                                                         Duration</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item active selected"><span
-                                                                                    class="text">Select</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">1 Day</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">2 Day</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">3 Day</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">1 Week</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select [(ngModel)]="formcreateproject.projectduration"
+                                                            id="projectduration" name="projectduration"
+                                                            class="form-control">
+                                                            <option value="select">Select</option>
+                                                            <option value="1-day">1 Day</option>
+                                                            <option value="2-day">2 Days</option>
+                                                            <option value="3-day">3 Days</option>
+                                                            <option value="1-week">1 Week</option>
+                                                        </select>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Level</label>
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Level</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item active selected"><span
-                                                                                    class="text">Select</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Entry Level</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Standard
-                                                                                    Level</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Expert Level</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select [(ngModel)]="formcreateproject.level" id="level"
+                                                            name="level" class="form-control">
+                                                            <option value="select">Select</option>
+                                                            <option value="entry-level">Entry Level</option>
+                                                            <option value="standard-level">Standard Level</option>
+                                                            <option value="expert-level">Expert Level</option>
+                                                        </select>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Country</label>
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Country</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">United
-                                                                            States</div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item active selected"><span
-                                                                                    class="text">United
-                                                                                    States</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Canada</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">United
-                                                                                    Kingdom</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Australia</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Germany</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Japan</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select [(ngModel)]="formcreateproject.country" id="country"
+                                                            name="country" class="form-control">
+                                                            <option value="united-states">United States</option>
+                                                            <option value="canada">Canada</option>
+                                                            <option value="united-kingdom">United Kingdom</option>
+                                                            <option value="australia">Australia</option>
+                                                            <option value="germany">Germany</option>
+                                                            <option value="japan">Japan</option>
+                                                        </select>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">City</label>
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">City</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">New York
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item active selected"><span
-                                                                                    class="text">New York</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Toronto</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">London</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Sydney</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Berlin</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Tokyo</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select [(ngModel)]="formcreateproject.city" id="city"
+                                                            name="city" class="form-control">
+                                                            <option value="new-york">New York</option>
+                                                            <option value="toronto">Toronto</option>
+                                                            <option value="london">London</option>
+                                                            <option value="sydney">Sydney</option>
+                                                            <option value="berlin">Berlin</option>
+                                                            <option value="tokyo">Tokyo</option>
+                                                        </select>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Language</label>
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Language</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">English</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">French</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">German</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Japanese</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select [(ngModel)]="formcreateproject.language" id="language"
+                                                            name="language" class="form-control">
+                                                            <option value="select">Select</option>
+                                                            <option value="english">English</option>
+                                                            <option value="french">French</option>
+                                                            <option value="german">German</option>
+                                                            <option value="japanese">Japanese</option>
+                                                        </select>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Languages
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Languages
                                                         Level</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Select
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Beginner</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Intermediate</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Advanced</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Fluent</span></a></li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select [(ngModel)]="formcreateproject.languageslevel"
+                                                            id="languageslevel" name="languageslevel"
+                                                            class="form-control">
+                                                            <option value="select">Select</option>
+                                                            <option value="beginner">Beginner</option>
+                                                            <option value="intermediate">Intermediate</option>
+                                                            <option value="advanced">Advanced</option>
+                                                            <option value="fluent">Fluent</option>
+                                                        </select>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col-sm-12">
                                             <div class="mb20">
-                                                <div class="form-style1"><label
-                                                        class="heading-color ff-heading fw500 mb10">Skills</label>
+                                                <div class="form-style1">
+                                                    <label class="heading-color ff-heading fw500 mb10">Skills</label>
                                                     <div class="bootselect-multiselect">
-                                                        <div class="dropdown bootstrap-select"><button type="button"
-                                                                class="btn dropdown-toggle btn-light"
-                                                                data-bs-toggle="dropdown">
-                                                                <div class="filter-option">
-                                                                    <div class="filter-option-inner">
-                                                                        <div class="filter-option-inner-inner">Nothing
-                                                                            selected</div>
-                                                                    </div>
-                                                                </div>
-                                                            </button>
-                                                            <div class="dropdown-menu ">
-                                                                <div class="inner show"
-                                                                    style="max-height:300px;overflow-x:auto">
-                                                                    <ul class="dropdown-menu inner show">
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Select</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Figma</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Adobe XD</span></a>
-                                                                        </li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">CSS</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">HTML</span></a></li>
-                                                                        <li class="selected active"><a
-                                                                                class="dropdown-item "><span
-                                                                                    class="text">Bootstrap</span></a>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <select [(ngModel)]="formcreateproject.skills" id="skills"
+                                                            name="skills" class="form-control">
+                                                            <option value="select">Select</option>
+                                                            <option value="figma">Figma</option>
+                                                            <option value="adobe-xd">Adobe XD</option>
+                                                            <option value="css">CSS</option>
+                                                            <option value="html">HTML</option>
+                                                            <option value="bootstrap">Bootstrap</option>
+                                                        </select>
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="col-md-12">
                                             <div class="mb10"><label class="heading-color ff-heading fw500 mb10">Project
-                                                    Detail</label><textarea cols="30" rows="6"
+                                                    Detail</label><textarea
+                                                    [(ngModel)]="formcreateproject.projectdetail" id="projectdetail"
+                                                    name="projectdetail" cols="30" rows="6"
                                                     placeholder="Description"></textarea></div>
                                         </div>
                                         <div class="col-md-12">
-                                            <div class="text-start"><a class="ud-btn btn-thm" href="contact.html">Save<i
+                                            <div (click)="createproject()" class="text-start"><a
+                                                    class="ud-btn btn-thm">Save<i
                                                         class="fal fa-arrow-right-long"></i></a></div>
                                         </div>
                                     </div>

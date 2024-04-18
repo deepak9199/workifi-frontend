@@ -23,15 +23,28 @@
                         <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
                             <div class="navtab-style1">
                                 <nav>
-                                    <div class="nav nav-tabs mb30"><button class="nav-link fw500 ps-0 active">Posted
-                                            Projects</button><button class="nav-link fw500 ps-0 ">Pending
-                                            Projects</button><button class="nav-link fw500 ps-0 ">Ongoing
-                                            Services</button><button class="nav-link fw500 ps-0 ">Expired
-                                            Projects</button><button class="nav-link fw500 ps-0 ">Completed
-                                            Services</button><button class="nav-link fw500 ps-0 ">Canceled
-                                            Services</button></div>
+                                    <div class="nav nav-tabs mb30">
+                                        <button (click)="projecttabtab('posted')"
+                                            [ngClass]="{'active': activeTab === 'posted'}"
+                                            class="nav-link fw500 ps-0">Posted Projects</button>
+                                        <button (click)="projecttabtab('pending')"
+                                            [ngClass]="{'active': activeTab === 'pending'}"
+                                            class="nav-link fw500 ps-0">Pending Projects</button>
+                                        <button (click)="projecttabtab('ongoing')"
+                                            [ngClass]="{'active': activeTab === 'ongoing'}"
+                                            class="nav-link fw500 ps-0">Ongoing Services</button>
+                                        <button (click)="projecttabtab('expired')"
+                                            [ngClass]="{'active': activeTab === 'expired'}"
+                                            class="nav-link fw500 ps-0">Expired Projects</button>
+                                        <button (click)="projecttabtab('completed')"
+                                            [ngClass]="{'active': activeTab === 'completed'}"
+                                            class="nav-link fw500 ps-0">Completed projects</button>
+                                        <button (click)="projecttabtab('canceled')"
+                                            [ngClass]="{'active': activeTab === 'canceled'}"
+                                            class="nav-link fw500 ps-0">Canceled projects</button>
+                                    </div>
                                 </nav>
-                                <div class="packages_table table-responsive">
+                                <div *ngIf="postedprojects" class="packages_table table-responsive">
                                     <table class="table-style3 table at-savesearch">
                                         <thead class="t-head">
                                             <tr>
@@ -42,13 +55,13 @@
                                             </tr>
                                         </thead>
                                         <tbody class="t-body">
-                                            <tr>
+                                            <tr *ngFor="let projectsdata of projects">
                                                 <th scope="row">
                                                     <div
                                                         class="freelancer-style1 box-shadow-none row m-0 p-0 align-items-lg-end">
                                                         <div class="d-lg-flex px-0">
                                                             <div class="details mb15-md-md">
-                                                                <h5 class="title mb10">Food Delviery Mobile App</h5>
+                                                                <h5 class="title mb10"> {{projectsdata.title}} </h5>
                                                                 <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                                         class="flaticon-place fz16 vam text-thm2 me-1"></i>
                                                                     <!-- -->London, UK</p>
@@ -62,9 +75,11 @@
                                                         </div>
                                                     </div>
                                                 </th>
-                                                <td class="vam"><span class="fz15 fw400">Web &amp; App Design</span>
+                                                <td class="vam"><span class="fz15 fw400"> {{projectsdata.category}}
+                                                    </span>
                                                 </td>
-                                                <td class="vam"><span class="fz14 fw400">$500.00/Fixed</span></td>
+                                                <td class="vam"><span class="fz14 fw400">$ {{projectsdata.cost}} /
+                                                        {{projectsdata.pricetype}} </span></td>
                                                 <td>
                                                     <div class="d-flex"><a class="icon me-2" id="edit"
                                                             data-bs-toggle="modal" data-bs-target="#proposalModal"><span
@@ -74,13 +89,47 @@
                                                                 class="flaticon-delete"></span></a></div>
                                                 </td>
                                             </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="mt30">
+                                        <div class="mbp_pagination text-center  ">
+                                            <ul class="page_navigation">
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-left"></span></a></li>
+                                                <li class="page-item"><a class="page-link">1</a></li>
+                                                <li class="page-item active" aria-current="page"><a class="page-link">2
+                                                        <span class="sr-only">(current)</span></a></li>
+                                                <li class="page-item"><a class="page-link">3</a></li>
+                                                <li class="page-item"><a class="page-link">4</a></li>
+                                                <li class="page-item"><a class="page-link">5</a></li>
+                                                <li class="page-item"><a class="page-link">...</a></li>
+                                                <li class="page-item"><a class="page-link">20</a></li>
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-right"></span></a></li>
+                                            </ul>
+                                            <p class="mt10 mb-0 pagination_page_count text-center">1 – 20 of 300+
+                                                property available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="pendingprojects" class="packages_table table-responsive">
+                                    <table class="table-style3 table at-savesearch">
+                                        <thead class="t-head">
                                             <tr>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Category</th>
+                                                <th scope="col">Type/Cost</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="t-body">
+                                            <tr *ngFor="let projectsdata of projects">
                                                 <th scope="row">
                                                     <div
                                                         class="freelancer-style1 box-shadow-none row m-0 p-0 align-items-lg-end">
                                                         <div class="d-lg-flex px-0">
                                                             <div class="details mb15-md-md">
-                                                                <h5 class="title mb10">Food Delviery Mobile App</h5>
+                                                                <h5 class="title mb10"> {{projectsdata.title}} </h5>
                                                                 <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                                         class="flaticon-place fz16 vam text-thm2 me-1"></i>
                                                                     <!-- -->London, UK</p>
@@ -94,9 +143,11 @@
                                                         </div>
                                                     </div>
                                                 </th>
-                                                <td class="vam"><span class="fz15 fw400">Web &amp; App Design</span>
+                                                <td class="vam"><span class="fz15 fw400"> {{projectsdata.category}}
+                                                    </span>
                                                 </td>
-                                                <td class="vam"><span class="fz14 fw400">$500.00/Fixed</span></td>
+                                                <td class="vam"><span class="fz14 fw400">$ {{projectsdata.cost}} /
+                                                        {{projectsdata.pricetype}} </span></td>
                                                 <td>
                                                     <div class="d-flex"><a class="icon me-2" id="edit"
                                                             data-bs-toggle="modal" data-bs-target="#proposalModal"><span
@@ -106,13 +157,47 @@
                                                                 class="flaticon-delete"></span></a></div>
                                                 </td>
                                             </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="mt30">
+                                        <div class="mbp_pagination text-center  ">
+                                            <ul class="page_navigation">
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-left"></span></a></li>
+                                                <li class="page-item"><a class="page-link">1</a></li>
+                                                <li class="page-item active" aria-current="page"><a class="page-link">2
+                                                        <span class="sr-only">(current)</span></a></li>
+                                                <li class="page-item"><a class="page-link">3</a></li>
+                                                <li class="page-item"><a class="page-link">4</a></li>
+                                                <li class="page-item"><a class="page-link">5</a></li>
+                                                <li class="page-item"><a class="page-link">...</a></li>
+                                                <li class="page-item"><a class="page-link">20</a></li>
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-right"></span></a></li>
+                                            </ul>
+                                            <p class="mt10 mb-0 pagination_page_count text-center">1 – 20 of 300+
+                                                property available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="outgoingprojects" class="packages_table table-responsive">
+                                    <table class="table-style3 table at-savesearch">
+                                        <thead class="t-head">
                                             <tr>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Category</th>
+                                                <th scope="col">Type/Cost</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="t-body">
+                                            <tr *ngFor="let projectsdata of projects">
                                                 <th scope="row">
                                                     <div
                                                         class="freelancer-style1 box-shadow-none row m-0 p-0 align-items-lg-end">
                                                         <div class="d-lg-flex px-0">
                                                             <div class="details mb15-md-md">
-                                                                <h5 class="title mb10">Food Delviery Mobile App</h5>
+                                                                <h5 class="title mb10"> {{projectsdata.title}} </h5>
                                                                 <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                                         class="flaticon-place fz16 vam text-thm2 me-1"></i>
                                                                     <!-- -->London, UK</p>
@@ -126,9 +211,11 @@
                                                         </div>
                                                     </div>
                                                 </th>
-                                                <td class="vam"><span class="fz15 fw400">Web &amp; App Design</span>
+                                                <td class="vam"><span class="fz15 fw400"> {{projectsdata.category}}
+                                                    </span>
                                                 </td>
-                                                <td class="vam"><span class="fz14 fw400">$500.00/Fixed</span></td>
+                                                <td class="vam"><span class="fz14 fw400">$ {{projectsdata.cost}} /
+                                                        {{projectsdata.pricetype}} </span></td>
                                                 <td>
                                                     <div class="d-flex"><a class="icon me-2" id="edit"
                                                             data-bs-toggle="modal" data-bs-target="#proposalModal"><span
@@ -138,13 +225,47 @@
                                                                 class="flaticon-delete"></span></a></div>
                                                 </td>
                                             </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="mt30">
+                                        <div class="mbp_pagination text-center  ">
+                                            <ul class="page_navigation">
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-left"></span></a></li>
+                                                <li class="page-item"><a class="page-link">1</a></li>
+                                                <li class="page-item active" aria-current="page"><a class="page-link">2
+                                                        <span class="sr-only">(current)</span></a></li>
+                                                <li class="page-item"><a class="page-link">3</a></li>
+                                                <li class="page-item"><a class="page-link">4</a></li>
+                                                <li class="page-item"><a class="page-link">5</a></li>
+                                                <li class="page-item"><a class="page-link">...</a></li>
+                                                <li class="page-item"><a class="page-link">20</a></li>
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-right"></span></a></li>
+                                            </ul>
+                                            <p class="mt10 mb-0 pagination_page_count text-center">1 – 20 of 300+
+                                                property available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="completedprojects" class="packages_table table-responsive">
+                                    <table class="table-style3 table at-savesearch">
+                                        <thead class="t-head">
                                             <tr>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Category</th>
+                                                <th scope="col">Type/Cost</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="t-body">
+                                            <tr *ngFor="let projectsdata of projects">
                                                 <th scope="row">
                                                     <div
                                                         class="freelancer-style1 box-shadow-none row m-0 p-0 align-items-lg-end">
                                                         <div class="d-lg-flex px-0">
                                                             <div class="details mb15-md-md">
-                                                                <h5 class="title mb10">Food Delviery Mobile App</h5>
+                                                                <h5 class="title mb10"> {{projectsdata.title}} </h5>
                                                                 <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                                         class="flaticon-place fz16 vam text-thm2 me-1"></i>
                                                                     <!-- -->London, UK</p>
@@ -158,9 +279,11 @@
                                                         </div>
                                                     </div>
                                                 </th>
-                                                <td class="vam"><span class="fz15 fw400">Web &amp; App Design</span>
+                                                <td class="vam"><span class="fz15 fw400"> {{projectsdata.category}}
+                                                    </span>
                                                 </td>
-                                                <td class="vam"><span class="fz14 fw400">$500.00/Fixed</span></td>
+                                                <td class="vam"><span class="fz14 fw400">$ {{projectsdata.cost}} /
+                                                        {{projectsdata.pricetype}} </span></td>
                                                 <td>
                                                     <div class="d-flex"><a class="icon me-2" id="edit"
                                                             data-bs-toggle="modal" data-bs-target="#proposalModal"><span
@@ -170,13 +293,47 @@
                                                                 class="flaticon-delete"></span></a></div>
                                                 </td>
                                             </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="mt30">
+                                        <div class="mbp_pagination text-center  ">
+                                            <ul class="page_navigation">
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-left"></span></a></li>
+                                                <li class="page-item"><a class="page-link">1</a></li>
+                                                <li class="page-item active" aria-current="page"><a class="page-link">2
+                                                        <span class="sr-only">(current)</span></a></li>
+                                                <li class="page-item"><a class="page-link">3</a></li>
+                                                <li class="page-item"><a class="page-link">4</a></li>
+                                                <li class="page-item"><a class="page-link">5</a></li>
+                                                <li class="page-item"><a class="page-link">...</a></li>
+                                                <li class="page-item"><a class="page-link">20</a></li>
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-right"></span></a></li>
+                                            </ul>
+                                            <p class="mt10 mb-0 pagination_page_count text-center">1 – 20 of 300+
+                                                property available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="cancelprojects" class="packages_table table-responsive">
+                                    <table class="table-style3 table at-savesearch">
+                                        <thead class="t-head">
                                             <tr>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Category</th>
+                                                <th scope="col">Type/Cost</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="t-body">
+                                            <tr *ngFor="let projectsdata of projects">
                                                 <th scope="row">
                                                     <div
                                                         class="freelancer-style1 box-shadow-none row m-0 p-0 align-items-lg-end">
                                                         <div class="d-lg-flex px-0">
                                                             <div class="details mb15-md-md">
-                                                                <h5 class="title mb10">Food Delviery Mobile App</h5>
+                                                                <h5 class="title mb10"> {{projectsdata.title}} </h5>
                                                                 <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                                         class="flaticon-place fz16 vam text-thm2 me-1"></i>
                                                                     <!-- -->London, UK</p>
@@ -190,9 +347,11 @@
                                                         </div>
                                                     </div>
                                                 </th>
-                                                <td class="vam"><span class="fz15 fw400">Web &amp; App Design</span>
+                                                <td class="vam"><span class="fz15 fw400"> {{projectsdata.category}}
+                                                    </span>
                                                 </td>
-                                                <td class="vam"><span class="fz14 fw400">$500.00/Fixed</span></td>
+                                                <td class="vam"><span class="fz14 fw400">$ {{projectsdata.cost}} /
+                                                        {{projectsdata.pricetype}} </span></td>
                                                 <td>
                                                     <div class="d-flex"><a class="icon me-2" id="edit"
                                                             data-bs-toggle="modal" data-bs-target="#proposalModal"><span
@@ -202,45 +361,47 @@
                                                                 class="flaticon-delete"></span></a></div>
                                                 </td>
                                             </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="mt30">
+                                        <div class="mbp_pagination text-center  ">
+                                            <ul class="page_navigation">
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-left"></span></a></li>
+                                                <li class="page-item"><a class="page-link">1</a></li>
+                                                <li class="page-item active" aria-current="page"><a class="page-link">2
+                                                        <span class="sr-only">(current)</span></a></li>
+                                                <li class="page-item"><a class="page-link">3</a></li>
+                                                <li class="page-item"><a class="page-link">4</a></li>
+                                                <li class="page-item"><a class="page-link">5</a></li>
+                                                <li class="page-item"><a class="page-link">...</a></li>
+                                                <li class="page-item"><a class="page-link">20</a></li>
+                                                <li class="page-item"><a class="page-link"><span
+                                                            class="fas fa-angle-right"></span></a></li>
+                                            </ul>
+                                            <p class="mt10 mb-0 pagination_page_count text-center">1 – 20 of 300+
+                                                property available</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="expiredprojects" class="packages_table table-responsive">
+                                    <table class="table-style3 table at-savesearch">
+                                        <thead class="t-head">
                                             <tr>
-                                                <th scope="row">
-                                                    <div
-                                                        class="freelancer-style1 box-shadow-none row m-0 p-0 align-items-lg-end">
-                                                        <div class="d-lg-flex px-0">
-                                                            <div class="details mb15-md-md">
-                                                                <h5 class="title mb10">Food Delviery Mobile App</h5>
-                                                                <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                                        class="flaticon-place fz16 vam text-thm2 me-1"></i>
-                                                                    <!-- -->London, UK</p>
-                                                                <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                                        class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                                    <!-- -->2 hours ago</p>
-                                                                <p class="mb-0 fz14 list-inline-item mb5-sm text-thm"><i
-                                                                        class="flaticon-contract fz16 vam me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                                    <!-- -->1 Received</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </th>
-                                                <td class="vam"><span class="fz15 fw400">Web &amp; App Design</span>
-                                                </td>
-                                                <td class="vam"><span class="fz14 fw400">$500.00/Fixed</span></td>
-                                                <td>
-                                                    <div class="d-flex"><a class="icon me-2" id="edit"
-                                                            data-bs-toggle="modal" data-bs-target="#proposalModal"><span
-                                                                class="flaticon-pencil"></span></a><a class="icon"
-                                                            id="delete" data-bs-toggle="modal"
-                                                            data-bs-target="#deleteModal"><span
-                                                                class="flaticon-delete"></span></a></div>
-                                                </td>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Category</th>
+                                                <th scope="col">Type/Cost</th>
+                                                <th scope="col">Actions</th>
                                             </tr>
-                                            <tr>
+                                        </thead>
+                                        <tbody class="t-body">
+                                            <tr *ngFor="let projectsdata of projects">
                                                 <th scope="row">
                                                     <div
                                                         class="freelancer-style1 box-shadow-none row m-0 p-0 align-items-lg-end">
                                                         <div class="d-lg-flex px-0">
                                                             <div class="details mb15-md-md">
-                                                                <h5 class="title mb10">Food Delviery Mobile App</h5>
+                                                                <h5 class="title mb10"> {{projectsdata.title}} </h5>
                                                                 <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                                         class="flaticon-place fz16 vam text-thm2 me-1"></i>
                                                                     <!-- -->London, UK</p>
@@ -254,9 +415,11 @@
                                                         </div>
                                                     </div>
                                                 </th>
-                                                <td class="vam"><span class="fz15 fw400">Web &amp; App Design</span>
+                                                <td class="vam"><span class="fz15 fw400"> {{projectsdata.category}}
+                                                    </span>
                                                 </td>
-                                                <td class="vam"><span class="fz14 fw400">$500.00/Fixed</span></td>
+                                                <td class="vam"><span class="fz14 fw400">$ {{projectsdata.cost}} /
+                                                        {{projectsdata.pricetype}} </span></td>
                                                 <td>
                                                     <div class="d-flex"><a class="icon me-2" id="edit"
                                                             data-bs-toggle="modal" data-bs-target="#proposalModal"><span

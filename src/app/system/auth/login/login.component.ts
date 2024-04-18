@@ -91,8 +91,10 @@ export class LoginComponent {
               });
             }
             else {
-              // this.router.navigate(['/logout'])
-              console.log('login as freelancer')
+              this.router.navigate(['/freelancer/projectlistout']).then(() => {
+                this.trigertrefreshnavbar()
+              });
+
             }
           }
           else {

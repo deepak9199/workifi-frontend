@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,15 @@ export class CollectionService {
   constructor(private firestore: AngularFirestore) { }
 
   getData(collectionName: string): Observable<any[]> {
-    return this.firestore.collection(collectionName).valueChanges();
+    return this.firestore.collection(collectionName).snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(action => {
+          const data = action.payload.doc.data() as any;
+          const id = action.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
   }
 
   getDocumentById(collectionName: string, documentId: string): Observable<any> {

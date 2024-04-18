@@ -10,6 +10,8 @@ import { CreateProjectComponent } from '../system/client/create-project/create-p
 import { ProfileComponent } from '../system/client/profile/profile.component';
 import { ProposalsComponent } from '../system/client/proposals/proposals.component';
 import { LogoutComponent } from '../system/auth/logout/logout.component';
+import { FreelancerProjectListComponent } from '../system/freelancer/freelancer-project-list/freelancer-project-list.component';
+import { FreelancerSubmitProposalComponent } from '../system/freelancer/freelancer-submit-proposal/freelancer-submit-proposal.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'client/createproject', component: CreateProjectComponent },
   { path: 'client/profile', component: ProfileComponent },
   { path: 'client/proposals', component: ProposalsComponent },
+  { path: 'freelancer/projectlist', component: FreelancerProjectListComponent },
+  { path: 'freelancer/proposals', component: FreelancerSubmitProposalComponent },
 ];
 
 @NgModule({

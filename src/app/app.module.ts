@@ -33,6 +33,8 @@ import { ClientNavComponent } from './system/client/shared/client-nav/client-nav
 import { ClientSideComponent } from './system/client/shared/client-side/client-side.component';
 import { ProposalsComponent } from './system/client/proposals/proposals.component';
 import { ProfileComponent } from './system/client/profile/profile.component';
+import { FreelancerProjectListComponent } from './system/freelancer/freelancer-project-list/freelancer-project-list.component';
+import { FreelancerSubmitProposalComponent } from './system/freelancer/freelancer-submit-proposal/freelancer-submit-proposal.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +56,8 @@ import { ProfileComponent } from './system/client/profile/profile.component';
     ClientSideComponent,
     ProposalsComponent,
     ProfileComponent,
+    FreelancerProjectListComponent,
+    FreelancerSubmitProposalComponent,
   ],
   imports: [
     BrowserModule,
