@@ -27,7 +27,7 @@ export class AuthGuard implements CanActivate {
           // tslint:disable-next-line: quotemark
 
           this.router.navigate(['/']).then(() => {
-            this.toster.error("unauthorise routing session logout");
+            this.toster.error("unauthorise routing logout");
           });
           this.logout()
           return false;
@@ -36,10 +36,11 @@ export class AuthGuard implements CanActivate {
         return true;
       }
     }
-    this.router.navigate(['/']).then(() => {
-      this.toster.error("unauthorise routing");
-    });;
-    return false;
+    else {
+      console.log('else')
+      this.router.navigate(['/'])
+      return false;
+    }
   }
 
   logout() {

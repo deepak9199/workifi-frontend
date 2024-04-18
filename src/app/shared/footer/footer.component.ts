@@ -20,14 +20,14 @@ export class FooterComponent {
   ) { }
   ngOnInit() {
     this.gettrigertrefresh()
-    this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
+    // this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
     this.islogin = this.ValidatorChecker(this.tokenstorage.getToken())
 
   }
   private gettrigertrefresh() {
     this.sharedservice.functionTriggerObservable.subscribe(() => {
       this.islogin = this.ValidatorChecker(this.tokenstorage.getToken())
-      this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
+      // this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
     });
   }
   private ValidatorChecker(data: any) {

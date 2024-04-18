@@ -27,11 +27,8 @@ import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { ManageProjectComponent } from './system/client/manage-project/manage-project.component';
 import { CreateProjectComponent } from './system/client/create-project/create-project.component';
-import { ClientFooterComponent } from './system/client/shared/client-footer/client-footer.component';
-import { ClientNavComponent } from './system/client/shared/client-nav/client-nav.component';
-import { ClientSideComponent } from './system/client/shared/client-side/client-side.component';
 import { ProposalsComponent } from './system/client/proposals/proposals.component';
-import { ProfileComponent } from './system/client/profile/profile.component';
+import { ProfileComponent } from './system/profile/profile.component';
 import { FreelancerProjectListComponent } from './system/freelancer/freelancer-project-list/freelancer-project-list.component';
 import { FreelancerSubmitProposalComponent } from './system/freelancer/freelancer-submit-proposal/freelancer-submit-proposal.component';
 import { AuthGuard } from './shared/_guards/guard';
@@ -50,9 +47,6 @@ import { AuthGuard } from './shared/_guards/guard';
     RoleComponent,
     ManageProjectComponent,
     CreateProjectComponent,
-    ClientFooterComponent,
-    ClientNavComponent,
-    ClientSideComponent,
     ProposalsComponent,
     ProfileComponent,
     FreelancerProjectListComponent,

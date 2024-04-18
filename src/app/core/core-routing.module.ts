@@ -6,7 +6,7 @@ import { RegisterComponent } from '../system/auth/register/register.component';
 import { RoleComponent } from '../system/auth/role/role.component';
 import { ManageProjectComponent } from '../system/client/manage-project/manage-project.component';
 import { CreateProjectComponent } from '../system/client/create-project/create-project.component';
-import { ProfileComponent } from '../system/client/profile/profile.component';
+import { ProfileComponent } from '../system/profile/profile.component';
 import { ProposalsComponent } from '../system/client/proposals/proposals.component';
 import { LogoutComponent } from '../system/auth/logout/logout.component';
 import { FreelancerProjectListComponent } from '../system/freelancer/freelancer-project-list/freelancer-project-list.component';
@@ -33,7 +33,12 @@ const routes: Routes = [
       role: 'client'
     }
   },
-  { path: 'client/profile', component: ProfileComponent },
+  {
+    path: 'client/profile', component: ProfileComponent, canActivate: [AuthGuard], data:
+    {
+      role: 'client'
+    }
+  },
   {
     path: 'client/proposals', component: ProposalsComponent, canActivate: [AuthGuard], data:
     {
