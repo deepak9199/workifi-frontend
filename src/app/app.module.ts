@@ -35,6 +35,7 @@ import { ProposalsComponent } from './system/client/proposals/proposals.componen
 import { ProfileComponent } from './system/client/profile/profile.component';
 import { FreelancerProjectListComponent } from './system/freelancer/freelancer-project-list/freelancer-project-list.component';
 import { FreelancerSubmitProposalComponent } from './system/freelancer/freelancer-submit-proposal/freelancer-submit-proposal.component';
+import { AuthGuard } from './shared/_guards/guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +71,7 @@ import { FreelancerSubmitProposalComponent } from './system/freelancer/freelance
     ToastrModule.forRoot(),
   ],
   providers: [
+    AuthGuard,
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

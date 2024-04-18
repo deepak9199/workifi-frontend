@@ -8,20 +8,5 @@ import { Router } from '@angular/router';
   styleUrl: './client-side.component.css'
 })
 export class ClientSideComponent {
-  islogin: boolean = false
-  constructor(private tokenstorage: TokenStorageService, private route: Router) { }
-  ngOnInit() {
-    this.islogin = this.ValidatorChecker(this.tokenstorage.getToken())
-    if (!this.islogin) {
-      this.route.navigate(['/'])
-    }
-  }
-  private ValidatorChecker(data: any) {
-    if (typeof data === "undefined" || data === null || data === '') {
-      return false
-    }
-    else {
-      return true
-    }
-  }
+
 }
