@@ -56,7 +56,7 @@ export class LoginComponent {
           this.loading = false
           this.tokenstorage.saveUser((response))
           this.tokenstorage.saveToken(response.token)
-          this.getusers(email)
+          this.route(this.tokenstorage.getUser().role[0])
           this.toster.success("Login SuccessFully")
         } else {
           // Handle null response, possibly display an error message
@@ -75,41 +75,26 @@ export class LoginComponent {
   private trigertrefreshnavbar() {
     this.sharedService.triggerFunction();
   }
-  // api call for workinghours
-  private getusers(email: string) {
-    this.dataservice.getData("users").subscribe({
-      next: (data: users[]) => {
-        if (data.length != 0) {
-          // console.log('call done')
-          let user: users[] = data.filter((user: users) => user.email === email)
-          if (user.length != 0) {
-            console.log(user[0].role)
-            if (user[0].role === 'client') {
+  route(role: string) {
+    switch (role) {
+      case 'client': {
+        this.router.navigate(['/client/createproject']).then(() => {
+          this.trigertrefreshnavbar()
+        });
+        break;
+      }
+      case 'freelancer': {
+        this.router.navigate(['/freelancer/projectlistout']).then(() => {
+          this.trigertrefreshnavbar()
+        });
+        break
+      }
+      default: {
+        this.router.navigate(['/'])
+        console.log('role not found')
+      }
 
-              this.router.navigate(['/client/dashboard']).then(() => {
-                this.trigertrefreshnavbar()
-              });
-            }
-            else {
-              this.router.navigate(['/freelancer/projectlistout']).then(() => {
-                this.trigertrefreshnavbar()
-              });
-
-            }
-          }
-          else {
-            console.log('user not found')
-          }
-        }
-        else {
-          console.log("workinghours data not found")
-        }
-      },
-      error: (error) => {
-        console.error('Error fetching data:', error)
-      },
-      complete: () => {
-      },
-    });
+    }
   }
+
 }

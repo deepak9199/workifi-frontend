@@ -25,7 +25,6 @@ import { FormsModule } from '@angular/forms';
 
 // toser
 import { ToastrModule } from 'ngx-toastr';
-import { DashBoardComponent } from './system/client/dash-board/dash-board.component';
 import { ManageProjectComponent } from './system/client/manage-project/manage-project.component';
 import { CreateProjectComponent } from './system/client/create-project/create-project.component';
 import { ClientFooterComponent } from './system/client/shared/client-footer/client-footer.component';
@@ -49,7 +48,6 @@ import { AuthGuard } from './shared/_guards/guard';
     FooterComponent,
     RegisterComponent,
     RoleComponent,
-    DashBoardComponent,
     ManageProjectComponent,
     CreateProjectComponent,
     ClientFooterComponent,
