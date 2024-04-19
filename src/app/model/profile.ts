@@ -2,7 +2,8 @@
 export interface profile {
     points: number
     uid: string
-    date_time: string
+    created_date_time: string
+    updated_date_time: string
     image: string
     username: string
     email: string

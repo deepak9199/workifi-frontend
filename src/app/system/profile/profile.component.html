@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Email
-                                            Address</label><input [(ngModel)]="formProfile.email" id="email"
+                                            Address</label><input disabled [(ngModel)]="formProfile.email" id="email"
                                             name="email" class="form-control" placeholder="Enter Emial" type="email">
                                     </div>
                                 </div>
@@ -230,28 +230,42 @@
                         </a>
 
                     </div>
-                    <div class="col-lg-7">
-                        <div class="row">
-                            <form class="form-style1">
+                    <div class="position-relative">
+                        <div *ngFor="let skill of skilList;let i = index">
+                            <div class="del-edit">
+                                <div class="d-flex">
+                                    <!-- <a class="icon me-2" id="edit"><span class="flaticon-pencil"></span></a> -->
+                                    <a style="margin-top: 40px;" (click)="deletedata('skill',i)" class="icon"
+                                        id="delete"><span class="flaticon-delete"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-7">
                                 <div class="row">
-                                    <div class="col-sm-12" *ngFor="let skillobj of skilList;let i = index">
-                                        <div class="mb20">
-                                            <div class="form-style1">
-                                                <label class="heading-color ff-heading fw500 mb10">
-                                                    Skill {{i+1}} </label>
-                                                <div class="bootselect-multiselect">
-                                                    <input type="text" class="form-control" disabled
-                                                        value="{{skillobj}}">
+                                    <form class="form-style1">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="mb20">
+                                                    <div class="form-style1">
+                                                        <label class="heading-color ff-heading fw500 mb10">
+                                                            Skill {{i+1}} </label>
+                                                        <div class="bootselect-multiselect d-flex">
+                                                            <input type="text" class="form-control" disabled
+                                                                value="{{skill}}">
+
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
+
                                         </div>
-                                    </div>
-                                    <div *ngIf="skilList.length!=0" class="col-md-12">
-                                        <div class="text-start"><a class="ud-btn btn-thm" (click)="save()">Save<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
+                                    </form>
                                 </div>
-                            </form>
+                            </div>
+                        </div>
+                        <div *ngIf="skilList.length!=0" class="text-start"><a class="ud-btn btn-thm"
+                                (click)="save()">Save<i class="fal fa-arrow-right-long"></i></a>
                         </div>
                     </div>
                 </div>
@@ -267,10 +281,14 @@
                                 <div class="m-circle  text-thm">M</div>
                                 <div class="wrapper mb30 position-relative">
                                     <div class="del-edit">
-                                        <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                    class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
-                                                    class="flaticon-delete"></span></a></div>
-                                    </div><span class="tag"> {{educationobj.from}} - {{educationobj.to}} </span>
+                                        <div class="d-flex">
+                                            <!-- <a class="icon me-2" id="edit"><span class="flaticon-pencil"></span></a> -->
+                                            <a (click)="deletedata('edu',i)" class="icon" id="delete"><span
+                                                    class="flaticon-delete"></span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <span class="tag"> {{educationobj.from}} - {{educationobj.to}} </span>
                                     <h5 class="mt15"> {{educationobj.certificate_name}} </h5>
                                     <h6 class="text-thm"> {{educationobj.collage}} </h6>
                                     <p> {{educationobj.description}} </p>
@@ -294,9 +312,12 @@
                                 <div class="m-circle  text-thm">M</div>
                                 <div class="wrapper mb30 position-relative">
                                     <div class="del-edit">
-                                        <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                    class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
-                                                    class="flaticon-delete"></span></a></div>
+                                        <div class="d-flex">
+                                            <!-- <a class="icon me-2" id="edit"><span class="flaticon-pencil"></span>
+                                            </a> -->
+                                            <a (click)="deletedata('exp',i)" class="icon" id="delete"><span
+                                                    class="flaticon-delete"></span></a>
+                                        </div>
                                     </div><span class="tag"> {{obj.from}} - {{obj.to}} </span>
                                     <h5 class="mt15"> {{obj.company_name}} </h5>
                                     <h6 class="text-thm"> {{obj.project_name}} </h6>
@@ -321,9 +342,13 @@
                                 <div class="m-circle  text-thm">M</div>
                                 <div class="wrapper mb30 position-relative">
                                     <div class="del-edit">
-                                        <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                    class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
-                                                    class="flaticon-delete"></span></a></div>
+                                        <div class="d-flex">
+                                            <!-- <a class="icon me-2" id="edit">
+                                                <span class="flaticon-pencil"></span></a> -->
+                                            <a (click)="deletedata('awad',i)" class="icon" id="delete"><span
+                                                    class="flaticon-delete"></span>
+                                            </a>
+                                        </div>
                                     </div><span class="tag"> {{obj.from}} - {{obj.to}} </span>
                                     <h5 class="mt15"> {{obj.company_name}} </h5>
                                     <h6 class="text-thm"> {{obj.project_name}} </h6>

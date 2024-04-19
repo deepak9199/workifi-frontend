@@ -4,6 +4,7 @@ import { CollectionService } from '../../shared/_service/collection.service';
 import { ToastrService } from 'ngx-toastr';
 import { TokenStorageService } from '../../shared/_service/token-storage.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../shared/_service/auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -36,7 +37,7 @@ export class ProfileComponent {
   }
   formProfile: profile = {
     uid: '',
-    date_time: '',
+    created_date_time: '',
     image: '',
     username: '',
     email: '',
@@ -55,13 +56,15 @@ export class ProfileComponent {
     education: [],
     work_experience: [],
     award: [],
-    points: 0
+    points: 0,
+    updated_date_time: ''
   }
   fromchangepass = {
     old: '',
     new: '',
     confrom: ''
   }
+  private profileid: string = ''
   skilList: string[] = []
   educationlist: education[] = []
   work_experience_list: work_experience[] = []
@@ -70,8 +73,14 @@ export class ProfileComponent {
     private collectionservice: CollectionService,
     private toster: ToastrService,
     private token: TokenStorageService,
-    private route: Router
+    private route: Router,
+    private auth: AuthService
   ) { }
+
+  ngOnInit() {
+    this.formProfile.email = this.token.getUser().userCredential.user.email
+    this.getprofileapi()
+  }
 
   saveUser() {
     this.save()
@@ -90,13 +99,111 @@ export class ProfileComponent {
     this.awadsList.push(this.awads)
   }
   changepassword() {
-
+    this.changePasswordapi(this.fromchangepass.old, this.fromchangepass.new, this.fromchangepass.confrom)
   }
   save() {
+    if (this.profileid === '') {
+      this.savedata()
+    }
+    else {
+      this.updatedata(this.profileid)
+    }
+  }
+  savedata() {
+    this.formProfile.uid = this.token.getUser().uid
+    this.formProfile.points = 1500
+    this.formProfile.created_date_time = (new Date()).toString()
+    this.formProfile.updated_date_time = (new Date()).toString()
     this.formProfile.education = this.educationlist
     this.formProfile.skil = this.skilList
     this.formProfile.work_experience = this.work_experience_list
     this.formProfile.award = this.awadsList
-    console.log(this.formProfile)
+    console.log('created')
+    this.saveprofileapi(this.formProfile)
+  }
+  updatedata(id: string) {
+    this.formProfile.updated_date_time = (new Date()).toString()
+    this.formProfile.education = this.educationlist
+    this.formProfile.skil = this.skilList
+    this.formProfile.work_experience = this.work_experience_list
+    this.formProfile.award = this.awadsList
+    console.log('Updated')
+    this.updateprofileapi(this.formProfile, id)
+  }
+  deletedata(type: string, index: number) {
+    switch (type) {
+      case 'edu':
+        this.educationlist = this.educationlist.filter((item: education, item_index: number) => item_index != index)
+        break;
+      case 'skill':
+        this.skilList = this.skilList.filter((item: string, item_index: number) => item_index != index)
+        break;
+      case 'awad':
+        this.awadsList = this.awadsList.filter((item: award, item_index: number) => item_index != index)
+        break
+      case 'exp':
+        this.work_experience_list = this.work_experience_list.filter((item: work_experience, item_index: number) => item_index != index)
+        break;
+      default:
+        console.error('type selection error')
+    }
+  }
+  private saveprofileapi(data: profile) {
+    this.collectionservice.addDocumnet('profile', data).subscribe({
+      next: (data: profile[]) => {
+        this.toster.success('Profile Update Successfully')
+        this.ngOnInit()
+      },
+      error: (error) => {
+        console.error(error)
+      }
+    })
+  }
+  private updateprofileapi(data: profile, id: string) {
+    this.collectionservice.updateDocument('profile', id, data).subscribe((data) => {
+      this.toster.success('Profile Update Successfully')
+      this.ngOnInit()
+    },
+      (err) => {
+        console.error(err)
+      })
+  }
+  private getprofileapi() {
+    this.collectionservice.getData('profile').subscribe({
+      next: (data) => {
+        let obj = data.filter((obj: profile) => obj.uid === this.token.getUser().uid)
+        if (obj.length != 0) {
+          this.formProfile = obj[0]
+          this.skilList = this.formProfile.skil
+          this.work_experience_list = this.formProfile.work_experience
+          this.educationlist = this.formProfile.education
+          this.awadsList = this.formProfile.award
+          this.profileid = obj[0].id
+        }
+        else {
+          console.log('no profile found')
+        }
+      },
+      error: (error) => {
+        console.error(error)
+      }
+    })
+  }
+  changePasswordapi(oldPassword: string, newPassword: string, confirmPassword: string): void {
+    if (oldPassword != "" && newPassword != "" && confirmPassword != "") {
+      this.auth.changePasswordWithConfirmation(oldPassword, newPassword, confirmPassword)
+        .subscribe(success => {
+          if (success) {
+            // Password changed successfully, do something
+            this.toster.success('Password changed successfully');
+          } else {
+            // Failed to change password, handle error
+            this.toster.error('Failed to change password');
+          }
+        });
+    }
+    else {
+      this.toster.error("Empty Password Filed")
+    }
   }
 }
