@@ -20,7 +20,7 @@ export class HomeComponent {
       switch (this.tokenstorage.getUser().role[0]) {
         case 'client':
           // Assuming tokenstorage is accessible and getUser() returns an object with a 'role' array
-          this.router.navigate(['/client/createproject']);
+          this.router.navigate(['/client/home']);
           break;
 
         case 'freelancer':

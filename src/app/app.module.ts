@@ -34,6 +34,7 @@ import { FreelancerSubmitProposalComponent } from './system/freelancer/freelance
 import { AuthGuard } from './shared/_guards/guard';
 import { FreelancerListComponent } from './system/client/freelancer-list/freelancer-list.component';
 import { ProposalToFreelancerComponent } from './system/client/proposal-to-freelancer/proposal-to-freelancer.component';
+import { ClientHomeComponent } from './system/client/client-home/client-home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,8 @@ import { ProposalToFreelancerComponent } from './system/client/proposal-to-freel
     FreelancerSubmitProposalComponent,
     FreelancerListComponent,
     ProposalToFreelancerComponent,
-    ProfileComponent
+    ProfileComponent,
+    ClientHomeComponent
   ],
   imports: [
     BrowserModule,

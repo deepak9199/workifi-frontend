@@ -78,7 +78,7 @@ export class LoginComponent {
   route(role: string) {
     switch (role) {
       case 'client': {
-        this.router.navigate(['/client/createproject']).then(() => {
+        this.router.navigate(['/client/home']).then(() => {
           this.trigertrefreshnavbar()
         });
         break;

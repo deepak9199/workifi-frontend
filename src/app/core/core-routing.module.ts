@@ -14,6 +14,7 @@ import { FreelancerSubmitProposalComponent } from '../system/freelancer/freelanc
 import { AuthGuard } from '../shared/_guards/guard';
 import { ProposalToFreelancerComponent } from '../system/client/proposal-to-freelancer/proposal-to-freelancer.component';
 import { FreelancerListComponent } from '../system/client/freelancer-list/freelancer-list.component';
+import { ClientHomeComponent } from '../system/client/client-home/client-home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -52,6 +53,12 @@ const routes: Routes = [
   },
   {
     path: 'client/proposalstofreelancer', component: ProposalToFreelancerComponent, canActivate: [AuthGuard], data:
+    {
+      role: 'client'
+    }
+  },
+  {
+    path: 'client/home', component: ClientHomeComponent, canActivate: [AuthGuard], data:
     {
       role: 'client'
     }
