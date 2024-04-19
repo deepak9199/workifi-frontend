@@ -35,5 +35,12 @@ export interface Project {
     projectdetail: string
     status: string
     upload: string
-    proposals: string[]
+    proposals: proposal[]
+}
+
+export interface proposal {
+    uid: string
+    hourly_price: number
+    Estimated_Hours: string
+    cover_letter: string
 }
