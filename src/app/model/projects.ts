@@ -15,6 +15,7 @@ export interface createProject {
     projectdetail: string
     status: string
     upload: string
+    proposals: string[]
 }
 
 export interface Project {
@@ -34,4 +35,5 @@ export interface Project {
     projectdetail: string
     status: string
     upload: string
+    proposals: string[]
 }

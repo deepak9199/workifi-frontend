@@ -11,7 +11,6 @@ import { createProject } from '../../../model/projects';
 export class CreateProjectComponent {
   loading: boolean = false
   formcreateproject: createProject = {
-
     title: '',
     category: '',
     freelancertype: '',
@@ -26,7 +25,8 @@ export class CreateProjectComponent {
     skills: '',
     projectdetail: '',
     status: '',
-    upload: ''
+    upload: '',
+    proposals: []
   }
   constructor(
     private collectionservice: CollectionService,

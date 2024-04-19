@@ -272,7 +272,8 @@
                     <div class="row align-items-center mb20">
                         <div class="col-md-6">
                             <div class="text-center text-md-start">
-                                <p class="text mb-0 mb10-sm"><span class="fw500">8</span> services available</p>
+                                <p class="text mb-0 mb10-sm"><span class="fw500"> {{projects.length}} </span> services
+                                    available</p>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -317,7 +318,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 col-lg-12">
-                            <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                            <div *ngFor="let projectobj of projects"
+                                class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
                                 <div class="col-lg-8 ps-0">
                                     <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
                                         <div class="thumb w60 position-relative rounded-circle mb15-md"><img
@@ -326,9 +328,10 @@
                                                 src="assets/client-1b9ce.png" style="color: transparent;"><span
                                                 class="online-badge2"></span></div>
                                         <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3">Food Delviery Mobile App</h5>
+                                            <h5 class="title mb-3"> {{projectobj.title}} </h5>
                                             <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i> United States
+                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i>
+                                                {{projectobj.country}}
                                             </p>
                                             <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                     class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
@@ -336,11 +339,9 @@
                                             <p class="mb-0 fz14 list-inline-item mb5-sm"><i
                                                     class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
                                                 1 Received</p>
-                                            <p class="text mt10">Many desktop publishing packages and web page editors
-                                                now use Lorem Ipsum as their default model text.</p>
+                                            <p class="text mt10"> {{projectobj.projectdetail}} </p>
                                             <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag ">Figma</span><span class="tag mx10">Sketch</span><span
-                                                    class="tag ">HTML5</span>
+                                                <span class="tag "> {{projectobj.skills}} </span>
                                             </div>
                                         </div>
                                     </div>
@@ -348,303 +349,11 @@
                                 <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
                                     <div class="details">
                                         <div class="text-lg-end">
-                                            <h4>$100 - $150</h4>
+                                            <h4>$ {{projectobj.cost}} </h4>
                                             <p class="text">Hourly Rate</p>
                                         </div>
-                                        <div class="d-grid mt15"><a [routerLink]="['/freelancer/proposals']"
-                                                class="ud-btn btn-light-thm" href="/project-single/1">Send Proposal<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-12">
-                            <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
-                                <div class="col-lg-8 ps-0">
-                                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
-                                        <div class="thumb w60 position-relative rounded-circle mb15-md"><img
-                                                alt="rounded-circle" loading="lazy" width="60" height="60"
-                                                decoding="async" data-nimg="1" class="rounded-circle mx-auto"
-                                                src="assets/client-1b9ce.png" style="color: transparent;"><span
-                                                class="online-badge2"></span></div>
-                                        <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3">Swift / SwiftUI Developer for B2B iOS apps</h5>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i> United Kingdom
-                                            </p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                2 hours ago</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm"><i
-                                                    class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                1 Received</p>
-                                            <p class="text mt10">Many desktop publishing packages and web page editors
-                                                now use Lorem Ipsum as their default model text.</p>
-                                            <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag ">Figma</span><span class="tag mx10">Sketch</span><span
-                                                    class="tag ">HTML5</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
-                                    <div class="details">
-                                        <div class="text-lg-end">
-                                            <h4>$200 - $250</h4>
-                                            <p class="text">Hourly Rate</p>
-                                        </div>
-                                        <div class="d-grid mt15"><a class="ud-btn btn-light-thm"
-                                                href="/project-single/2">Send Proposal<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-12">
-                            <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
-                                <div class="col-lg-8 ps-0">
-                                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
-                                        <div class="thumb w60 position-relative rounded-circle mb15-md"><img
-                                                alt="rounded-circle" loading="lazy" width="60" height="60"
-                                                decoding="async" data-nimg="1" class="rounded-circle mx-auto"
-                                                src="assets/client-1b9ce.png" style="color: transparent;"><span
-                                                class="online-badge2"></span></div>
-                                        <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3">English content writer for Fintech</h5>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i> United Kingdom
-                                            </p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                2 hours ago</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm"><i
-                                                    class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                1 Received</p>
-                                            <p class="text mt10">Many desktop publishing packages and web page editors
-                                                now use Lorem Ipsum as their default model text.</p>
-                                            <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag ">Figma</span><span class="tag mx10">Sketch</span><span
-                                                    class="tag ">HTML5</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
-                                    <div class="details">
-                                        <div class="text-lg-end">
-                                            <h4>$300 - $350</h4>
-                                            <p class="text">Hourly Rate</p>
-                                        </div>
-                                        <div class="d-grid mt15"><a class="ud-btn btn-light-thm"
-                                                href="/project-single/3">Send Proposal<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-12">
-                            <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
-                                <div class="col-lg-8 ps-0">
-                                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
-                                        <div class="thumb w60 position-relative rounded-circle mb15-md"><img
-                                                alt="rounded-circle" loading="lazy" width="60" height="60"
-                                                decoding="async" data-nimg="1" class="rounded-circle mx-auto"
-                                                src="assets/client-1b9ce.png" style="color: transparent;"><span
-                                                class="online-badge2"></span></div>
-                                        <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3">Full-stack Developer to help us to build our</h5>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i> Canada</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                2 hours ago</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm"><i
-                                                    class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                1 Received</p>
-                                            <p class="text mt10">Many desktop publishing packages and web page editors
-                                                now use Lorem Ipsum as their default model text.</p>
-                                            <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag ">Figma</span><span class="tag mx10">Sketch</span><span
-                                                    class="tag ">HTML5</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
-                                    <div class="details">
-                                        <div class="text-lg-end">
-                                            <h4>$400 - $450</h4>
-                                            <p class="text">Hourly Rate</p>
-                                        </div>
-                                        <div class="d-grid mt15"><a class="ud-btn btn-light-thm"
-                                                href="/project-single/4">Send Proposal<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-12">
-                            <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
-                                <div class="col-lg-8 ps-0">
-                                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
-                                        <div class="thumb w60 position-relative rounded-circle mb15-md"><img
-                                                alt="rounded-circle" loading="lazy" width="60" height="60"
-                                                decoding="async" data-nimg="1" class="rounded-circle mx-auto"
-                                                src="assets/client-1b9ce.png" style="color: transparent;"><span
-                                                class="online-badge2"></span></div>
-                                        <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3">Looking for team members for web agency</h5>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i> Germany</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                2 hours ago</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm"><i
-                                                    class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                1 Received</p>
-                                            <p class="text mt10">Many desktop publishing packages and web page editors
-                                                now use Lorem Ipsum as their default model text.</p>
-                                            <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag ">Figma</span><span class="tag mx10">Sketch</span><span
-                                                    class="tag ">HTML5</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
-                                    <div class="details">
-                                        <div class="text-lg-end">
-                                            <h4>$500 - $550</h4>
-                                            <p class="text">Hourly Rate</p>
-                                        </div>
-                                        <div class="d-grid mt15"><a class="ud-btn btn-light-thm"
-                                                href="/project-single/5">Send Proposal<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-12">
-                            <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
-                                <div class="col-lg-8 ps-0">
-                                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
-                                        <div class="thumb w60 position-relative rounded-circle mb15-md"><img
-                                                alt="rounded-circle" loading="lazy" width="60" height="60"
-                                                decoding="async" data-nimg="1" class="rounded-circle mx-auto"
-                                                src="assets/client-1b9ce.png" style="color: transparent;"><span
-                                                class="online-badge2"></span></div>
-                                        <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3">Video animator to bring some illustrations to life
-                                            </h5>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i> Turkey</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                2 hours ago</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm"><i
-                                                    class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                1 Received</p>
-                                            <p class="text mt10">Many desktop publishing packages and web page editors
-                                                now use Lorem Ipsum as their default model text.</p>
-                                            <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag ">Figma</span><span class="tag mx10">Sketch</span><span
-                                                    class="tag ">HTML5</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
-                                    <div class="details">
-                                        <div class="text-lg-end">
-                                            <h4>$600 - $750</h4>
-                                            <p class="text">Hourly Rate</p>
-                                        </div>
-                                        <div class="d-grid mt15"><a class="ud-btn btn-light-thm"
-                                                href="/project-single/6">Send Proposal<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-12">
-                            <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
-                                <div class="col-lg-8 ps-0">
-                                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
-                                        <div class="thumb w60 position-relative rounded-circle mb15-md"><img
-                                                alt="rounded-circle" loading="lazy" width="60" height="60"
-                                                decoding="async" data-nimg="1" class="rounded-circle mx-auto"
-                                                src="assets/client-1b9ce.png" style="color: transparent;"><span
-                                                class="online-badge2"></span></div>
-                                        <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3">Food Delviery Mobile App</h5>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i> United States
-                                            </p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                2 hours ago</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm"><i
-                                                    class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                1 Received</p>
-                                            <p class="text mt10">Many desktop publishing packages and web page editors
-                                                now use Lorem Ipsum as their default model text.</p>
-                                            <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag ">Figma</span><span class="tag mx10">Sketch</span><span
-                                                    class="tag ">HTML5</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
-                                    <div class="details">
-                                        <div class="text-lg-end">
-                                            <h4>$700 - $850</h4>
-                                            <p class="text">Hourly Rate</p>
-                                        </div>
-                                        <div class="d-grid mt15"><a class="ud-btn btn-light-thm"
-                                                href="/project-single/7">Send Proposal<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-12">
-                            <div class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
-                                <div class="col-lg-8 ps-0">
-                                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
-                                        <div class="thumb w60 position-relative rounded-circle mb15-md"><img
-                                                alt="rounded-circle" loading="lazy" width="60" height="60"
-                                                decoding="async" data-nimg="1" class="rounded-circle mx-auto"
-                                                src="assets/client-1b9ce.png" style="color: transparent;"><span
-                                                class="online-badge2"></span></div>
-                                        <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3">Food Delviery Mobile App</h5>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i> United Kingdom
-                                            </p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                2 hours ago</p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm"><i
-                                                    class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                1 Received</p>
-                                            <p class="text mt10">Many desktop publishing packages and web page editors
-                                                now use Lorem Ipsum as their default model text.</p>
-                                            <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag ">Figma</span><span class="tag mx10">Sketch</span><span
-                                                    class="tag ">HTML5</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
-                                    <div class="details">
-                                        <div class="text-lg-end">
-                                            <h4>$800 - $950</h4>
-                                            <p class="text">Hourly Rate</p>
-                                        </div>
-                                        <div class="d-grid mt15"><a class="ud-btn btn-light-thm"
-                                                href="/project-single/8">Send Proposal<i
+                                        <div class="d-grid mt15"><a (click)="route(projectobj)"
+                                                class="ud-btn btn-light-thm">Send Proposal<i
                                                     class="fal fa-arrow-right-long"></i></a></div>
                                     </div>
                                 </div>
