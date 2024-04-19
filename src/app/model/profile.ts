@@ -20,7 +20,7 @@ export interface profile {
     skil: string[]
     education: education[]
     work_experience: work_experience[]
-    award: []
+    award: award[]
 }
 export interface education {
     from: Date | null;

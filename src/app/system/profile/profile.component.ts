@@ -57,6 +57,11 @@ export class ProfileComponent {
     award: [],
     points: 0
   }
+  fromchangepass = {
+    old: '',
+    new: '',
+    confrom: ''
+  }
   skilList: string[] = []
   educationlist: education[] = []
   work_experience_list: work_experience[] = []
@@ -84,7 +89,14 @@ export class ProfileComponent {
   saveawds() {
     this.awadsList.push(this.awads)
   }
+  changepassword() {
+
+  }
   save() {
+    this.formProfile.education = this.educationlist
+    this.formProfile.skil = this.skilList
+    this.formProfile.work_experience = this.work_experience_list
+    this.formProfile.award = this.awadsList
     console.log(this.formProfile)
   }
 }

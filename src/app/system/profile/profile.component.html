@@ -283,82 +283,57 @@
                     </div>
                 </div>
                 <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                    <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                    <div data-bs-toggle="modal" data-bs-target="#proposalModalworkexp"
+                        class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
                         <h5 class="list-title">Work &amp; Experience</h5><a class="add-more-btn text-thm"><i
                                 class="icon far fa-plus mr10"></i>Add Experience</a>
                     </div>
                     <div class="position-relative">
                         <div class="educational-quality">
-                            <div class="m-circle text-thm">M</div>
-                            <div class="wrapper mb40 position-relative">
-                                <div class="del-edit">
-                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
-                                                class="flaticon-delete"></span></a></div>
-                                </div><span class="tag">2012 - 2014</span>
-                                <h5 class="mt15">UX Designer</h5>
-                                <h6 class="text-thm">Dropbox</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus.
-                                    Interdum
-                                    et malesuada fames ac ante ipsum <br class="d-none d-lg-block"> primis in faucibus.
-                                </p>
-                            </div>
-                            <div class="m-circle before-none text-thm">M</div>
-                            <div class="wrapper mb30 position-relative">
-                                <div class="del-edit">
-                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
-                                                class="flaticon-delete"></span></a></div>
-                                </div><span class="tag">2008 - 2012</span>
-                                <h5 class="mt15">Art Director</h5>
-                                <h6 class="text-thm">amazon</h6>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
-                                    tellus. Interdum et malesuada fames ac ante ipsum <br class="d-none d-lg-block">
-                                    primis
-                                    in faucibus.</p>
+                            <div *ngFor="let obj of work_experience_list;let i = index">
+                                <div class="m-circle  text-thm">M</div>
+                                <div class="wrapper mb30 position-relative">
+                                    <div class="del-edit">
+                                        <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                    class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                    class="flaticon-delete"></span></a></div>
+                                    </div><span class="tag"> {{obj.from}} - {{obj.to}} </span>
+                                    <h5 class="mt15"> {{obj.company_name}} </h5>
+                                    <h6 class="text-thm"> {{obj.project_name}} </h6>
+                                    <p> {{obj.description}} </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-start"><a class="ud-btn btn-thm">Save<i
+                        <div *ngIf="educationlist.length!=0" class="text-start"><a class="ud-btn btn-thm">Save<i
                                     class="fal fa-arrow-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                    <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                    <div data-bs-toggle="modal" data-bs-target="#proposalModalawad"
+                        class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
                         <h5 class="list-title">Awards</h5><a class="add-more-btn text-thm"><i
                                 class="icon far fa-plus mr10"></i>Add Awards</a>
                     </div>
                     <div class="position-relative">
-                        <div class="educational-quality ps-0">
-                            <div class="wrapper mb40 position-relative">
-                                <div class="del-edit">
-                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
-                                                class="flaticon-delete"></span></a></div>
-                                </div><span class="tag">2012 - 2014</span>
-                                <h5 class="mt15">UI UX Design</h5>
-                                <h6 class="text-thm">Udemy</h6>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus.
-                                    Interdum
-                                    et malesuada fames ac ante ipsum <br class="d-none d-lg-block"> primis in faucibus.
-                                </p>
-                            </div>
-                            <div class="wrapper mb40 position-relative">
-                                <div class="del-edit">
-                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
-                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
-                                                class="flaticon-delete"></span></a></div>
-                                </div><span class="tag">2008 - 2012</span>
-                                <h5 class="mt15">App Design</h5>
-                                <h6 class="text-thm">Google</h6>
-                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
-                                    tellus. Interdum et malesuada fames ac ante ipsum <br class="d-none d-lg-block">
-                                    primis
-                                    in faucibus.</p>
+                        <div class="educational-quality">
+                            <div *ngFor="let obj of awadsList;let i = index">
+                                <div class="m-circle  text-thm">M</div>
+                                <div class="wrapper mb30 position-relative">
+                                    <div class="del-edit">
+                                        <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                    class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                    class="flaticon-delete"></span></a></div>
+                                    </div><span class="tag"> {{obj.from}} - {{obj.to}} </span>
+                                    <h5 class="mt15"> {{obj.company_name}} </h5>
+                                    <h6 class="text-thm"> {{obj.project_name}} </h6>
+                                    <p> {{obj.description}} </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-start"><a class="ud-btn btn-thm" href="#">Save<i
-                                    class="fal fa-arrow-right-long"></i></a></div>
+                        <div *ngIf="educationlist.length!=0" class="text-start"><a class="ud-btn btn-thm">Save<i
+                                    class="fal fa-arrow-right-long"></i></a>
+                        </div>
                     </div>
                 </div>
                 <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
@@ -367,60 +342,38 @@
                     </div>
                     <div class="col-lg-7">
                         <div class="row">
-                            <form class="form-style1">
+                            <form class="form-style1" (ngSubmit)="changepassword()">
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Old
-                                                Password</label><input class="form-control" placeholder="********"
-                                                type="text"></div>
+                                                Password</label><input [(ngModel)]="fromchangepass.old" id="old"
+                                                name="old" class="form-control" placeholder="********" type="password">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="mb20"><label class="heading-color ff-heading fw500 mb10">New
-                                                Password</label><input class="form-control" placeholder="********"
-                                                type="text"></div>
+                                                Password</label><input [(ngModel)]="fromchangepass.new" id="new"
+                                                name="new" class="form-control" placeholder="********" type="password">
+                                        </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Confirm New
-                                                Password</label><input class="form-control" placeholder="********"
-                                                type="text"></div>
+                                                Password</label><input [(ngModel)]="fromchangepass.confrom" id="confrom"
+                                                name="confrom" class="form-control" placeholder="********"
+                                                type="password"></div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="text-start"><a class="ud-btn btn-thm" href="/contact">Change
-                                                Password<i class="fal fa-arrow-right-long"></i></a></div>
+                                        <div class="text-start"><button type="submit" class="ud-btn btn-thm">Change
+                                                Password<i class="fal fa-arrow-right-long"></i></button></div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
-                    <div class="col-lg-7">
-                        <div class="row">
-                            <div class="bdrb1 pb15 mb25">
-                                <h5 class="list-title">Change password</h5>
-                            </div>
-                            <form class="form-style1">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <h6>Close account</h6>
-                                        <p class="text">Warning: If you close your account, you will be unsubscribed
-                                            from
-                                            all your 5 courses, and will lose access forever.</p>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Enter
-                                                Password</label><input class="form-control" placeholder="********"
-                                                type="text"></div>
-                                        <div class="text-start"><a class="ud-btn btn-thm" href="/contact">Change
-                                                Password<i class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
