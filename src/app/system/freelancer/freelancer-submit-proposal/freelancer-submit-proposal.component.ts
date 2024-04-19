@@ -61,12 +61,19 @@ export class FreelancerSubmitProposalComponent {
     }
     this.finalsubmit(proposal)
   }
+
   finalsubmit(data: proposal) {
     let proposals: proposal[] = []
     proposals = this.projects.proposals
-    proposals.push(data)
+    let index: number = proposals.findIndex((item: proposal) => item.uid === this.token.getUser().uid)
+    if (index > -1) {
+      proposals[index] = data
+    }
+    else {
+      proposals.push(data)
+    }
     this.projects.proposals = proposals
-    console.log(this.projects)
+    this.updateprojectapi(this.projects.id, this.projects)
   }
   callshareddata() {
     if (this.ValidatorChecker(this.sharedservice.getdata())) {
@@ -81,7 +88,7 @@ export class FreelancerSubmitProposalComponent {
       this.router.navigate(['/freelancer/projectlist'])
     }
   }
-  private updateproject(id: string, data: Project) {
+  private updateprojectapi(id: string, data: Project) {
     this.loading = true
     this.collectionservice.updateDocument('projects', id, data).subscribe(() => {
       this.toster.success("Your proposal is submited successfully")
