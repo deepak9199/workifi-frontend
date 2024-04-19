@@ -22,7 +22,7 @@ export class FreelancerListComponent {
   }
   private getprofileapi() {
     this.loading = true
-    this.collectionservice.getData('projects').subscribe({
+    this.collectionservice.getData('profile').subscribe({
       next: (data: profile[]) => {
         this.profile = data
         this.loading = false
@@ -34,6 +34,7 @@ export class FreelancerListComponent {
     })
   }
   route(data: profile) {
+    // console.log(data)
     this.sharedservice.savedata(JSON.stringify(data))
     this.router.navigate(['/client/proposalstofreelancer'])
   }

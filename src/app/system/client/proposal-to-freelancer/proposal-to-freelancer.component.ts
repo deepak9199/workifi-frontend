@@ -86,6 +86,7 @@ export class ProposalToFreelancerComponent {
       const jsonData = this.sharedservice.getdata();
       if (jsonData !== null) {
         this.profile = JSON.parse(jsonData);
+        console.log(this.profile)
       } else {
         this.toster.error("Received null data from shared service.");
       }
