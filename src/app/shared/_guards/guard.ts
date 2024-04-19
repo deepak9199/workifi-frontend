@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate {
       if (roles) {
         const match = this.token.getUser().role[0]
         // console.log(match + ' ' + roles)
-        console.log(roles)
+        // console.log(roles)
         if (match == roles) {
           return true;
         } else {

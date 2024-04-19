@@ -54,6 +54,7 @@ import { ProposalToFreelancerComponent } from './system/client/proposal-to-freel
     FreelancerSubmitProposalComponent,
     FreelancerListComponent,
     ProposalToFreelancerComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

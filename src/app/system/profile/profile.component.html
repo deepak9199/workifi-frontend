@@ -1,1 +1,577 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="dashboard__content ">
+        <div class="row pb40">
+            <div class="col-lg-9">
+                <div class="dashboard_title_area">
+                    <h2>My Profile</h2>
+                    <p class="text">Lorem ipsum dolor sit amet, consectetur.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb25">
+                        <h5 class="list-title">Profile Details</h5>
+                    </div>
+                    <div class="col-xl-7">
+                        <div class="profile-box d-sm-flex align-items-center mb30">
+                            <div class="profile-img mb20-sm"><img alt="profile" loading="lazy" width="71" height="71"
+                                    decoding="async" data-nimg="1" class="rounded-circle wa-xs"
+                                    src="assets/user033f.png"
+                                    style="color: transparent; height: 71px; width: 71px; object-fit: cover;"></div>
+                            <div class="profile-content ml20 ml0-xs">
+                                <div class="d-flex align-items-center my-3"><a class="tag-delt text-thm2"><span
+                                            class="flaticon-delete text-thm2"></span></a><label><input
+                                            accept=".png, .jpg, .jpeg" class="d-none" type="file"><a
+                                            class="upload-btn ml10">Upload Images</a></label></div>
+                                <p class="text mb-0">Max file size is 1MB, Minimum dimension: 330x300 And Suitable files
+                                    are
+                                    .jpg &amp; .png</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <form class="form-style1">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label
+                                            class="heading-color ff-heading fw500 mb10">Username</label><input
+                                            [(ngModel)]="formProfile.username" id="username" name="username"
+                                            class="form-control" placeholder="Enter username" type="text"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Email
+                                            Address</label><input [(ngModel)]="formProfile.email" id="email"
+                                            name="email" class="form-control" placeholder="Enter Emial" type="email">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Phone
+                                            Number</label><input [(ngModel)]="formProfile.phone" id="phone" name="phone"
+                                            class="form-control" placeholder="Enter phone" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label
+                                            class="heading-color ff-heading fw500 mb10">Tagline</label><input
+                                            [(ngModel)]="formProfile.tagline" id="tagline" name="tagline"
+                                            class="form-control" placeholder="Enter tagline" type="text"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">Hourly Rate</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.hourly_rate" id="hourly_rate"
+                                                    name="hourly_rate" class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="$50">$50</option>
+                                                    <option value="$60">$60</option>
+                                                    <option value="$70">$70</option>
+                                                    <option value="$80">$80</option>
+                                                    <option value="$90">$90</option>
+                                                    <option value="$100">$100</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">Gender</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.gender" id="gender" name="gender"
+                                                    class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                    <option value="Other">Other</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">Specialization</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.specialization" id="specialization"
+                                                    name="specialization" class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="Male">Developer</option>
+                                                    <option value="Female">Markiting</option>
+                                                    <option>UI Design</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">Type</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.type" id="type" name="type"
+                                                    class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="Front-End">Front-End</option>
+                                                    <option value="Back-end">Back-end</option>
+                                                    <option value="Front-end And Back-end">Front-end And Back-end
+                                                    </option>
+                                                    <option value="UI Design">UI Design</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">Country</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.country" id="country" name="country"
+                                                    class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="US">United States</option>
+                                                    <option value="CA">Canada</option>
+                                                    <option value="UK">United Kingdom</option>
+                                                    <option value="AU">Australia</option>
+                                                    <option value="DE">Germany</option>
+                                                    <option value="JP">Japan</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">City</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.city" id="city" name="city"
+                                                    class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="NY">New York</option>
+                                                    <option value="TO">Toronto</option>
+                                                    <option value="LDN">London</option>
+                                                    <option value="SYD">Sydney</option>
+                                                    <option value="BER">Berlin</option>
+                                                    <option value="TKO">Tokyo</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">Language</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.language" id="language" name="language"
+                                                    class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="EN">English</option>
+                                                    <option value="FR">French</option>
+                                                    <option value="DE">German</option>
+                                                    <option value="JP">Japanese</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">Languages Level</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.language_level" id="language_level"
+                                                    name="language_level" class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option value="Beginner">Beginner</option>
+                                                    <option value="Intermediate">Intermediate</option>
+                                                    <option value="Advanced">Advanced</option>
+                                                    <option value="Fluent">Fluent</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="mb10"><label class="heading-color ff-heading fw500 mb10">Introduce
+                                            Yourself</label><textarea [(ngModel)]="formProfile.introduce_yourself"
+                                            id="introduce_yourself" name="introduce_yourself" cols="30" rows="6"
+                                            placeholder="Description"></textarea></div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="text-start"><a (click)="saveUser()" class="ud-btn btn-thm">Save<i
+                                                class="fal fa-arrow-right-long"></i></a></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div data-bs-toggle="modal" data-bs-target="#proposalModal"
+                        class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                        <h5 class="list-title">Skills</h5><a class="add-more-btn text-thm"><i
+                                class="icon far fa-plus mr10" data-bs-toggle="modal"
+                                data-bs-target="#proposalModal"></i>Add Skills
+                        </a>
+
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <form class="form-style1">
+                                <div class="row">
+                                    <div class="col-sm-12" *ngFor="let skillobj of skilList;let i = index">
+                                        <div class="mb20">
+                                            <div class="form-style1">
+                                                <label class="heading-color ff-heading fw500 mb10">
+                                                    Skill {{i+1}} </label>
+                                                <div class="bootselect-multiselect">
+                                                    <input type="text" class="form-control" disabled
+                                                        value="{{skillobj}}">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div *ngIf="skilList.length!=0" class="col-md-12">
+                                        <div class="text-start"><a class="ud-btn btn-thm" href="/contact">Save<i
+                                                    class="fal fa-arrow-right-long"></i></a></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div data-bs-toggle="modal" data-bs-target="#proposalModaleducation"
+                        class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                        <h5 class="list-title">Education</h5><a class="add-more-btn text-thm"><i
+                                class="icon far fa-plus mr10"></i>Add Aducation</a>
+                    </div>
+                    <div class="position-relative">
+                        <div class="educational-quality">
+                            <div *ngFor="let educationobj of educationlist;let i = index">
+                                <div class="m-circle  text-thm">M</div>
+                                <div class="wrapper mb30 position-relative">
+                                    <div class="del-edit">
+                                        <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                    class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                    class="flaticon-delete"></span></a></div>
+                                    </div><span class="tag"> {{educationobj.from}} - {{educationobj.to}} </span>
+                                    <h5 class="mt15"> {{educationobj.certificate_name}} </h5>
+                                    <h6 class="text-thm"> {{educationobj.collage}} </h6>
+                                    <p> {{educationobj.description}} </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="educationlist.length!=0" class="text-start"><a class="ud-btn btn-thm">Save<i
+                                    class="fal fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                        <h5 class="list-title">Work &amp; Experience</h5><a class="add-more-btn text-thm"><i
+                                class="icon far fa-plus mr10"></i>Add Experience</a>
+                    </div>
+                    <div class="position-relative">
+                        <div class="educational-quality">
+                            <div class="m-circle text-thm">M</div>
+                            <div class="wrapper mb40 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2012 - 2014</span>
+                                <h5 class="mt15">UX Designer</h5>
+                                <h6 class="text-thm">Dropbox</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus.
+                                    Interdum
+                                    et malesuada fames ac ante ipsum <br class="d-none d-lg-block"> primis in faucibus.
+                                </p>
+                            </div>
+                            <div class="m-circle before-none text-thm">M</div>
+                            <div class="wrapper mb30 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2008 - 2012</span>
+                                <h5 class="mt15">Art Director</h5>
+                                <h6 class="text-thm">amazon</h6>
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
+                                    tellus. Interdum et malesuada fames ac ante ipsum <br class="d-none d-lg-block">
+                                    primis
+                                    in faucibus.</p>
+                            </div>
+                        </div>
+                        <div class="text-start"><a class="ud-btn btn-thm">Save<i
+                                    class="fal fa-arrow-right-long"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb30 d-sm-flex justify-content-between">
+                        <h5 class="list-title">Awards</h5><a class="add-more-btn text-thm"><i
+                                class="icon far fa-plus mr10"></i>Add Awards</a>
+                    </div>
+                    <div class="position-relative">
+                        <div class="educational-quality ps-0">
+                            <div class="wrapper mb40 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2012 - 2014</span>
+                                <h5 class="mt15">UI UX Design</h5>
+                                <h6 class="text-thm">Udemy</h6>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus.
+                                    Interdum
+                                    et malesuada fames ac ante ipsum <br class="d-none d-lg-block"> primis in faucibus.
+                                </p>
+                            </div>
+                            <div class="wrapper mb40 position-relative">
+                                <div class="del-edit">
+                                    <div class="d-flex"><a class="icon me-2" id="edit"><span
+                                                class="flaticon-pencil"></span></a><a class="icon" id="delete"><span
+                                                class="flaticon-delete"></span></a></div>
+                                </div><span class="tag">2008 - 2012</span>
+                                <h5 class="mt15">App Design</h5>
+                                <h6 class="text-thm">Google</h6>
+                                <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum
+                                    tellus. Interdum et malesuada fames ac ante ipsum <br class="d-none d-lg-block">
+                                    primis
+                                    in faucibus.</p>
+                            </div>
+                        </div>
+                        <div class="text-start"><a class="ud-btn btn-thm" href="#">Save<i
+                                    class="fal fa-arrow-right-long"></i></a></div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="bdrb1 pb15 mb25">
+                        <h5 class="list-title">Change password</h5>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <form class="form-style1">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Old
+                                                Password</label><input class="form-control" placeholder="********"
+                                                type="text"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="mb20"><label class="heading-color ff-heading fw500 mb10">New
+                                                Password</label><input class="form-control" placeholder="********"
+                                                type="text"></div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Confirm New
+                                                Password</label><input class="form-control" placeholder="********"
+                                                type="text"></div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="text-start"><a class="ud-btn btn-thm" href="/contact">Change
+                                                Password<i class="fal fa-arrow-right-long"></i></a></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="ps-widget bgc-white bdrs4 p30 mb30 overflow-hidden position-relative">
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="bdrb1 pb15 mb25">
+                                <h5 class="list-title">Change password</h5>
+                            </div>
+                            <form class="form-style1">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h6>Close account</h6>
+                                        <p class="text">Warning: If you close your account, you will be unsubscribed
+                                            from
+                                            all your 5 courses, and will lose access forever.</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Enter
+                                                Password</label><input class="form-control" placeholder="********"
+                                                type="text"></div>
+                                        <div class="text-start"><a class="ud-btn btn-thm" href="/contact">Change
+                                                Password<i class="fal fa-arrow-right-long"></i></a></div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model skills -->
+<div class="modal fade" id="proposalModal" tabindex="-1" aria-labelledby="proposalModalLabel" style="display: none;"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content position-relative"><button type="button" class="btn-close position-absolute"
+                data-bs-dismiss="modal" aria-label="Close" style="top: 10px; right: 10px; z-index: 9;"></button>
+            <div class="modal-body p-4">
+                <form (ngSubmit)="saveskill()">
+                    <div class="mb-3"><label class="form-label">Cover letter</label><textarea [(ngModel)]="skills"
+                            id="skills" name="skills" placeholder="Enter Your Skills" name="text" cols="30"
+                            rows="2"></textarea></div><button type="submit" class="ud-btn btn-thm"
+                        data-bs-dismiss="modal" aria-label="Close">Add<i class="fal fa-arrow-right-long"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model educatiuon -->
+<div class="modal fade" id="proposalModaleducation" tabindex="-1" aria-labelledby="proposalModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content position-relative"><button type="button" class="btn-close position-absolute"
+                data-bs-dismiss="modal" aria-label="Close" style="top: 10px; right: 10px; z-index: 9;"></button>
+            <div class="modal-body p-4">
+                <form (ngSubmit)="saveeducation()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">From</label><input [(ngModel)]="education.from"
+                                    id="from" name="from" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">To</label><input [(ngModel)]="education.to"
+                                    id="to" name="to" class="form-control" type="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">College</label><input
+                                    [(ngModel)]="education.collage" id="collage" name="collage" class="form-control"
+                                    type="text">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">certificate</label><input
+                                    [(ngModel)]="education.certificate_name" id="certificate_name"
+                                    name="certificate_name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3"><label class="form-label">Description</label><textarea
+                            [(ngModel)]="education.description" id="description" name="description"
+                            placeholder="Description" name="text" cols="30" rows="2"></textarea></div><button
+                        type="submit" class="ud-btn btn-thm" data-bs-dismiss="modal" aria-label="Close">Add<i
+                            class="fal fa-arrow-right-long"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model worl exp -->
+<div class="modal fade" id="proposalModalworkexp" tabindex="-1" aria-labelledby="proposalModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content position-relative"><button type="button" class="btn-close position-absolute"
+                data-bs-dismiss="modal" aria-label="Close" style="top: 10px; right: 10px; z-index: 9;"></button>
+            <div class="modal-body p-4">
+                <form (ngSubmit)="saveworkexp()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">From</label><input
+                                    [(ngModel)]="work_experiance.from" id="from" name="from" class="form-control"
+                                    type="date">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">To</label><input
+                                    [(ngModel)]="work_experiance.to" id="to" name="to" class="form-control" type="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">College</label><input
+                                    [(ngModel)]="work_experiance.company_name" id="collage" name="collage"
+                                    class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">certificate</label><input
+                                    [(ngModel)]="work_experiance.project_name" id="certificate_name"
+                                    name="certificate_name" class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3"><label class="form-label">Description</label><textarea
+                            [(ngModel)]="work_experiance.description" id="description" name="description"
+                            placeholder="Description" name="text" cols="30" rows="2"></textarea></div><button
+                        type="submit" class="ud-btn btn-thm" data-bs-dismiss="modal" aria-label="Close">Add<i
+                            class="fal fa-arrow-right-long"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model awad -->
+<div class="modal fade" id="proposalModalawad" tabindex="-1" aria-labelledby="proposalModalLabel" style="display: none;"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content position-relative"><button type="button" class="btn-close position-absolute"
+                data-bs-dismiss="modal" aria-label="Close" style="top: 10px; right: 10px; z-index: 9;"></button>
+            <div class="modal-body p-4">
+                <form (ngSubmit)="saveawds()">
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">From</label><input [(ngModel)]="awads.from"
+                                    id="from" name="from" class="form-control" type="date">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">To</label><input [(ngModel)]="awads.to" id="to"
+                                    name="to" class="form-control" type="date">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">College</label><input
+                                    [(ngModel)]="awads.company_name" id="collage" name="collage" class="form-control"
+                                    type="text">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">certificate</label><input
+                                    [(ngModel)]="awads.project_name" id="certificate_name" name="certificate_name"
+                                    class="form-control" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3"><label class="form-label">Description</label><textarea
+                            [(ngModel)]="awads.description" id="description" name="description"
+                            placeholder="Description" name="text" cols="30" rows="2"></textarea></div><button
+                        type="submit" class="ud-btn btn-thm" data-bs-dismiss="modal" aria-label="Close">Add<i
+                            class="fal fa-arrow-right-long"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
