@@ -18,7 +18,7 @@ import { FreelancerListComponent } from '../system/client/freelancer-list/freela
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent  },
   { path: 'logout', component: LogoutComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'role', component: RoleComponent },

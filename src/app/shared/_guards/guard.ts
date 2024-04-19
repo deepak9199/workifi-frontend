@@ -15,12 +15,12 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
+    const roles = next.data['role'] as Array<string>;
     if (this.ValidatorChecker(this.token.getToken()) && this.ValidatorChecker(this.token.getUser())) {
-      const roles = next.data['role'] as Array<string>;
-      // console.log(roles)
       if (roles) {
         const match = this.token.getUser().role[0]
         // console.log(match + ' ' + roles)
+        console.log(roles)
         if (match == roles) {
           return true;
         } else {
@@ -33,11 +33,12 @@ export class AuthGuard implements CanActivate {
           return false;
         }
       } else {
+        console.log(roles)
         return true;
       }
     }
     else {
-      console.log('else')
+
       this.router.navigate(['/'])
       return false;
     }
