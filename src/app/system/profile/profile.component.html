@@ -247,7 +247,7 @@
                                         </div>
                                     </div>
                                     <div *ngIf="skilList.length!=0" class="col-md-12">
-                                        <div class="text-start"><a class="ud-btn btn-thm" href="/contact">Save<i
+                                        <div class="text-start"><a class="ud-btn btn-thm" (click)="save()">Save<i
                                                     class="fal fa-arrow-right-long"></i></a></div>
                                     </div>
                                 </div>
@@ -277,8 +277,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="educationlist.length!=0" class="text-start"><a class="ud-btn btn-thm">Save<i
-                                    class="fal fa-arrow-right-long"></i></a>
+                        <div *ngIf="educationlist.length!=0" class="text-start"><a class="ud-btn btn-thm"
+                                (click)="save()">Save<i class="fal fa-arrow-right-long"></i></a>
                         </div>
                     </div>
                 </div>
@@ -304,8 +304,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="educationlist.length!=0" class="text-start"><a class="ud-btn btn-thm">Save<i
-                                    class="fal fa-arrow-right-long"></i></a>
+                        <div *ngIf="work_experience_list.length!=0" class="text-start"><a class="ud-btn btn-thm"
+                                (click)="save()">Save<i class="fal fa-arrow-right-long"></i></a>
                         </div>
                     </div>
                 </div>
@@ -331,8 +331,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div *ngIf="educationlist.length!=0" class="text-start"><a class="ud-btn btn-thm">Save<i
-                                    class="fal fa-arrow-right-long"></i></a>
+                        <div *ngIf="awadsList.length!=0" class="text-start"><a class="ud-btn btn-thm"
+                                (click)="save()">Save<i class="fal fa-arrow-right-long"></i></a>
                         </div>
                     </div>
                 </div>
