@@ -93,9 +93,11 @@ export class FreelancerSubmitProposalComponent {
     this.loading = true
     this.collectionservice.updateDocument('projects', id, data).subscribe(() => {
       this.toster.success("Your proposal is submited successfully")
+      this.loading = false
     },
       (error) => {
         console.error(error)
+        this.loading = false
       })
   }
   route(data: Project) {

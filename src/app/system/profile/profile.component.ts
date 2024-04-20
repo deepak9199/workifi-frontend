@@ -162,23 +162,29 @@ export class ProfileComponent {
     }
   }
   private saveprofileapi(data: profile) {
+    this.loading = true
     this.collectionservice.addDocumnet('profile', data).subscribe({
       next: (data: profile[]) => {
         this.toster.success('Profile Update Successfully')
         this.ngOnInit()
+        this.loading = false
       },
       error: (error) => {
         console.error(error)
+        this.loading = false
       }
     })
   }
   private updateprofileapi(data: profile, id: string) {
+    this.loading = true
     this.collectionservice.updateDocument('profile', id, data).subscribe((data) => {
       this.toster.success('Profile Update Successfully')
       this.ngOnInit()
+      this.loading = false
     },
       (err) => {
         console.error(err)
+        this.loading = false
       })
   }
   private getprofileapi() {
