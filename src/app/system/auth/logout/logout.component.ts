@@ -31,11 +31,14 @@ export class LogoutComponent {
   }
   // logout api
   signout() {
+    this.loading = true
     this.authService.signOut().subscribe({
       next: (data) => {
+        this.loading = false
         this.logout()
       },
       error: (err) => {
+        this.loading = false
         console.error(err)
       }
     })
