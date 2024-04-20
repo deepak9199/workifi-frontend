@@ -310,7 +310,7 @@
                                     </ul>
                                 </li>
                                 <li class="visible_list menu-active  "><a class="list-item
-                                " href="contact.php"><span class="title">Messages</span></a></li>
+                                "><span class="title">Messages</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -334,73 +334,12 @@
                                                     <p class="mb-0 text-thm">4 hours ago</p>
                                                 </div>
                                             </div>
-                                            <div class="notif_list d-flex align-items-start mb25"><img
-                                                    alt="testimonials" loading="lazy" width="50" height="50"
-                                                    decoding="async" data-nimg="1" class="img-2"
-                                                    style="color:transparent" src="assets/testi-21607.png" />
-                                                <div class="details ml15">
-                                                    <p class="dark-color fw500 mb-2">Ali Tufan</p>
-                                                    <p class="text mb-2">Lorem ipsum dolor sit amet, consectetur
-                                                        adipiscing.</p>
-                                                    <p class="mb-0 text-thm">4 hours ago</p>
-                                                </div>
-                                            </div>
                                             <div class="d-grid"><a class="ud-btn btn-thm w-100" href="message.php">View
                                                     All Messages<i class="fal fa-arrow-right-long"></i></a></div>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="d-none d-sm-block"><a class="text-center mr5 text-thm2 dropdown-toggle fz20"
-                                        type="button" data-bs-toggle="dropdown"><span class="flaticon-like"></span></a>
-                                    <div class="dropdown-menu">
-                                        <div class="dboard_notific_dd px30 pt10 pb15">
-                                            <div class="notif_list d-flex align-items-center bdrb1 pb15 mb10"><img
-                                                    alt="notif" loading="lazy" width="40" height="40" decoding="async"
-                                                    data-nimg="1" style="color:transparent"
-                                                    src="assets/notif-12a24.png" />
-                                                <div class="details ml10">
-                                                    <p class="text mb-0">Your resume</p>
-                                                    <p class="text mb-0">updated!</p>
-                                                </div>
-                                            </div>
-                                            <div class="notif_list d-flex align-items-center bdrb1 pb15 mb10"><img
-                                                    alt="notif" loading="lazy" width="40" height="40" decoding="async"
-                                                    data-nimg="1" style="color:transparent"
-                                                    src="assets/notif-28373.png" />
-                                                <div class="details ml10">
-                                                    <p class="text mb-0">You changed</p>
-                                                    <p class="text mb-0">password</p>
-                                                </div>
-                                            </div>
-                                            <div class="notif_list d-flex align-items-center bdrb1 pb15 mb10"><img
-                                                    alt="notif" loading="lazy" width="40" height="40" decoding="async"
-                                                    data-nimg="1" style="color:transparent"
-                                                    src="assets/notif-3df8c.png" />
-                                                <div class="details ml10">
-                                                    <p class="text mb-0">Your account has been</p>
-                                                    <p class="text mb-0">created successfully</p>
-                                                </div>
-                                            </div>
-                                            <div class="notif_list d-flex align-items-center bdrb1 pb15 mb10"><img
-                                                    alt="notif" loading="lazy" width="40" height="40" decoding="async"
-                                                    data-nimg="1" style="color:transparent"
-                                                    src="assets/notif-41938.png" />
-                                                <div class="details ml10">
-                                                    <p class="text mb-0">You applied for a job<!-- --> </p>
-                                                    <p class="text mb-0">Front-end Developer</p>
-                                                </div>
-                                            </div>
-                                            <div class="notif_list d-flex align-items-center"><img alt="notif"
-                                                    loading="lazy" width="40" height="40" decoding="async" data-nimg="1"
-                                                    style="color:transparent" src="assets/notif-5bb24.png" />
-                                                <div class="details ml10">
-                                                    <p class="text mb-0">Your course uploaded</p>
-                                                    <p class="text mb-0">successfully</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
+
                                 <li class="d-none d-sm-block">
                                     <a class="btn" data-bs-toggle="dropdown"><img alt="user.png" loading="lazy"
                                             width="50" height="50" decoding="async" data-nimg="1"
@@ -590,18 +529,8 @@
                                                     <p class="mb-0 text-thm">4 hours ago</p>
                                                 </div>
                                             </div>
-                                            <div class="notif_list d-flex align-items-start mb25"><img
-                                                    alt="testimonials" loading="lazy" width="50" height="50"
-                                                    decoding="async" data-nimg="1" class="img-2"
-                                                    style="color:transparent" src="assets/testi-21607.png" />
-                                                <div class="details ml15">
-                                                    <p class="dark-color fw500 mb-2">Ali Tufan</p>
-                                                    <p class="text mb-2">Lorem ipsum dolor sit amet, consectetur
-                                                        adipiscing.</p>
-                                                    <p class="mb-0 text-thm">4 hours ago</p>
-                                                </div>
-                                            </div>
-                                            <div class="d-grid"><a class="ud-btn btn-thm w-100" href="message.php">View
+
+                                            <div class="d-grid"><a class="ud-btn btn-thm w-100">View
                                                     All Messages<i class="fal fa-arrow-right-long"></i></a></div>
                                         </div>
                                     </div>
@@ -662,15 +591,16 @@
                                             width="50" height="50" decoding="async" data-nimg="1"
                                             style="color:transparent" src="assets/user033f.png" /></a>
                                     <div class="dropdown-menu">
-                                        <div class="dboard_notific_dd px30 pt10 pb15">
+                                        <div [routerLink]="['/profile']" style="cursor: pointer;"
+                                            class="dboard_notific_dd px30 pt10 pb15">
                                             <div class="notif_list d-flex align-items-center bdrb1 pb15 mb10">
-                                                <a class="dropdown-item " [routerLink]="['/profile']"><i
-                                                        class="flaticon-photo mr10"></i>My Profile</a>
+                                                <a class="dropdown-item "><i class="flaticon-photo mr10"></i>My
+                                                    Profile</a>
 
                                             </div>
-                                            <div class="notif_list d-flex align-items-center">
-                                                <a class="dropdown-item " [routerLink]="['/logout']"><i
-                                                        class="flaticon-logout mr10"></i>Logout
+                                            <div [routerLink]="['/logout']" style="cursor: pointer;"
+                                                class="notif_list d-flex align-items-center">
+                                                <a class="dropdown-item "><i class="flaticon-logout mr10"></i>Logout
                                                 </a>
                                             </div>
 
