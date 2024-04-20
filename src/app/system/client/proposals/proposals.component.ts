@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './proposals.component.css'
 })
 export class ProposalsComponent {
-
+  loading: boolean = false
 }

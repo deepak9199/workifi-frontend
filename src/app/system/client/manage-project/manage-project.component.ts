@@ -32,13 +32,16 @@ export class ManageProjectComponent {
 
   // api call for workinghours
   private getprojectsapi() {
+    this.loading = true
     this.collectionservice.getData("projects").subscribe({
       next: (data: Project[]) => {
         this.globalprojects = data
         this.projecttabtab('posted')
+        this.loading = false
       },
       error: (error) => {
         console.error('Error fetching data:', error)
+        this.loading = false
       },
       complete: () => {
       },

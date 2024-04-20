@@ -181,6 +181,7 @@ export class ProfileComponent {
       })
   }
   private getprofileapi() {
+    this.loading = true
     this.collectionservice.getData('profile').subscribe({
       next: (data) => {
         let obj = data.filter((obj: profile) => obj.uid === this.token.getUser().uid)
@@ -191,14 +192,18 @@ export class ProfileComponent {
           this.educationlist = this.formProfile.education
           this.awadsList = this.formProfile.award
           this.profileid = obj[0].id
+
         }
         else {
           console.log('no profile found')
         }
+        this.loading = false
       },
       error: (error) => {
         console.error(error)
-      }
+        this.loading = false
+      },
+
     })
   }
   changePasswordapi(oldPassword: string, newPassword: string, confirmPassword: string): void {

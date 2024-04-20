@@ -15,27 +15,27 @@ export class HomeComponent {
     private toster: ToastrService
   ) { }
 
-  // ngOnInit() {
-  //   if (this.ValidatorChecker(this.tokenstorage.getToken())) {
-  //     switch (this.tokenstorage.getUser().role[0]) {
-  //       case 'client':
-  //         // Assuming tokenstorage is accessible and getUser() returns an object with a 'role' array
-  //         this.router.navigate(['/client/home']);
-  //         break;
+  ngOnInit() {
+    if (this.ValidatorChecker(this.tokenstorage.getToken())) {
+      switch (this.tokenstorage.getUser().role[0]) {
+        case 'client':
+          // Assuming tokenstorage is accessible and getUser() returns an object with a 'role' array
+          this.router.navigate(['/client/home']);
+          break;
 
-  //       case 'freelancer':
-  //         this.router.navigate(['/freelancer/projectlist']);
-  //         break;
+        case 'freelancer':
+          this.router.navigate(['/freelancer/projectlist']);
+          break;
 
-  //       default:
-  //         this.router.navigate(['/']).then(() => {
-  //           this.toster.error('Role not Matched'); // Assuming toster is accessible and has an error method
-  //         });
+        default:
+          this.router.navigate(['/']).then(() => {
+            this.toster.error('Role not Matched'); // Assuming toster is accessible and has an error method
+          });
 
-  //     }
+      }
 
-  //   }
-  // }
+    }
+  }
 
   private ValidatorChecker(data: any) {
     if (typeof data === "undefined" || data === null || data === '') {
