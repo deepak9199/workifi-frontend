@@ -78,10 +78,22 @@ export class ProfileComponent {
   ) { }
 
   ngOnInit() {
-    this.formProfile.email = this.token.getUser().userCredential.user.email
-    this.getprofileapi()
+    if (this.ValidatorChecker(this.token.getUser())) {
+      this.formProfile.email = this.token.getUser().userCredential.user.email
+      this.getprofileapi()
+    }
+    else {
+      this.route.navigate(['/'])
+    }
   }
-
+  private ValidatorChecker(data: any) {
+    if (typeof data === "undefined" || data === null || data === '') {
+      return false
+    }
+    else {
+      return true
+    }
+  }
   saveUser() {
     this.save()
   }

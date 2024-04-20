@@ -31,15 +31,14 @@ export class LogoutComponent {
   }
   // logout api
   signout() {
-    this.authService.signOut().subscribe(
-      (response) => {
-        // console.log(response)
+    this.authService.signOut().subscribe({
+      next: (data) => {
         this.logout()
       },
-      error => {
-        console.error(error)
-        this.toster.error('error in logout')
-      })
+      error: (err) => {
+        console.error(err)
+      }
+    })
   }
   private trigertrefreshnavbar() {
     this.sharedService.triggerFunction();

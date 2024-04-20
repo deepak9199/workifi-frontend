@@ -17,27 +17,44 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth, private firestore: AngularFirestore, private tokenStorage: TokenStorageService, private toster: ToastrService) { }
 
   // Sign in with email and password
-  signInWithEmailAndPassword(email: string, password: string): Observable<{ userCredential: firebase.default.auth.UserCredential, token: string, uid: string } | null> {
-    return from(this.afAuth.signInWithEmailAndPassword(email, password)).pipe(
-      switchMap(userCredential => {
-        if (!userCredential || !userCredential.user) {
-          return of(null);
-        }
-        return from(userCredential.user.getIdToken()).pipe(
-          switchMap(token => {
-            return this.getUserData(userCredential.user!.uid).pipe(
-              map(userrole => ({ userCredential, token, uid: userCredential.user!.uid, role: userrole }))
-            );
-          })
-        );
-      }),
-      catchError(error => {
-        console.error('Error signing in:', error);
-        this.toster.error(error.message)
-        return of(null);
-      })
-    );
+  login(email: string, password: string): Observable<{ userCredential: firebase.default.auth.UserCredential, token: string, uid: string, role: any } | null> {
+    return new Observable(observer => {
+      this.afAuth.signInWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          if (!userCredential || !userCredential.user) {
+            observer.next(null);
+            observer.complete();
+          } else {
+            userCredential.user.getIdToken()
+              .then(token => {
+                this.getUserData(userCredential.user!.uid)
+                  .subscribe(userrole => {
+                    observer.next({ userCredential, token, uid: userCredential.user!.uid, role: userrole });
+                    observer.complete();
+                  }, error => {
+                    console.error('Error getting user data:', error);
+                    this.toster.error(error.message);
+                    observer.next(null);
+                    observer.complete();
+                  });
+              })
+              .catch(error => {
+                console.error('Error getting ID token:', error);
+                this.toster.error(error.message);
+                observer.next(null);
+                observer.complete();
+              });
+          }
+        })
+        .catch(error => {
+          console.error('Error signing in:', error);
+          this.toster.error(error.message);
+          observer.next(null);
+          observer.complete();
+        });
+    });
   }
+
   // change password
   // Change password with old password, new password, and confirmation
   changePasswordWithConfirmation(oldPassword: string, newPassword: string, confirmPassword: string): Observable<boolean> {
@@ -116,7 +133,6 @@ export class AuthService {
 
   logout() {
     // remove user from local storage to log user out
-    localStorage.removeItem('currentUser');
     this.tokenStorage.signOut();
   }
   // Get the current user
