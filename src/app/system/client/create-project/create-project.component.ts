@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CollectionService } from '../../../shared/_service/collection.service';
 import { ToastrService } from 'ngx-toastr';
 import { createProject } from '../../../model/projects';
+import { TokenStorageService } from '../../../shared/_service/token-storage.service';
 
 @Component({
   selector: 'app-create-project',
@@ -26,17 +27,20 @@ export class CreateProjectComponent {
     projectdetail: '',
     status: '',
     upload: '',
-    proposals: []
+    proposals: [],
+    uid: ''
   }
   constructor(
     private collectionservice: CollectionService,
-    private toster: ToastrService
+    private toster: ToastrService,
+    private token: TokenStorageService
   ) { }
   ngOnInit() {
 
   }
   createproject() {
     console.log(this.formcreateproject)
+    this.formcreateproject.uid = this.token.getUser().uid
     this.formcreateproject.status = 'pending'
     this.createProjectApi(this.formcreateproject)
   }

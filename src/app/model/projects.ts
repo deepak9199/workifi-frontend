@@ -1,5 +1,5 @@
 export interface createProject {
-
+    uid: string
     title: string
     category: string
     freelancertype: string
@@ -20,6 +20,7 @@ export interface createProject {
 
 export interface Project {
     id: string
+    uid: string
     title: string
     category: string
     freelancertype: string

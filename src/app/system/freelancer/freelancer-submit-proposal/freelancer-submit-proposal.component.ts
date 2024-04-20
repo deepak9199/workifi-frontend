@@ -30,7 +30,8 @@ export class FreelancerSubmitProposalComponent {
     projectdetail: '',
     status: '',
     upload: '',
-    proposals: []
+    proposals: [],
+    uid: ''
   }
   formProposals: proposal = {
     uid: '',
