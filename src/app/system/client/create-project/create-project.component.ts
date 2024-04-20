@@ -44,14 +44,23 @@ export class CreateProjectComponent {
     this.formcreateproject.status = 'pending'
     this.createProjectApi(this.formcreateproject)
   }
+  createPubliceproject() {
+    console.log(this.formcreateproject)
+    this.formcreateproject.uid = this.token.getUser().uid
+    this.formcreateproject.status = 'posted'
+    this.createProjectApi(this.formcreateproject)
+  }
   private createProjectApi(data: createProject) {
+    this.loading = true
     this.collectionservice.addDocumnet('projects', data).subscribe({
       next: (response) => {
 
         this.toster.success('Project Save Successfully')
+        this.loading = false
       },
       error: (error) => {
         console.error(error)
+        this.loading = false
       }
     })
   }
