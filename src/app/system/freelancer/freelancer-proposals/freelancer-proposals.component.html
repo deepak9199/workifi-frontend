@@ -23,7 +23,7 @@
                                 </tr>
                             </thead>
                             <tbody class="t-body">
-                                <tr *ngFor="let obj of projects">
+                                <tr *ngFor="let obj of profile">
                                     <th class="ps-0" scope="row">
                                         <div class="freelancer-style1 p-0 mb-0 box-shadow-none">
                                             <div class="d-lg-flex align-items-lg-center">
@@ -33,7 +33,7 @@
                                                         style="color:transparent" src="assets/client-1b9ce.png" /><span
                                                         class="online-badge2"></span></div>
                                                 <div class="details ml15 ml0-md mb15-md">
-                                                    <h5 class="title mb-2"> {{obj.title}} </h5>
+                                                    <h5 class="title mb-2"> {{obj.username}} </h5>
                                                     <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                             class="flaticon-place fz16 vam text-thm2 me-1"></i>
                                                         <!-- --> {{obj.country}} , {{obj.city}} </p>
@@ -48,7 +48,8 @@
                                         </div>
                                     </th>
                                     <td class="vam">
-                                        <h5 class="mb-0">$ {{obj.cost}} <span class="fz14 fw400">Hourly Rate</span>
+                                        <h5 class="mb-0">$ {{obj.hourly_rate}} <span class="fz14 fw400">Hourly
+                                                Rate</span>
                                         </h5>
                                     </td>
                                     <td>

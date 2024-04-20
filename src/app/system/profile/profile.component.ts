@@ -57,7 +57,8 @@ export class ProfileComponent {
     work_experience: [],
     award: [],
     points: 0,
-    updated_date_time: ''
+    updated_date_time: '',
+    proposals: []
   }
   fromchangepass = {
     old: '',

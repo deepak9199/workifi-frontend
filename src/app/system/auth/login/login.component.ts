@@ -33,7 +33,7 @@ export class LoginComponent {
 
   // login function
   signIn() {
-    console.log(this.form_login)
+    // console.log(this.form_login)
     this.loginauthapi(this.form_login)
   }
   // login api
@@ -51,6 +51,7 @@ export class LoginComponent {
         } else {
           // Handle the case when data or data.token is null
           console.error("Data or token is null.");
+          this.loading = false
         }
       },
       error: (error) => {

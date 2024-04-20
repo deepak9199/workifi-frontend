@@ -22,6 +22,34 @@ export interface profile {
     education: education[]
     work_experience: work_experience[]
     award: award[]
+    proposals: proposal[]
+}
+
+export interface getprofile {
+    id: string
+    points: number
+    uid: string
+    created_date_time: string
+    updated_date_time: string
+    image: string
+    username: string
+    email: string
+    phone: number
+    tagline: string
+    hourly_rate: string
+    gender: string
+    specialization: string
+    type: string
+    country: string
+    city: string
+    language: string
+    language_level: string
+    introduce_yourself: string
+    skil: string[]
+    education: education[]
+    work_experience: work_experience[]
+    award: award[]
+    proposals: proposal[]
 }
 export interface education {
     from: Date | null;
@@ -43,4 +71,9 @@ export interface award {
     company_name: string
     project_name: string
     description: string
+}
+export interface proposal {
+    uid: string
+    message: string
+    date_time: string
 }

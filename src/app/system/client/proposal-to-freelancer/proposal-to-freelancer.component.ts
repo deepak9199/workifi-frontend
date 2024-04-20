@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { proposal, Project } from '../../../model/projects';
+import { Project } from '../../../model/projects';
 import { CollectionService } from '../../../shared/_service/collection.service';
 import { SharedService } from '../../../shared/_service/shared.service';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
-import { profile } from '../../../model/profile';
+import { getprofile, profile, proposal } from '../../../model/profile';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class ProposalToFreelancerComponent {
   loading: boolean = false
-  profile: profile = {
+  profile: getprofile = {
     points: 0,
     uid: '',
     created_date_time: '',
@@ -36,13 +36,14 @@ export class ProposalToFreelancerComponent {
     skil: [],
     education: [],
     work_experience: [],
-    award: []
+    award: [],
+    proposals: [],
+    id: ''
   }
   formProposals: proposal = {
     uid: '',
-    hourly_price: 0,
-    Estimated_Hours: '',
-    cover_letter: ''
+    message: '',
+    date_time: ''
   }
   constructor(
     private collectionservice: CollectionService,
@@ -61,9 +62,8 @@ export class ProposalToFreelancerComponent {
   submitaproposal() {
     let proposal: proposal = {
       uid: this.token.getUser().uid,
-      hourly_price: Number(this.profile.hourly_rate.toString()),
-      Estimated_Hours: this.profile.hourly_rate,
-      cover_letter: ''
+      message: '',
+      date_time: (new Date().toString())
     }
     this.finalsubmit(proposal)
   }
@@ -78,30 +78,33 @@ export class ProposalToFreelancerComponent {
     else {
       proposals.push(data)
     }
-    // this.profile.proposals = proposals
-    // this.updateprojectapi(this.profile.id, this.profile)
+    this.profile.proposals = proposals
+    console.log(this.profile)
+    this.updateprojectapi(this.profile.id, this.profile)
   }
   callshareddata() {
     if (this.ValidatorChecker(this.sharedservice.getdata())) {
       const jsonData = this.sharedservice.getdata();
       if (jsonData !== null) {
         this.profile = JSON.parse(jsonData);
-        console.log(this.profile)
+        // console.log(this.profile)
       } else {
         this.toster.error("Received null data from shared service.");
       }
     }
     else {
-      this.router.navigate(['/freelancer/projectlist'])
+      this.router.navigate(['/client/freelancerlist'])
     }
   }
-  private updateprojectapi(id: string, data: Project) {
+  private updateprojectapi(id: string, data: profile) {
     this.loading = true
     this.collectionservice.updateDocument('profile', id, data).subscribe(() => {
       this.toster.success("Your proposal is submited successfully")
+      this.loading = false
     },
       (error) => {
         console.error(error)
+        this.loading = false
       })
   }
   route(data: Project) {
