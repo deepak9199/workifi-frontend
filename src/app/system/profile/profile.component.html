@@ -17,15 +17,24 @@
                     </div>
                     <div class="col-xl-7">
                         <div class="profile-box d-sm-flex align-items-center mb30">
-                            <div class="profile-img mb20-sm"><img alt="profile" loading="lazy" width="71" height="71"
+                            <div class="profile-img mb20-sm">
+                                <img *ngIf="formProfile.image == ''" alt="profile" loading="lazy" width="71" height="71"
                                     decoding="async" data-nimg="1" class="rounded-circle wa-xs"
                                     src="assets/user033f.png"
-                                    style="color: transparent; height: 71px; width: 71px; object-fit: cover;"></div>
+                                    style="color: transparent; height: 71px; width: 71px; object-fit: cover;">
+                                <img *ngIf="formProfile.image != ''" alt="profile" loading="lazy" width="71" height="71"
+                                    decoding="async" data-nimg="1" class="rounded-circle wa-xs"
+                                    src="{{formProfile.image}}"
+                                    style="color: transparent; height: 71px; width: 71px; object-fit: cover;">
+                            </div>
                             <div class="profile-content ml20 ml0-xs">
-                                <div class="d-flex align-items-center my-3"><a class="tag-delt text-thm2"><span
-                                            class="flaticon-delete text-thm2"></span></a><label><input
-                                            accept=".png, .jpg, .jpeg" class="d-none" type="file"><a
-                                            class="upload-btn ml10">Upload Images</a></label></div>
+                                <div class="d-flex align-items-center my-3">
+                                    <a (click)="onDeleteFile(formProfile.image)" class="tag-delt text-thm2"><span
+                                            class="flaticon-delete text-thm2"></span></a>
+                                    <label><input accept=".png, .jpg, .jpeg" class="d-none" type="file"
+                                            (change)="onFileSelected($event)"><a class="upload-btn ml10">Upload
+                                            Images</a></label>
+                                </div>
                                 <p class="text mb-0">Max file size is 1MB, Minimum dimension: 330x300 And Suitable files
                                     are
                                     .jpg &amp; .png</p>

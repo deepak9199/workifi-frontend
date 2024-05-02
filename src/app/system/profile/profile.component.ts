@@ -70,12 +70,14 @@ export class ProfileComponent {
   educationlist: education[] = []
   work_experience_list: work_experience[] = []
   awadsList: award[] = []
+  uploadProgress: number = 0
   constructor(
     private collectionservice: CollectionService,
     private toster: ToastrService,
     private token: TokenStorageService,
     private route: Router,
-    private auth: AuthService
+    private auth: AuthService,
+
   ) { }
 
   ngOnInit() {
@@ -229,5 +231,48 @@ export class ProfileComponent {
     else {
       this.toster.error("Empty Password Filed")
     }
+  }
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      this.collectionservice.uploadFile(file, 'users/' + this.token.getUser().uid + '/profile').subscribe(
+        (progress) => {
+          // this.uploadProgress = progress;
+          console.log('Upload progress:', progress);
+        },
+        (error) => {
+          console.error('Upload error:', error);
+        },
+        () => {
+          console.log('Upload complete');
+          this.collectionservice.getDownloadUrl('users/' + this.token.getUser().uid + '/profile/' + file.name).subscribe(
+            (url) => {
+              this.formProfile.image = url;
+              console.log('Download URL:', url);
+              if (this.profileid != '') {
+                this.updateprofileapi(this.formProfile, this.profileid)
+              }
+            },
+            (error) => {
+              console.error('Error getting download URL:', error);
+            }
+          );
+        }
+      );
+    }
+  }
+  onDeleteFile(filePath: string) {
+    this.collectionservice.deleteFile(filePath).subscribe(
+      () => {
+        console.log('File deleted successfully');
+        this.formProfile.image = '';
+        if (this.profileid != '') {
+          this.updateprofileapi(this.formProfile, this.profileid)
+        }
+      },
+      (error) => {
+        console.error('Error deleting file:', error);
+      }
+    );
   }
 }
