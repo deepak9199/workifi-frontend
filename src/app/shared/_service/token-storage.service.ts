@@ -7,7 +7,7 @@ const USER_KEY = 'auth-user';
 export class TokenStorageService {
 
   constructor() { }
-  
+
   signOut(): void {
     window.localStorage.clear();
     window.sessionStorage.clear();
@@ -17,6 +17,7 @@ export class TokenStorageService {
     window.localStorage.removeItem(TOKEN_KEY);
     window.localStorage.setItem(TOKEN_KEY, token);
   }
+  
   public getToken(): string | null {
     if (typeof localStorage !== 'undefined') {
       return localStorage.getItem(TOKEN_KEY);

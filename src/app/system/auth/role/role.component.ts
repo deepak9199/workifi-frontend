@@ -10,26 +10,26 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RoleComponent {
 
-  optionname: string = 'Join as a client '
+  optionname: string = 'Sign Up as a client '
 
   constructor(private shareservice: SharedService, private router: Router, private toster: ToastrService) {
 
   }
 
   clickclient() {
-    this.optionname = 'Join as a client'
+    this.optionname = 'Sign Up as a client'
   }
   clickfreelancer() {
-    this.optionname = 'Join as a freelancer'
+    this.optionname = 'Sign Up as a freelancer'
   }
   routtosignup() {
-    if (this.optionname === 'Join as a client') {
+    if (this.optionname === 'Sign Up as a client') {
       this.shareservice.savedata('client')
-      this.router.navigate(['/signup'])
+      this.router.navigate(['/signUp'])
     }
-    else if (this.optionname === 'Join as a freelancer') {
+    else if (this.optionname === 'Sign Up as a freelancer') {
       this.shareservice.savedata('freelancer')
-      this.router.navigate(['/signup'])
+      this.router.navigate(['/signUp'])
     }
     else {
       this.toster.error('Role selection error')

@@ -12,15 +12,17 @@
             <div class="row wow fadeInRight" data-wow-delay="300ms">
                 <div class="col-xl-6 mx-auto">
                     <div class="log-reg-form search-modal form-style1 bgc-white p50 p30-sm default-box-shadow1 bdrs12">
-                        <div class="user-type-options">
-                            <div (click)="clickclient()" class="user-type-option">
+                        <div class="d-grid gap-2 mt-4">
+                            <div (click)="clickclient()" class="user-type-option text-center">
                                 <input type="radio" id="clientRadio" name="userType" value="client" checked>
-                                <label for="clientRadio">I'm a client, hiring
+                                <label for="clientRadio" style="width: 103%;">I'm a client, hiring
                                     for a project</label>
                             </div>
-                            <div (click)="clickfreelancer()" class="user-type-option">
+                        </div>
+                        <div class="d-grid gap-2 mt-4">
+                            <div (click)="clickfreelancer()" class="user-type-option text-center">
                                 <input type="radio" id="freelancerRadio" name="userType" value="freelancer">
-                                <label for="freelancerRadio">I'm a
+                                <label for="freelancerRadio" style="width: 103%;">I'm a
                                     freelancer, looking for work</label>
                             </div>
                         </div>
