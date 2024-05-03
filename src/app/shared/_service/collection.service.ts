@@ -5,11 +5,16 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/compat/
 
 import { Observable, map } from 'rxjs';
 
+import { HttpClient } from '@angular/common/http';
+import { switchMap, catchError } from 'rxjs/operators';
+import { forkJoin, throwError } from 'rxjs';
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class CollectionService {
-  constructor(private firestore: AngularFirestore, private storage: AngularFireStorage) { }
+  constructor(private firestore: AngularFirestore, private storage: AngularFireStorage, private http: HttpClient) { }
 
   getData(collectionName: string): Observable<any[]> {
     return this.firestore.collection(collectionName).snapshotChanges().pipe(
@@ -82,4 +87,5 @@ export class CollectionService {
     const fileRef = this.storage.ref(filePath);
     return fileRef.getDownloadURL();
   }
+
 }
