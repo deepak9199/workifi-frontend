@@ -25,11 +25,11 @@ export class RoleComponent {
   routtosignup() {
     if (this.optionname === 'Sign Up as a client') {
       this.shareservice.savedata('client')
-      this.router.navigate(['/signUp'])
+      this.router.navigate(['/signup'])
     }
     else if (this.optionname === 'Sign Up as a freelancer') {
       this.shareservice.savedata('freelancer')
-      this.router.navigate(['/signUp'])
+      this.router.navigate(['/signup'])
     }
     else {
       this.toster.error('Role selection error')

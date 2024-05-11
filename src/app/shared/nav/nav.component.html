@@ -172,18 +172,36 @@
                                     "><span class="title">Category</span> <span class="arrow "></span></a>
 
                                     <ul class="sub-menu  ">
-                                        <li class="menu-active ">
-                                            <a><span class="title">How to Hire</span><span class="title "></span></a>
-
+                                        <li class="">
+                                            <a>Development and IT</a>
                                         </li>
-                                        <li class="menu-active ">
-                                            <a><span class="title">How to Grab Work</span><span
-                                                    class="title "></span></a>
-
+                                        <li class="">
+                                            <a>Design and creative</a>
                                         </li>
-                                        <li class="menu-active ">
-                                            <a><span class="title">FEQ</span><span class="title "></span></a>
-
+                                        <li class="">
+                                            <a>Sales and Marketing</a>
+                                        </li>
+                                        <li class="">
+                                            <a>Writing and Translation</a>
+                                        </li>
+                                        <li class="">
+                                            <a>Admin & Customer Support</a>
+                                        </li>
+                                        <li class="">
+                                            <a>Finance & Accounting</a>
+                                        </li>
+                                        <li class="">
+                                            <a>HR & Training</a>
+                                        </li>
+                                        <li class="">
+                                            <a>Legal</a>
+                                        </li>
+                                        <li class="">
+                                            <a>Engineering &
+                                                Architecture</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="">Hire Freelancers</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -368,7 +386,7 @@
                                     </ul>
                                 </li>
                                 <li class="visible_list menu-active  "><a class="list-item
-                                "><span class="title">Messages</span></a></li>
+                                " [routerLink]="['/message']"><span class="title">Messages</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -392,7 +410,8 @@
                                                     <p class="mb-0 text-thm">4 hours ago</p>
                                                 </div>
                                             </div>
-                                            <div class="d-grid"><a class="ud-btn btn-thm w-100" href="message.php">View
+                                            <div class="d-grid"><a class="ud-btn btn-thm w-100"
+                                                    [routerLink]="['/message']">View
                                                     All Messages<i class="fal fa-arrow-right-long"></i></a></div>
                                         </div>
                                     </div>
@@ -468,7 +487,7 @@
             </div>
         </div>
     </div>
-    <div class="body_content">
+    <!-- <div class="body_content">
         <section class="categories_list_section overflow-hidden border-0">
             <div class="container bgc-thm3">
                 <div class="row">
@@ -490,7 +509,7 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
 </div>
 <div *ngIf="isrole('freelancer')">
     <header class="header-nav nav-innerpage-style bg-transparent zi9 position-relative main-menu border-0"
@@ -562,7 +581,7 @@
                                     </ul>
                                 </li>
                                 <li class="visible_list menu-active  "><a class="list-item
-                                "><span class="title">Messages</span></a></li>
+                                " [routerLink]="['/message']"><span class="title">Messages</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -586,7 +605,6 @@
                                                     <p class="mb-0 text-thm">4 hours ago</p>
                                                 </div>
                                             </div>
-
                                             <div class="d-grid"><a class="ud-btn btn-thm w-100">View
                                                     All Messages<i class="fal fa-arrow-right-long"></i></a></div>
                                         </div>
@@ -713,7 +731,7 @@
             </div>
         </div>
     </div>
-    <div class="body_content">
+    <!-- <div class="body_content">
         <section class="categories_list_section overflow-hidden border-0">
             <div class="container bgc-thm3">
                 <div class="row">
@@ -735,5 +753,5 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
 </div>

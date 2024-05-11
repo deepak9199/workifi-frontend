@@ -14,7 +14,7 @@ import { forkJoin, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class CollectionService {
-  constructor(private firestore: AngularFirestore, private storage: AngularFireStorage, private http: HttpClient) { }
+  constructor(private firestore: AngularFirestore, private storage: AngularFireStorage) { }
 
   getData(collectionName: string): Observable<any[]> {
     return this.firestore.collection(collectionName).snapshotChanges().pipe(

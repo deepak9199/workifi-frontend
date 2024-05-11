@@ -36,6 +36,7 @@ import { FreelancerListComponent } from './system/client/freelancer-list/freelan
 import { ProposalToFreelancerComponent } from './system/client/proposal-to-freelancer/proposal-to-freelancer.component';
 import { ClientHomeComponent } from './system/client/client-home/client-home.component';
 import { FreelancerProposalsComponent } from './system/freelancer/freelancer-proposals/freelancer-proposals.component';
+import { MessagesComponent } from './system/messages/messages.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,8 @@ import { FreelancerProposalsComponent } from './system/freelancer/freelancer-pro
     ProposalToFreelancerComponent,
     ProfileComponent,
     ClientHomeComponent,
-    FreelancerProposalsComponent
+    FreelancerProposalsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

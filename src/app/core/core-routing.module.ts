@@ -16,6 +16,7 @@ import { ProposalToFreelancerComponent } from '../system/client/proposal-to-free
 import { FreelancerListComponent } from '../system/client/freelancer-list/freelancer-list.component';
 import { ClientHomeComponent } from '../system/client/client-home/client-home.component';
 import { FreelancerProposalsComponent } from '../system/freelancer/freelancer-proposals/freelancer-proposals.component';
+import { MessagesComponent } from '../system/messages/messages.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'role', component: RoleComponent },
+  { path: 'message', component: MessagesComponent },
 
   {
     path: 'client/manageproject', component: ManageProjectComponent, canActivate: [AuthGuard], data:
@@ -82,6 +84,7 @@ const routes: Routes = [
       role: 'freelancer'
     }
   },
+
 
 
 ];

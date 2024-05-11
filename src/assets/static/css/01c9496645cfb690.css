@@ -73536,7 +73536,7 @@ section {
 
 .main-title .paragraph,
 .main-title2 .paragraph {
-    color: var(--headings-color);
+    color: white;
     font-family: var(--title-font-family)
 }
 
@@ -76207,7 +76207,7 @@ textarea {
 }
 
 .freelancer-style1 {
-    background-color: #fff;
+    background-color: #a7bef2;
     border-radius: 4px;
     -o-box-shadow: 0 6px 15px rgba(64, 79, 104, .05);
     box-shadow: 0 6px 15px rgba(64, 79, 104, .05);
@@ -81331,9 +81331,11 @@ input:focus-visible {
 
 .list-sidebar-style1 .card,
 .sidebar-accordion .card {
+    padding: 15px;
     border: none;
     border-bottom: 1px solid #e9e9e9;
-    margin-top: 10px
+    margin-top: 10px;
+    background-color: #a7bef2;
 }
 
 .list-sidebar-style1 .card:last-child,
@@ -81683,11 +81685,11 @@ input:focus-visible {
 }
 
 .bgc-white {
-    background-color: #fff
+    background-color: #a7bef2
 }
 
 .hover-bgc-color {
-    background-color: #f0efec
+    /* background-color: #f0efec */
 }
 
 .bgc-transparent {
