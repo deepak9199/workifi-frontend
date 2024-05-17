@@ -58,7 +58,10 @@ export class ProfileComponent {
     award: [],
     points: 0,
     updated_date_time: '',
-    proposals: []
+    proposals: [],
+    status: '',
+    pan_card_no: '',
+    loyalty_coins: 0
   }
   fromchangepass = {
     old: '',
@@ -125,16 +128,23 @@ export class ProfileComponent {
     }
   }
   savedata() {
-    this.formProfile.uid = this.token.getUser().uid
-    this.formProfile.points = 1500
-    this.formProfile.created_date_time = (new Date()).toString()
-    this.formProfile.updated_date_time = (new Date()).toString()
-    this.formProfile.education = this.educationlist
-    this.formProfile.skil = this.skilList
-    this.formProfile.work_experience = this.work_experience_list
-    this.formProfile.award = this.awadsList
-    console.log('created')
-    this.saveprofileapi(this.formProfile)
+    if (this.formProfile.pan_card_no != '') {
+      this.formProfile.uid = this.token.getUser().uid
+      this.formProfile.uid = this.token.getUser().uid
+      this.formProfile.loyalty_coins = 50
+      this.formProfile.created_date_time = (new Date()).toString()
+      this.formProfile.updated_date_time = (new Date()).toString()
+      this.formProfile.education = this.educationlist
+      this.formProfile.skil = this.skilList
+      this.formProfile.work_experience = this.work_experience_list
+      this.formProfile.award = this.awadsList
+      console.log('created')
+      this.saveprofileapi(this.formProfile)
+    }
+    else {
+      this.toster.error('Pan Card no. is required')
+    }
+
   }
   updatedata(id: string) {
     this.formProfile.updated_date_time = (new Date()).toString()
@@ -275,5 +285,5 @@ export class ProfileComponent {
       }
     );
   }
- 
+
 }

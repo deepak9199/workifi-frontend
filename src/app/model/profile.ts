@@ -2,6 +2,9 @@
 export interface profile {
     points: number
     uid: string
+    loyalty_coins:number
+    status: string
+    pan_card_no: string
     created_date_time: string
     updated_date_time: string
     image: string
@@ -29,6 +32,9 @@ export interface getprofile {
     id: string
     points: number
     uid: string
+    status: string
+    loyalty_coins:number
+    pan_card_no: string
     created_date_time: string
     updated_date_time: string
     image: string

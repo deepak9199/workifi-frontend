@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     const roles = next.data['role'] as Array<string>;
     if (this.ValidatorChecker(this.token.getToken()) && this.ValidatorChecker(this.token.getUser())) {
       if (roles) {
-        const match = this.token.getUser().role[0]
+        const match = this.token.getUser().role
         // console.log(match + ' ' + roles)
         // console.log(roles)
         if (match == roles) {

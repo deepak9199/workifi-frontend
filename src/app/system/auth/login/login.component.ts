@@ -42,11 +42,12 @@ export class LoginComponent {
     this.loading = true
     this.authService.login(login.email, login.password).subscribe({
       next: (data) => {
+        console.log(data)
         if (data && data.token) {
           this.loading = false
           this.tokenstorage.saveUser(data)
           this.tokenstorage.saveToken(data.token);
-          this.route(this.tokenstorage.getUser().role[0])
+          this.route(this.tokenstorage.getUser().role)
           this.toster.success("Login SuccessFully")
         } else {
           // Handle the case when data or data.token is null

@@ -4,7 +4,7 @@
         <div class="row pb40">
             <div class="col-lg-9">
                 <div class="dashboard_title_area">
-                    <h2>My Profile</h2>
+                    <h2>My Profile - (Loyalty Coins: {{formProfile.loyalty_coins}} )</h2>
                     <p class="text">Lorem ipsum dolor sit amet, consectetur.</p>
                 </div>
             </div>
@@ -35,7 +35,8 @@
                                             (change)="onFileSelected($event)"><a class="upload-btn ml10">Upload
                                             Images</a></label>
                                 </div>
-                                <p class="text mb-0">Max file size is 1MB, Minimum dimension: 330x300 And Suitable files
+                                <p class="text mb-0">Max file size is 100kb, Minimum dimension: 330x300 And Suitable
+                                    files
                                     are
                                     .jpg &amp; .png</p>
                             </div>
@@ -46,7 +47,7 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="mb20"><label
-                                            class="heading-color ff-heading fw500 mb10">Username</label><input
+                                            class="heading-color ff-heading fw500 mb10">Name</label><input
                                             [(ngModel)]="formProfile.username" id="username" name="username"
                                             class="form-control" placeholder="Enter username" type="text"></div>
                                 </div>
@@ -60,6 +61,13 @@
                                     <div class="mb20"><label class="heading-color ff-heading fw500 mb10">Phone
                                             Number</label><input [(ngModel)]="formProfile.phone" id="phone" name="phone"
                                             class="form-control" placeholder="Enter phone" type="text">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20"><label class="heading-color ff-heading fw500 mb10">PAN
+                                            Card no.</label><input [(ngModel)]="formProfile.pan_card_no"
+                                            id="pan_card_no" name="pan_card_no" class="form-control"
+                                            placeholder="Enter Pan card no." type="text">
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
