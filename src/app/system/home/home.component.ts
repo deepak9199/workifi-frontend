@@ -17,7 +17,7 @@ export class HomeComponent {
 
   ngOnInit() {
     if (this.ValidatorChecker(this.tokenstorage.getToken())) {
-      switch (this.tokenstorage.getUser().role[0]) {
+      switch (this.tokenstorage.getUser().role) {
         case 'client':
           // Assuming tokenstorage is accessible and getUser() returns an object with a 'role' array
           this.router.navigate(['/client/home']);

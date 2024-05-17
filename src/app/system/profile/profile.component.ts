@@ -86,6 +86,8 @@ export class ProfileComponent {
   ngOnInit() {
     if (this.ValidatorChecker(this.token.getUser())) {
       this.formProfile.email = this.token.getUser().userCredential.user.email
+      this.formProfile.username = this.token.getUser().name
+      this.formProfile.phone = this.token.getUser().phone
       this.getprofileapi()
     }
     else {
@@ -131,13 +133,19 @@ export class ProfileComponent {
     if (this.formProfile.pan_card_no != '') {
       this.formProfile.uid = this.token.getUser().uid
       this.formProfile.uid = this.token.getUser().uid
-      this.formProfile.loyalty_coins = 50
+      if (this.token.getUser().role === 'freelancer') {
+        this.formProfile.loyalty_coins = 50
+      }
+      else {
+        this.formProfile.loyalty_coins = 0
+      }
       this.formProfile.created_date_time = (new Date()).toString()
       this.formProfile.updated_date_time = (new Date()).toString()
       this.formProfile.education = this.educationlist
       this.formProfile.skil = this.skilList
       this.formProfile.work_experience = this.work_experience_list
       this.formProfile.award = this.awadsList
+      this.formProfile.status = 'active'
       console.log('created')
       this.saveprofileapi(this.formProfile)
     }

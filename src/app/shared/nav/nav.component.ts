@@ -40,7 +40,7 @@ export class NavComponent {
   isrole(data: string): boolean {
 
     if (this.ValidatorChecker(this.tokenstorage.getUser())) {
-      let role: string = this.tokenstorage.getUser().role[0]
+      let role: string = this.tokenstorage.getUser().role
       if (role === data) {
         return true
       }
