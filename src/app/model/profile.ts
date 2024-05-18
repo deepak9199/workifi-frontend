@@ -7,6 +7,7 @@ export interface profile {
     pan_card_no: string
     created_date_time: string
     updated_date_time: string
+    transaction_rewards:number
     image: string
     username: string
     email: string
@@ -37,6 +38,7 @@ export interface getprofile {
     pan_card_no: string
     created_date_time: string
     updated_date_time: string
+    transaction_rewards:number
     image: string
     username: string
     email: string

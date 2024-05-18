@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { TokenStorageService } from '../../shared/_service/token-storage.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../../shared/_service/auth.service';
+import { Transaction, Transaction_detail } from '../../model/Transaction ';
+import { error } from 'console';
 
 @Component({
   selector: 'app-profile',
@@ -61,7 +63,8 @@ export class ProfileComponent {
     proposals: [],
     status: '',
     pan_card_no: '',
-    loyalty_coins: 0
+    loyalty_coins: 0,
+    transaction_rewards: 0
   }
   fromchangepass = {
     old: '',
@@ -71,6 +74,7 @@ export class ProfileComponent {
   private profileid: string = ''
   skilList: string[] = []
   educationlist: education[] = []
+  private Transactionlist: Transaction[] = []
   work_experience_list: work_experience[] = []
   awadsList: award[] = []
   uploadProgress: number = 0
@@ -89,6 +93,7 @@ export class ProfileComponent {
       this.formProfile.username = this.token.getUser().name
       this.formProfile.phone = this.token.getUser().phone
       this.getprofileapi()
+
     }
     else {
       this.route.navigate(['/'])
@@ -136,7 +141,7 @@ export class ProfileComponent {
       if (this.token.getUser().role === 'freelancer') {
         this.formProfile.loyalty_coins = 50
       }
-      else {
+      else if (this.token.getUser().role === 'client') {
         this.formProfile.loyalty_coins = 0
       }
       this.formProfile.created_date_time = (new Date()).toString()
@@ -161,6 +166,7 @@ export class ProfileComponent {
     this.formProfile.work_experience = this.work_experience_list
     this.formProfile.award = this.awadsList
     console.log('Updated')
+    console.log(this.formProfile)
     this.updateprofileapi(this.formProfile, id)
   }
   deletedata(type: string, index: number) {
@@ -211,6 +217,7 @@ export class ProfileComponent {
     this.loading = true
     this.collectionservice.getData('profile').subscribe({
       next: (data) => {
+        // console.log(data)
         let obj = data.filter((obj: profile) => obj.uid === this.token.getUser().uid)
         if (obj.length != 0) {
           this.formProfile = obj[0]
@@ -219,7 +226,7 @@ export class ProfileComponent {
           this.educationlist = this.formProfile.education
           this.awadsList = this.formProfile.award
           this.profileid = obj[0].id
-
+          this.getTransactionapi()
         }
         else {
           console.log('no profile found')
@@ -293,5 +300,48 @@ export class ProfileComponent {
       }
     );
   }
-
+  private getTransactionapi() {
+    this.collectionservice.getData('transaction').subscribe({
+      next: (data: Transaction_detail[]) => {
+        // let sum: number = 0
+        // this.Transactionlist = data.filter((item: Transaction) => (item.to_id === this.token.getUser().uid && (item.type === 'project')))
+        // this.Transactionlist.map((item: Transaction) => {
+        //   sum = sum + item.amount
+        // })
+        // this.formProfile.transaction_rewards = sum / 10000
+        let transaction_rewards_count = data.filter((item: Transaction) => (item.to_id === this.token.getUser().uid && item.type === 'project')).reduce((sum, item: Transaction) => sum + item.amount, 0) / 10000;
+        // this.formProfile.transaction_rewards = data.filter((item: Transaction) => (item.to_id === this.token.getUser().uid && item.type === 'project')).reduce((sum, item: Transaction) => sum + item.amount, 0) / 10000;
+        if (this.formProfile.transaction_rewards < transaction_rewards_count) {
+          this.formProfile.transaction_rewards = transaction_rewards_count
+          this.addTransactionapi({
+            from_uid: 'Auto',
+            type: 'transaction_reward',
+            to_id: this.token.getUser().uid,
+            utr: '',
+            amount: 100 * 0.20,
+            description: 'Transaction reward Above 10000',
+            login_user: this.token.getUser().uid,
+            createdTime: new Date().toString()
+          });
+        }
+        else {
+          console.error('No transaction_rewards_count is not greater', this.formProfile.transaction_rewards, transaction_rewards_count)
+        }
+      },
+      error: (err: any) => {
+        console.error(err)
+      }
+    })
+  }
+  private addTransactionapi(data: Transaction) {
+    this.collectionservice.addDocumnet('transaction', data).subscribe({
+      next: (data: any) => {
+        console.log(data)
+        this.updateprofileapi(this.formProfile, this.profileid)
+      },
+      error: (error: any) => {
+        console.log(error)
+      }
+    })
+  }
 }

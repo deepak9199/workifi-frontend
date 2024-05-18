@@ -37,6 +37,8 @@ import { ProposalToFreelancerComponent } from './system/client/proposal-to-freel
 import { ClientHomeComponent } from './system/client/client-home/client-home.component';
 import { FreelancerProposalsComponent } from './system/freelancer/freelancer-proposals/freelancer-proposals.component';
 import { MessagesComponent } from './system/messages/messages.component';
+import { NoPageFoundComponent } from './system/no-page-found/no-page-found.component';
+import { TransactionComponent } from './system/transaction/transaction.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +62,9 @@ import { MessagesComponent } from './system/messages/messages.component';
     ProfileComponent,
     ClientHomeComponent,
     FreelancerProposalsComponent,
-    MessagesComponent
+    MessagesComponent,
+    NoPageFoundComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,

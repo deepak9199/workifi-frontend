@@ -17,16 +17,18 @@ import { FreelancerListComponent } from '../system/client/freelancer-list/freela
 import { ClientHomeComponent } from '../system/client/client-home/client-home.component';
 import { FreelancerProposalsComponent } from '../system/freelancer/freelancer-proposals/freelancer-proposals.component';
 import { MessagesComponent } from '../system/messages/messages.component';
+import { NoPageFoundComponent } from '../system/no-page-found/no-page-found.component';
+import { TransactionComponent } from '../system/transaction/transaction.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'role', component: RoleComponent },
   { path: 'message', component: MessagesComponent },
-
+  { path: 'transaction', component: TransactionComponent },
   {
     path: 'client/manageproject', component: ManageProjectComponent, canActivate: [AuthGuard], data:
     {
@@ -84,7 +86,12 @@ const routes: Routes = [
       role: 'freelancer'
     }
   },
-
+  {
+    path: '', redirectTo: '/home', pathMatch: 'full'
+  },
+  {
+    path: '**', component: NoPageFoundComponent
+  },
 
 
 ];

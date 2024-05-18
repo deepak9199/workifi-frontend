@@ -29,11 +29,15 @@
                             </div>
                             <div class="profile-content ml20 ml0-xs">
                                 <div class="d-flex align-items-center my-3">
-                                    <a (click)="onDeleteFile(formProfile.image)" class="tag-delt text-thm2"><span
+                                    <a data-bs-toggle="modal" href="#walletModalToggle"
+                                        class="tag-delt text-thm2 "><span class="flaticon-wallet text-thm2"></span></a>
+                                    <a (click)="onDeleteFile(formProfile.image)" class="tag-delt text-thm2 ml10"><span
                                             class="flaticon-delete text-thm2"></span></a>
                                     <label><input accept=".png, .jpg, .jpeg" class="d-none" type="file"
                                             (change)="onFileSelected($event)"><a class="upload-btn ml10">Upload
-                                            Images</a></label>
+                                            Images</a>
+                                    </label>
+
                                 </div>
                                 <p class="text mb-0">Max file size is 100kb, Minimum dimension: 330x300 And Suitable
                                     files
@@ -570,6 +574,43 @@
                             placeholder="Description" name="text" cols="30" rows="2"></textarea></div><button
                         type="submit" class="ud-btn btn-thm" data-bs-dismiss="modal" aria-label="Close">Add<i
                             class="fal fa-arrow-right-long"></i></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model wallet -->
+<div class="modal fade" id="walletModalToggle" tabindex="-1" aria-labelledby="proposalModalLabel" style="display: none;"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content position-relative"><button type="button" class="btn-close position-absolute"
+                data-bs-dismiss="modal" aria-label="Close" style="top: 10px; right: 10px; z-index: 9;"></button>
+            <div class="modal-body p-4">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3"><label class="form-label">Ballacne</label><input disabled
+                                    [(ngModel)]="formProfile.loyalty_coins" id="from" name="from" class="form-control"
+                                    type="number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <button type="submit" class="ud-btn btn-thm w-100" data-bs-dismiss="modal"
+                                    aria-label="Close">Add<i class="fal fa-arrow-right-long"></i></button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <button [routerLink]="['/transaction']" type="submit" class="ud-btn btn-thm w-100"
+                                    data-bs-dismiss="modal" aria-label="Close">Transaction <i
+                                        class="fal fa-arrow-right-long"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
                 </form>
             </div>
         </div>

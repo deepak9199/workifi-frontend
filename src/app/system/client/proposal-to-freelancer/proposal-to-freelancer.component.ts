@@ -41,7 +41,8 @@ export class ProposalToFreelancerComponent {
     id: '',
     status: '',
     loyalty_coins: 0,
-    pan_card_no: ''
+    pan_card_no: '',
+    transaction_rewards: 0
   }
   formProposals: proposal = {
     uid: '',
