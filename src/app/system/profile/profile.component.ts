@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../shared/_service/auth.service';
 import { Transaction, Transaction_detail } from '../../model/Transaction ';
 import { error } from 'console';
+import { SharedService } from '../../shared/_service/shared.service';
 
 @Component({
   selector: 'app-profile',
@@ -84,16 +85,15 @@ export class ProfileComponent {
     private token: TokenStorageService,
     private route: Router,
     private auth: AuthService,
-
+    private sharedservice: SharedService
   ) { }
-
   ngOnInit() {
     if (this.ValidatorChecker(this.token.getUser())) {
       this.formProfile.email = this.token.getUser().userCredential.user.email
       this.formProfile.username = this.token.getUser().name
       this.formProfile.phone = this.token.getUser().phone
       this.getprofileapi()
-
+      this.trigertrefreshnavbar()
     }
     else {
       this.route.navigate(['/'])
@@ -343,5 +343,8 @@ export class ProfileComponent {
         console.log(error)
       }
     })
+  }
+  private trigertrefreshnavbar() {
+    this.sharedservice.triggerFunction();
   }
 }

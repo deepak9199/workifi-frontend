@@ -233,30 +233,40 @@
                                                     Proposal<i class="fal fa-arrow-right-long"></i></a></div>
                                         </div>
                                         <div class="freelancer-style1 service-single mb-0 bdrs8">
-                                            <h4>About Buyer</h4>
+                                            <h4>About Client</h4>
                                             <div class="wrapper d-flex align-items-center mt20">
-                                                <div class="thumb position-relative mb25"><img alt="client"
-                                                        loading="lazy" width="60" height="60" decoding="async"
-                                                        data-nimg="1" class="rounded-circle mx-auto"
-                                                        src="assets/ea-1ff1e.png" style="color: transparent;"></div>
+                                                <div class="thumb position-relative mb25">
+                                                    <img *ngIf="client.image == ''" alt="profile" loading="lazy"
+                                                        width="71" height="71" decoding="async" data-nimg="1"
+                                                        class="rounded-circle wa-xs" src="assets/user033f.png"
+                                                        style="color: transparent; height: 71px; width: 71px; object-fit: cover;">
+                                                    <img *ngIf="client.image != ''" alt="profile" loading="lazy"
+                                                        width="71" height="71" decoding="async" data-nimg="1"
+                                                        class="rounded-circle wa-xs" src="{{client.image}}"
+                                                        style="color: transparent; height: 71px; width: 71px; object-fit: cover;">
+                                                </div>
                                                 <div class="ml20">
-                                                    <h5 class="title mb-1">Dropbox</h5>
-                                                    <p class="mb-0">Digital Marketing</p>
-                                                    <div class="review">
+                                                    <h5 class="title mb-1"> </h5>
+                                                    <p class="mb-0"> {{client.username}}</p>
+                                                    <!-- <div class="review">
                                                         <p><i class="fas fa-star fz10 review-color pr10"></i><span
                                                                 class="dark-color">4.9</span> (595 reviews)</p>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <hr class="opacity-100">
                                             <div class="details">
                                                 <div class="fl-meta d-flex align-items-center justify-content-between">
                                                     <a class="meta fw500 text-start">Location<br><span
-                                                            class="fz14 fw400">London</span></a><a
-                                                        class="meta fw500 text-start">Employees<br><span
-                                                            class="fz14 fw400">11-20</span></a><a
-                                                        class="meta fw500 text-start">Departments<br><span
-                                                            class="fz14 fw400">Designer</span></a>
+                                                            class="fz14 fw400"> {{client.country}} {{client.city}}
+                                                        </span>
+                                                    </a>
+                                                    <a class="meta fw500 text-start"> Tag Line <br><span
+                                                            class="fz14 fw400">{{client.tagline}} </span>
+                                                    </a>
+                                                    <a class="meta fw500 text-start">Departments<br><span
+                                                            class="fz14 fw400">Designer</span>
+                                                    </a>
                                                 </div>
                                             </div>
                                             <div class="d-grid mt30"><a class="ud-btn btn-thm-border"

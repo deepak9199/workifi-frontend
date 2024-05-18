@@ -206,12 +206,12 @@
                                     </ul>
                                 </li>
                                 <li class="visible_list menu-active  "><a class="list-item
-                                    "><span class="title">Core Bussiness Solution</span> <span
+                                    "><span class="title">Core Business Solution</span> <span
                                             class="arrow "></span></a>
 
                                     <ul class="sub-menu  ">
                                         <li class="menu-active ">
-                                            <a><span class="title">Bussiness Solution</span><span
+                                            <a><span class="title">Business Solution</span><span
                                                     class="title "></span></a>
 
                                         </li>
@@ -662,9 +662,16 @@
                                     </div>
                                 </li>
                                 <li class="d-none d-sm-block">
-                                    <a class="btn" data-bs-toggle="dropdown"><img alt="user.png" loading="lazy"
-                                            width="50" height="50" decoding="async" data-nimg="1"
-                                            style="color:transparent" src="assets/user033f.png" /></a>
+                                    <a class="btn" data-bs-toggle="dropdown">
+                                        <img *ngIf="profile_image == ''" alt="profile" loading="lazy" width="50"
+                                            height="50" decoding="async" data-nimg="1" class="rounded-circle wa-xs"
+                                            src="assets/user033f.png"
+                                            style="color: transparent; height: 50px; width: 50px; object-fit: cover;">
+                                        <img *ngIf="profile_image != ''" alt="profile" loading="lazy" width="50"
+                                            height="50" decoding="async" data-nimg="1" class="rounded-circle wa-xs"
+                                            src="{{profile_image}}"
+                                            style="color: transparent; height: 50px; width: 50px; object-fit: cover;">
+                                    </a>
                                     <div class="dropdown-menu">
                                         <div [routerLink]="['/profile']" style="cursor: pointer;"
                                             class="dboard_notific_dd px30 pt10 pb15">

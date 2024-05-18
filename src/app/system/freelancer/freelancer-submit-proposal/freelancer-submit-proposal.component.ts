@@ -5,6 +5,7 @@ import { SharedService } from '../../../shared/_service/shared.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
+import { profile } from '../../../model/profile';
 
 @Component({
   selector: 'app-freelancer-submit-proposal',
@@ -32,6 +33,35 @@ export class FreelancerSubmitProposalComponent {
     upload: '',
     proposals: [],
     uid: ''
+  }
+  client: profile = {
+    points: 0,
+    uid: '',
+    loyalty_coins: 0,
+    status: '',
+    pan_card_no: '',
+    created_date_time: '',
+    updated_date_time: '',
+    transaction_rewards: 0,
+    image: '',
+    username: '',
+    email: '',
+    phone: 0,
+    tagline: '',
+    hourly_rate: '',
+    gender: '',
+    specialization: '',
+    type: '',
+    country: '',
+    city: '',
+    language: '',
+    language_level: '',
+    introduce_yourself: '',
+    skil: [],
+    education: [],
+    work_experience: [],
+    award: [],
+    proposals: []
   }
   formProposals: proposal = {
     uid: '',
@@ -62,7 +92,6 @@ export class FreelancerSubmitProposalComponent {
     }
     this.finalsubmit(proposal)
   }
-
   finalsubmit(data: proposal) {
     let proposals: proposal[] = []
     proposals = this.projects.proposals
@@ -111,5 +140,26 @@ export class FreelancerSubmitProposalComponent {
     else {
       return true
     }
+  }
+  private getprofileapi() {
+    this.loading = true
+    this.collectionservice.getData('profile').subscribe({
+      next: (data) => {
+        // console.log(data)
+        let obj = data.filter((obj: profile) => obj.uid === this.projects.uid)
+        if (obj.length != 0) {
+          this.client = obj[0]
+        }
+        else {
+          console.log('no profile found')
+        }
+        this.loading = false
+      },
+      error: (error) => {
+        console.error(error)
+        this.loading = false
+      },
+
+    })
   }
 }

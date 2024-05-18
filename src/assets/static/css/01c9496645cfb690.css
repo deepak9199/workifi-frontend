@@ -76243,7 +76243,7 @@ textarea {
 }
 
 .freelancer-style1.service-single {
-    background-color: #fff;
+    background-color: #a7bef2;
     border: 1px solid #e9e9e9;
     border-radius: 4px;
     -o-box-shadow: 0 6px 15px rgba(64, 79, 104, .05);
@@ -81390,7 +81390,7 @@ input:focus-visible {
 
 .price-widget,
 .share-save-widget .icon {
-    background-color: #fff;
+    background-color: #a7bef2;
     -o-box-shadow: 0 6px 15px rgba(64, 79, 104, .05);
     box-shadow: 0 6px 15px rgba(64, 79, 104, .05)
 }

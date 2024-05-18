@@ -3,6 +3,7 @@ import { SharedService } from '../_service/shared.service';
 import { TokenStorageService } from '../_service/token-storage.service';
 import { CollectionService } from '../_service/collection.service';
 import { users } from '../../model/user';
+import { profile } from '../../model/profile';
 
 @Component({
   selector: 'app-nav',
@@ -12,6 +13,7 @@ import { users } from '../../model/user';
 export class NavComponent {
   client: boolean = false
   islogin: boolean = false
+  profile_image: string = ''
   constructor(
     private sharedservice: SharedService,
     private tokenstorage: TokenStorageService,
@@ -22,6 +24,7 @@ export class NavComponent {
     this.gettrigertrefresh()
     // this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
     this.islogin = this.ValidatorChecker(this.tokenstorage.getToken())
+    this.getprofileapi()
   }
   private gettrigertrefresh() {
     this.sharedservice.functionTriggerObservable.subscribe(() => {
@@ -57,5 +60,23 @@ export class NavComponent {
       }
     }
 
+  }
+  private getprofileapi() {
+    this.dataservice.getData('profile').subscribe({
+      next: (data) => {
+        // console.log(data)
+        let obj = data.filter((obj: profile) => obj.uid === this.tokenstorage.getUser().uid)
+        if (obj.length != 0) {
+          this.profile_image = obj[0].image
+        }
+        else {
+          console.log('no profile found')
+        }
+      },
+      error: (error) => {
+        console.error(error)
+      },
+
+    })
   }
 }
