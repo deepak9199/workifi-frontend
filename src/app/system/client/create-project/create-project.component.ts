@@ -3,6 +3,7 @@ import { CollectionService } from '../../../shared/_service/collection.service';
 import { ToastrService } from 'ngx-toastr';
 import { createProject } from '../../../model/projects';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
+import { proposal } from '../../../model/profile';
 
 @Component({
   selector: 'app-create-project',
@@ -30,6 +31,7 @@ export class CreateProjectComponent {
     proposals: [],
     uid: ''
   }
+  
   constructor(
     private collectionservice: CollectionService,
     private toster: ToastrService,

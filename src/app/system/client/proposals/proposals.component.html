@@ -40,7 +40,9 @@
                                                     <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                             class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
                                                         <!-- -->April 01, 2023</p>
-                                                    <p class="mb-0 fz14 list-inline-item mb5-sm"><i
+                                                    <p (click)="setPorposal(obj.proposals)" data-bs-toggle="modal"
+                                                        data-bs-target="#porposalListModalToggle"
+                                                        class="mb-0 fz14 list-inline-item mb5-sm"><i
                                                             class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
                                                         <!-- --> {{obj.proposals.length}} Received</p>
                                                 </div>
@@ -83,6 +85,44 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- model wallet -->
+<div class="modal fade-lg" id="porposalListModalToggle" tabindex="-1" aria-labelledby="proposalModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content position-relative"><button type="button" class="btn-close position-absolute"
+                data-bs-dismiss="modal" aria-label="Close" style="top: 10px; right: 10px; z-index: 9;"></button>
+            <div class="modal-body p-4">
+                <div class="packages_table table-responsive">
+                    <table class="table-style3 table at-savesearch">
+                        <thead class="t-head">
+                            <tr>
+                                <th scope="col">Freelancer</th>
+                                <th scope="col">Cover Letter</th>
+                                <th scope="col">Hourly price</th>
+                                <th scope="col">Estimated Hours</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="t-body">
+                            <tr *ngFor="let porposalobj of porposal_list;let i=index">
+                                <th scope="row">
+                                    <div># {{i+1}} <span class="ms-3"> {{porposalobj.uid}} </span></div>
+                                </th>
+                                <td class="vam"> {{porposalobj.cover_letter}} </td>
+                                <td class="vam"> {{porposalobj.hourly_price}} </td>
+                                <td class="vam"><span class="pending-style style1  "> {{porposalobj.Estimated_Hours}}
+                                    </span></td>
+                                <td class="vam"><a class="table-action fz15 fw500 text-thm2" id="view"><span
+                                            class="flaticon-website me-2 vam"></span> View</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>

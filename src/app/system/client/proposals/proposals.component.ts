@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CollectionService } from '../../../shared/_service/collection.service';
-import { Project } from '../../../model/projects';
+import { Project, proposal } from '../../../model/projects';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
 import { error } from 'console';
 
@@ -12,6 +12,7 @@ import { error } from 'console';
 export class ProposalsComponent {
   loading: boolean = false
   projects: Project[] = []
+  porposal_list: proposal[] = []
   constructor(
     private collectionservice: CollectionService,
     private token: TokenStorageService
@@ -33,5 +34,8 @@ export class ProposalsComponent {
         console.error(err)
       }
     })
+  }
+  setPorposal(data: proposal[]) {
+    this.porposal_list = data
   }
 }
