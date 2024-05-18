@@ -29,7 +29,8 @@ export class CreateProjectComponent {
     status: '',
     upload: '',
     proposals: [],
-    uid: ''
+    uid: '',
+    assign_to: ''
   }
   
   constructor(
