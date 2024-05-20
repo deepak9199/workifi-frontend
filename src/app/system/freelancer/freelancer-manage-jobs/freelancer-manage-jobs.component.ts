@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Project } from '../../../model/projects';
 import { CollectionService } from '../../../shared/_service/collection.service';
+import { Token } from '@angular/compiler';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-manage-project',
-  templateUrl: './manage-project.component.html',
-  styleUrl: './manage-project.component.css'
+  selector: 'app-freelancer-manage-jobs',
+  templateUrl: './freelancer-manage-jobs.component.html',
+  styleUrl: './freelancer-manage-jobs.component.css'
 })
-export class ManageProjectComponent {
+export class FreelancerManageJobsComponent {
 
   loading: boolean = false
   postedprojects: boolean = false
@@ -23,7 +24,8 @@ export class ManageProjectComponent {
   activeTab: string = '';
   constructor(
     private collectionservice: CollectionService,
-    private toster: ToastrService
+    private toster: ToastrService,
+    private token: TokenStorageService
   ) { }
 
   ngOnInit() {
@@ -35,8 +37,8 @@ export class ManageProjectComponent {
     this.loading = true
     this.collectionservice.getData("projects").subscribe({
       next: (data: Project[]) => {
-        this.globalprojects = data
-        this.projecttabtab('posted')
+        this.globalprojects = data.filter((item: Project) => item.assign_to === this.token.getUser().uid)
+        this.projecttabtab('ongoing')
         this.loading = false
       },
       error: (error) => {
@@ -117,8 +119,7 @@ export class ManageProjectComponent {
       }
     }
   }
-  conform(index: number) {
-
+  submit(index: number) {
+    this.globalprojects[index].submit_status = 'submit'
   }
-
 }

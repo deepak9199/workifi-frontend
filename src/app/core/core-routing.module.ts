@@ -19,6 +19,7 @@ import { FreelancerProposalsComponent } from '../system/freelancer/freelancer-pr
 import { MessagesComponent } from '../system/messages/messages.component';
 import { NoPageFoundComponent } from '../system/no-page-found/no-page-found.component';
 import { TransactionComponent } from '../system/transaction/transaction.component';
+import { FreelancerManageJobsComponent } from '../system/freelancer/freelancer-manage-jobs/freelancer-manage-jobs.component';
 
 const routes: Routes = [
 
@@ -76,6 +77,12 @@ const routes: Routes = [
   },
   {
     path: 'freelancer/proposals', component: FreelancerSubmitProposalComponent, canActivate: [AuthGuard], data:
+    {
+      role: 'freelancer'
+    }
+  },
+  {
+    path: 'freelancer/managejobs', component: FreelancerManageJobsComponent, canActivate: [AuthGuard], data:
     {
       role: 'freelancer'
     }

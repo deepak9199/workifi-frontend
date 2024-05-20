@@ -30,7 +30,8 @@ export class CreateProjectComponent {
     upload: '',
     proposals: [],
     uid: '',
-    assign_to: ''
+    assign_to: '',
+    submit_status: ''
   }
   
   constructor(

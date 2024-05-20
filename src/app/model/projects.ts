@@ -16,6 +16,7 @@ export interface createProject {
     status: string
     upload: string
     assign_to: string
+    submit_status:string
     proposals: string[]
 }
 
@@ -38,6 +39,7 @@ export interface Project {
     status: string
     upload: string
     assign_to: string
+    submit_status:string
     proposals: proposal[]
 }
 

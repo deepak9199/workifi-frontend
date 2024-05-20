@@ -3,6 +3,8 @@ import { CollectionService } from '../../../shared/_service/collection.service';
 import { Project, proposal } from '../../../model/projects';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
 import { error } from 'console';
+import { subscribe } from 'diagnostics_channel';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-proposals',
@@ -12,10 +14,32 @@ import { error } from 'console';
 export class ProposalsComponent {
   loading: boolean = false
   projects: Project[] = []
-  porposal_list: proposal[] = []
+  selected_project: Project = {
+    id: '',
+    uid: '',
+    title: '',
+    category: '',
+    freelancertype: '',
+    pricetype: '',
+    cost: 0,
+    projectduration: '',
+    level: '',
+    country: '',
+    city: '',
+    language: '',
+    languageslevel: '',
+    skills: '',
+    projectdetail: '',
+    status: '',
+    upload: '',
+    assign_to: '',
+    proposals: [],
+    submit_status: ''
+  }
   constructor(
     private collectionservice: CollectionService,
-    private token: TokenStorageService
+    private token: TokenStorageService,
+    private toster: ToastrService
   ) { }
 
   ngOnInit() {
@@ -35,7 +59,26 @@ export class ProposalsComponent {
       }
     })
   }
-  setPorposal(data: proposal[]) {
-    this.porposal_list = data
+  setPorposal(data: Project) {
+    this.selected_project = data
+  }
+  assignto(data: Project, assignto: string) {
+    data.assign_to = assignto
+    data.status = 'ongoing'
+    data.proposals = []
+    this.updateproject(data)
+  }
+  updateproject(data: Project) {
+    this.loading = true
+    this.collectionservice.updateDocument('projects', data.id, data).subscribe({
+      next: (data) => {
+        this.toster.success('Accepted')
+        this.loading = false
+      },
+      error: (err) => {
+        this.toster.error(err)
+        this.loading = false
+      }
+    })
   }
 }

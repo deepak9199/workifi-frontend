@@ -40,7 +40,7 @@
                                                     <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                             class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
                                                         <!-- -->April 01, 2023</p>
-                                                    <p (click)="setPorposal(obj.proposals)" data-bs-toggle="modal"
+                                                    <p (click)="setPorposal(obj)" data-bs-toggle="modal"
                                                         data-bs-target="#porposalListModalToggle"
                                                         class="mb-0 fz14 list-inline-item mb5-sm"><i
                                                             class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
@@ -109,7 +109,7 @@
                             </tr>
                         </thead>
                         <tbody class="t-body">
-                            <tr *ngFor="let porposalobj of porposal_list;let i=index">
+                            <tr *ngFor="let porposalobj of selected_project.proposals;let i=index">
                                 <th scope="row">
                                     <div># {{i+1}} <span class="ms-3"> {{porposalobj.uid}} </span></div>
                                 </th>
@@ -118,7 +118,8 @@
                                 <td class="vam"><span class="pending-style style1  "> {{porposalobj.Estimated_Hours}}
                                     </span></td>
                                 <td class="vam">
-                                    <a class="table-action fz15 fw500 text-thm2" id="view"><span
+                                    <a (click)="assignto(selected_project,porposalobj.uid)"
+                                        class="table-action fz15 fw500 text-thm2" id="view"><span
                                             class="flaticon-website me-2 vam"></span> Accept</a>
                                 </td>
                             </tr>

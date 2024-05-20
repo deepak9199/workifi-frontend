@@ -33,7 +33,8 @@ export class FreelancerSubmitProposalComponent {
     upload: '',
     proposals: [],
     uid: '',
-    assign_to: ''
+    assign_to: '',
+    submit_status: ''
   }
   client: profile = {
     points: 0,
