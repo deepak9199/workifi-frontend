@@ -40,6 +40,7 @@ import { MessagesComponent } from './system/messages/messages.component';
 import { NoPageFoundComponent } from './system/no-page-found/no-page-found.component';
 import { TransactionComponent } from './system/transaction/transaction.component';
 import { FreelancerManageJobsComponent } from './system/freelancer/freelancer-manage-jobs/freelancer-manage-jobs.component';
+import { PricingComponent } from './system/pricing/pricing.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +68,7 @@ import { FreelancerManageJobsComponent } from './system/freelancer/freelancer-ma
     NoPageFoundComponent,
     TransactionComponent,
     FreelancerManageJobsComponent,
+    PricingComponent,
   ],
   imports: [
     BrowserModule,

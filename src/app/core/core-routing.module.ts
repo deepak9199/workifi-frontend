@@ -20,6 +20,7 @@ import { MessagesComponent } from '../system/messages/messages.component';
 import { NoPageFoundComponent } from '../system/no-page-found/no-page-found.component';
 import { TransactionComponent } from '../system/transaction/transaction.component';
 import { FreelancerManageJobsComponent } from '../system/freelancer/freelancer-manage-jobs/freelancer-manage-jobs.component';
+import { PricingComponent } from '../system/pricing/pricing.component';
 
 const routes: Routes = [
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'role', component: RoleComponent },
   { path: 'message', component: MessagesComponent },
   { path: 'transaction', component: TransactionComponent },
+  { path: 'pricing', component: PricingComponent },
   {
     path: 'client/manageproject', component: ManageProjectComponent, canActivate: [AuthGuard], data:
     {
