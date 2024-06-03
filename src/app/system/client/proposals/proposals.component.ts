@@ -34,7 +34,8 @@ export class ProposalsComponent {
     upload: '',
     assign_to: '',
     proposals: [],
-    submit_status: ''
+    submit_status: '',
+    subscribe: ''
   }
   constructor(
     private collectionservice: CollectionService,

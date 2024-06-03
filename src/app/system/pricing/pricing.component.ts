@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './pricing.component.css'
 })
 export class PricingComponent {
+  loading: boolean = false
 
+  subscribe() {
+    
+  }
 }

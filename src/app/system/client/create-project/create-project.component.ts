@@ -31,9 +31,9 @@ export class CreateProjectComponent {
     proposals: [],
     uid: '',
     assign_to: '',
-    submit_status: ''
+    submit_status: '',
+    subscribe: ''
   }
-  
   constructor(
     private collectionservice: CollectionService,
     private toster: ToastrService,

@@ -92,7 +92,7 @@ export class AuthService {
           }
         })
         .catch(error => {
-          console.error('Error signing in:', error);
+          this.toster.error('Error signing in:', error);
           observer.next(null);
           observer.complete();
         });

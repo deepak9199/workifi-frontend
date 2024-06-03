@@ -25,6 +25,7 @@ export class FreelancerListComponent {
     this.collectionservice.getData('profile').subscribe({
       next: (data: profile[]) => {
         this.profile = data
+        this.profile = this.sortByDate(this.profile)
         this.loading = false
       },
       error: (error) => {
@@ -37,5 +38,12 @@ export class FreelancerListComponent {
     // console.log(data)
     this.sharedservice.savedata(JSON.stringify(data))
     this.router.navigate(['/client/proposalstofreelancer'])
+  }
+  sortByDate(array: profile[]): any[] {
+    return array.sort((a, b) => {
+      const date1 = new Date(a.created_date_time);
+      const date2 = new Date(b.created_date_time);
+      return date1.getTime() - date2.getTime();
+    });
   }
 }
