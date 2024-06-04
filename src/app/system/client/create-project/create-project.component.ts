@@ -47,6 +47,7 @@ export class CreateProjectComponent {
     console.log(this.formcreateproject)
     this.formcreateproject.uid = this.token.getUser().uid
     this.formcreateproject.status = 'pending'
+    console.log(this.formcreateproject)
     this.createProjectApi(this.formcreateproject)
   }
   createPubliceproject() {
