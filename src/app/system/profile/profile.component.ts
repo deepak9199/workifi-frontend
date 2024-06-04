@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { award, education, profile, work_experience } from '../../model/profile';
+import { award, education, getprofile, profile, work_experience } from '../../model/profile';
 import { CollectionService } from '../../shared/_service/collection.service';
 import { ToastrService } from 'ngx-toastr';
 import { TokenStorageService } from '../../shared/_service/token-storage.service';
@@ -66,7 +66,8 @@ export class ProfileComponent {
     pan_card_no: '',
     loyalty_coins: 0,
     transaction_rewards: 0,
-    subscribe: { plan: '', datetime: '' }
+    subscribe: { plan: '', datetime: '' },
+    trie: ''
   }
   fromchangepass = {
     old: '',
@@ -78,6 +79,7 @@ export class ProfileComponent {
   educationlist: education[] = []
   private Transactionlist: Transaction[] = []
   work_experience_list: work_experience[] = []
+  transactions: Transaction[] = []
   awadsList: award[] = []
   uploadProgress: number = 0
   role: string = ''
@@ -313,6 +315,8 @@ export class ProfileComponent {
         //   sum = sum + item.amount
         // })
         // this.formProfile.transaction_rewards = sum / 10000
+        this.transactions = data
+        this.formProfile = this.updateFreelancerTier(this.formProfile, this.transactions);
         let transaction_rewards_count = data.filter((item: Transaction) => (item.to_id === this.token.getUser().uid && item.type === 'project')).reduce((sum, item: Transaction) => sum + item.amount, 0) / 10000;
         // this.formProfile.transaction_rewards = data.filter((item: Transaction) => (item.to_id === this.token.getUser().uid && item.type === 'project')).reduce((sum, item: Transaction) => sum + item.amount, 0) / 10000;
         if (this.formProfile.transaction_rewards < transaction_rewards_count) {
@@ -350,5 +354,32 @@ export class ProfileComponent {
   }
   private trigertrefreshnavbar() {
     this.sharedservice.triggerFunction();
+  }
+  private calculateTotalTransactionAmount(uid: string, transactions: Transaction[]): number {
+    let totalAmount = 0;
+    for (const transaction of transactions) {
+      if (transaction.to_id === uid) {
+        totalAmount += transaction.amount;
+      }
+    }
+    return totalAmount;
+  }
+
+  private determineTier(workValue: number): string {
+    if (workValue >= 4000000) {
+      return 'Tier I';
+    } else if (workValue >= 2000000) {
+      return 'Tier II';
+    } else if (workValue >= 1000000) {
+      return 'Tier III';
+    } else {
+      return 'No Tier';
+    }
+  }
+
+  private updateFreelancerTier(freelancer: profile, transactions: Transaction[]): profile {
+    const totalWorkValue = this.calculateTotalTransactionAmount(freelancer.uid, transactions);
+    freelancer.trie = this.determineTier(totalWorkValue);
+    return freelancer;
   }
 }

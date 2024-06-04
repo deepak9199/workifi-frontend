@@ -41,7 +41,8 @@ export class PricingComponent {
     award: [],
     proposals: [],
     id: '',
-    subscribe: { plan: '', datetime: '' }
+    subscribe: { plan: '', datetime: '' },
+    trie: ''
   }
   constructor(
     private collectionservice: CollectionService,

@@ -65,7 +65,8 @@ export class FreelancerSubmitProposalComponent {
     work_experience: [],
     award: [],
     proposals: [],
-    subscribe: { plan: '', datetime: '' }
+    subscribe: { plan: '', datetime: '' },
+    trie: ''
   }
   formProposals: proposal = {
     uid: '',

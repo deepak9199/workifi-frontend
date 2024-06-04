@@ -25,9 +25,8 @@ export class FreelancerListComponent {
     this.collectionservice.getData('profile').subscribe({
       next: (data: getprofile[]) => {
         this.profile = data.filter((obj: getprofile) => obj.skil.length != 0)
-        console.log(this.profile)
+        // console.log(this.profile)
         this.profile = this.getSortedUserData(this.profile)
-
         this.loading = false
       },
       error: (error) => {
@@ -53,7 +52,6 @@ export class FreelancerListComponent {
     "Standard": 2,
     "Premium": 1  // Premium has the highest priority
   };
-
   private customSort(a: any, b: any): number {
     // Compare based on subscription plan priority
     if (this.subscriptionPriority[a.subscribe.plan] !== this.subscriptionPriority[b.subscribe.plan]) {
@@ -66,8 +64,7 @@ export class FreelancerListComponent {
 
     return dateA.getTime() - dateB.getTime();
   }
-
-  getSortedUserData(data: any[]): any[] {
+  private getSortedUserData(data: any[]): any[] {
     return data.sort((a, b) => this.customSort(a, b));
   }
 

@@ -43,7 +43,8 @@ export class ProposalToFreelancerComponent {
     loyalty_coins: 0,
     pan_card_no: '',
     transaction_rewards: 0,
-    subscribe: { plan: '', datetime: '' }
+    subscribe: { plan: '', datetime: '' },
+    trie: ''
   }
   formProposals: proposal = {
     uid: '',

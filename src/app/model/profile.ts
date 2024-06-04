@@ -23,11 +23,13 @@ export interface profile {
     language_level: string
     introduce_yourself: string
     subscribe: subscribe
+    trie: string
     skil: string[]
     education: education[]
     work_experience: work_experience[]
     award: award[]
     proposals: proposal[]
+
 }
 
 export interface getprofile {
@@ -55,6 +57,7 @@ export interface getprofile {
     language_level: string
     introduce_yourself: string
     subscribe: subscribe
+    trie: string
     skil: string[]
     education: education[]
     work_experience: work_experience[]
