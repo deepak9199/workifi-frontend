@@ -65,7 +65,8 @@ export class ProfileComponent {
     status: '',
     pan_card_no: '',
     loyalty_coins: 0,
-    transaction_rewards: 0
+    transaction_rewards: 0,
+    subscribe: { plan: '', datetime: '' }
   }
   fromchangepass = {
     old: '',
@@ -79,6 +80,7 @@ export class ProfileComponent {
   work_experience_list: work_experience[] = []
   awadsList: award[] = []
   uploadProgress: number = 0
+  role: string = ''
   constructor(
     private collectionservice: CollectionService,
     private toster: ToastrService,
@@ -88,7 +90,9 @@ export class ProfileComponent {
     private sharedservice: SharedService
   ) { }
   ngOnInit() {
+
     if (this.ValidatorChecker(this.token.getUser())) {
+      this.role = this.token.getUser().role
       this.formProfile.email = this.token.getUser().userCredential.user.email
       this.formProfile.username = this.token.getUser().name
       this.formProfile.phone = this.token.getUser().phone

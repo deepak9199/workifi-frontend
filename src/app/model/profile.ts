@@ -2,12 +2,12 @@
 export interface profile {
     points: number
     uid: string
-    loyalty_coins:number
+    loyalty_coins: number
     status: string
     pan_card_no: string
     created_date_time: string
     updated_date_time: string
-    transaction_rewards:number
+    transaction_rewards: number
     image: string
     username: string
     email: string
@@ -22,6 +22,7 @@ export interface profile {
     language: string
     language_level: string
     introduce_yourself: string
+    subscribe: subscribe
     skil: string[]
     education: education[]
     work_experience: work_experience[]
@@ -34,11 +35,11 @@ export interface getprofile {
     points: number
     uid: string
     status: string
-    loyalty_coins:number
+    loyalty_coins: number
     pan_card_no: string
     created_date_time: string
     updated_date_time: string
-    transaction_rewards:number
+    transaction_rewards: number
     image: string
     username: string
     email: string
@@ -53,11 +54,16 @@ export interface getprofile {
     language: string
     language_level: string
     introduce_yourself: string
+    subscribe: subscribe
     skil: string[]
     education: education[]
     work_experience: work_experience[]
     award: award[]
     proposals: proposal[]
+}
+export interface subscribe {
+    datetime: string
+    plan: string
 }
 export interface education {
     from: Date | null;
