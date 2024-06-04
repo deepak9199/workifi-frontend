@@ -35,7 +35,8 @@ export class FreelancerSubmitProposalComponent {
     uid: '',
     assign_to: '',
     submit_status: '',
-    subscribe: ''
+    subscribe: '',
+    creatdatetime: ''
   }
   client: profile = {
     points: 0,
@@ -72,7 +73,8 @@ export class FreelancerSubmitProposalComponent {
     uid: '',
     hourly_price: 0,
     Estimated_Hours: '',
-    cover_letter: ''
+    cover_letter: '',
+    creatdatetime: ''
   }
   constructor(
     private collectionservice: CollectionService,
@@ -86,6 +88,7 @@ export class FreelancerSubmitProposalComponent {
   }
   submitproposal() {
     this.formProposals.uid = this.token.getUser().uid
+    this.formProposals.creatdatetime = new Date().toString()
     this.finalsubmit(this.formProposals)
   }
   submitaproposal() {
@@ -93,7 +96,8 @@ export class FreelancerSubmitProposalComponent {
       uid: this.token.getUser().uid,
       hourly_price: this.projects.cost,
       Estimated_Hours: this.projects.projectduration,
-      cover_letter: ''
+      cover_letter: '',
+      creatdatetime: ''
     }
     this.finalsubmit(proposal)
   }

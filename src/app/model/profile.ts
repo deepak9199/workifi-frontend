@@ -93,4 +93,5 @@ export interface proposal {
     uid: string
     message: string
     date_time: string
+    creatdatetime: string
 }

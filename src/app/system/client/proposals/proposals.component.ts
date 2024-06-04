@@ -35,7 +35,8 @@ export class ProposalsComponent {
     assign_to: '',
     proposals: [],
     submit_status: '',
-    subscribe: ''
+    subscribe: '',
+    creatdatetime: ''
   }
   constructor(
     private collectionservice: CollectionService,

@@ -18,6 +18,7 @@ export interface createProject {
     assign_to: string
     submit_status: string
     subscribe: string
+    creatdatetime: string
     proposals: string[]
 }
 
@@ -42,6 +43,7 @@ export interface Project {
     assign_to: string
     submit_status: string
     subscribe: string
+    creatdatetime: string
     proposals: proposal[]
 }
 
@@ -50,4 +52,5 @@ export interface proposal {
     hourly_price: number
     Estimated_Hours: string
     cover_letter: string
+    creatdatetime: string
 }

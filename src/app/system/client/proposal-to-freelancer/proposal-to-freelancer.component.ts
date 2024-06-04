@@ -49,7 +49,8 @@ export class ProposalToFreelancerComponent {
   formProposals: proposal = {
     uid: '',
     message: '',
-    date_time: ''
+    date_time: '',
+    creatdatetime: ''
   }
   constructor(
     private collectionservice: CollectionService,
@@ -63,13 +64,15 @@ export class ProposalToFreelancerComponent {
   }
   submitproposal() {
     this.formProposals.uid = this.token.getUser().uid
+    this.formProposals.creatdatetime = new Date().toString()
     this.finalsubmit(this.formProposals)
   }
   submitaproposal() {
     let proposal: proposal = {
       uid: this.token.getUser().uid,
       message: '',
-      date_time: (new Date().toString())
+      date_time: (new Date().toString()),
+      creatdatetime: ''
     }
     this.finalsubmit(proposal)
   }
