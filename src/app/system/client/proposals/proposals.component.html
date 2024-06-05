@@ -40,8 +40,8 @@
                                                     <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
                                                             class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
                                                         <!-- -->April 01, 2023</p>
-                                                    <p (click)="setPorposal(obj)" data-bs-toggle="modal"
-                                                        data-bs-target="#porposalListModalToggle"
+                                                    <p style="cursor: pointer;" (click)="setPorposal(obj)"
+                                                        data-bs-toggle="modal" data-bs-target="#porposalListModalToggle"
                                                         class="mb-0 fz14 list-inline-item mb5-sm"><i
                                                             class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
                                                         <!-- --> {{obj.proposals.length}} Received</p>
@@ -50,7 +50,7 @@
                                         </div>
                                     </th>
                                     <td class="vam">
-                                        <h5 class="mb-0">$ {{obj.cost}} <span class="fz14 fw400">Hourly Rate</span>
+                                        <h5 class="mb-0">Rs {{obj.cost}} <span class="fz14 fw400">Hourly Rate</span>
                                         </h5>
                                     </td>
                                     <td>
@@ -106,6 +106,7 @@
                                 <th scope="col">Hourly price</th>
                                 <th scope="col">Estimated Hours</th>
                                 <th scope="col">Action</th>
+                                <th scope="col">Chat</th>
                             </tr>
                         </thead>
                         <tbody class="t-body">
@@ -119,8 +120,10 @@
                                     </span></td>
                                 <td class="vam">
                                     <a (click)="assignto(selected_project,porposalobj.uid)"
-                                        class="table-action fz15 fw500 text-thm2" id="view"><span
-                                            class="flaticon-website me-2 vam"></span> Accept</a>
+                                        class="table-action fz15 fw500 text-thm2" id="view"> Accept</a>
+                                </td>
+                                <td class="vam">
+                                    <a (click)="chat()" class="table-action fz15 fw500 text-thm2" id="view2">Chat</a>
                                 </td>
                             </tr>
                         </tbody>

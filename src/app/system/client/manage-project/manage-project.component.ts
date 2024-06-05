@@ -25,12 +25,9 @@ export class ManageProjectComponent {
     private collectionservice: CollectionService,
     private toster: ToastrService
   ) { }
-
   ngOnInit() {
     this.getprojectsapi()
   }
-
-  // api call for workinghours
   private getprojectsapi() {
     this.loading = true
     this.collectionservice.getData("projects").subscribe({
@@ -118,7 +115,5 @@ export class ManageProjectComponent {
     }
   }
   conform(index: number) {
-
   }
-
 }

@@ -119,6 +119,7 @@ export class FreelancerSubmitProposalComponent {
       const jsonData = this.sharedservice.getdata();
       if (jsonData !== null) {
         this.projects = JSON.parse(jsonData);
+        this.getprofileapi()
       } else {
         this.toster.error("Received null data from shared service.");
       }
@@ -154,10 +155,10 @@ export class FreelancerSubmitProposalComponent {
     this.loading = true
     this.collectionservice.getData('profile').subscribe({
       next: (data) => {
-        // console.log(data)
         let obj = data.filter((obj: profile) => obj.uid === this.projects.uid)
         if (obj.length != 0) {
           this.client = obj[0]
+          // console.log(this.client)
         }
         else {
           console.log('no profile found')

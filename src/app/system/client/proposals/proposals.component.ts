@@ -5,6 +5,7 @@ import { TokenStorageService } from '../../../shared/_service/token-storage.serv
 import { error } from 'console';
 import { subscribe } from 'diagnostics_channel';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-proposals',
@@ -41,7 +42,8 @@ export class ProposalsComponent {
   constructor(
     private collectionservice: CollectionService,
     private token: TokenStorageService,
-    private toster: ToastrService
+    private toster: ToastrService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -53,7 +55,7 @@ export class ProposalsComponent {
       next: (data: Project[]) => {
         this.loading = false
         this.projects = data.filter((item: Project) => item.proposals.length != 0 && item.uid === this.token.getUser().uid)
-        console.log(this.projects)
+        // console.log(this.projects)
       }
       , error: (err) => {
         this.loading = false
@@ -82,5 +84,8 @@ export class ProposalsComponent {
         this.loading = false
       }
     })
+  }
+  chat() {
+    this.router.navigate(['/message'])
   }
 }
