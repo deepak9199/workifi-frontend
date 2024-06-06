@@ -85,6 +85,7 @@ export class ProfileComponent {
   awadsList: award[] = []
   uploadProgress: number = 0
   role: string = ''
+  amount: number = 0
   constructor(
     private collectionservice: CollectionService,
     private toster: ToastrService,
@@ -203,7 +204,7 @@ export class ProfileComponent {
           type: 'cash',
           to_id: this.token.getUser().uid,
           utr: '',
-          amount: 50,
+          amount: this.amount,
           description: 'Cash add',
           login_user: this.token.getUser().uid,
           createdTime: new Date().toString()

@@ -596,8 +596,51 @@
                 <form>
                     <div class="row">
                         <div class="col">
-                            <div class="mb-3"><label class="form-label">Ballacne</label><input disabled
-                                    [(ngModel)]="formProfile.loyalty_coins" id="from" name="from" class="form-control"
+                            <div class="mb-3">
+                                <label class="form-label">Ballacne</label>
+                                <input disabled [(ngModel)]="formProfile.loyalty_coins" id="loyalty_coins"
+                                    name="loyalty_coins" class="form-control" type="number">
+                                <input disabled [(ngModel)]="formProfile.cash" id="cash" name="cash"
+                                    class="form-control" type="number">
+                                <input disabled [(ngModel)]="formProfile.bonus" id="bonus" name="bonus"
+                                    class="form-control" type="number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <button type="submit" class="ud-btn btn-thm w-100" data-bs-toggle="modal"
+                                    href="#addwalletModalToggle" data-bs-dismiss="modal" aria-label="Close">Add<i
+                                        class="fal fa-arrow-right-long"></i></button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="mb-3">
+                                <button [routerLink]="['/transaction']" type="submit" class="ud-btn btn-thm w-100"
+                                    data-bs-dismiss="modal" aria-label="Close">Transaction <i
+                                        class="fal fa-arrow-right-long"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="addwalletModalToggle" tabindex="-1" aria-labelledby="proposalModalLabel"
+    style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content position-relative"><button type="button" class="btn-close position-absolute"
+                data-bs-dismiss="modal" aria-label="Close" style="top: 10px; right: 10px; z-index: 9;"></button>
+            <div class="modal-body p-4">
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label class="form-label">Enter Amount</label>
+                                <input [(ngModel)]="amount" id="amount" name="amount" class="form-control"
                                     type="number">
                             </div>
                         </div>
@@ -618,7 +661,6 @@
                             </div>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>

@@ -163,12 +163,12 @@ export class ManageProjectComponent {
       }
     }
   }
-
   updateproject(data: Project) {
+    // console.log(data)
     this.loading = true
     this.collectionservice.updateDocument('projects', data.id, data).subscribe({
       next: (data) => {
-        this.toster.success('Accepted')
+        // this.toster.success('Accepted')
         this.loading = false
       },
       error: (err) => {
@@ -177,13 +177,12 @@ export class ManageProjectComponent {
       }
     })
   }
-
   getuserprofile(uid: string) {
     this.loading = true
     this.collectionservice.getDatabyuid('profile', uid).subscribe({
-      next: (data: any) => {
-        console.log(data)
-        this.profile = data
+      next: (data: getprofile[]) => {
+        this.profile = data[0]
+        // console.log(this.profile)
         this.getprojectsapi()
       },
       error: err => {
@@ -192,9 +191,10 @@ export class ManageProjectComponent {
       }
     })
   }
-  conform(index: number) {
+  conform(objdata: Project) {
+    let index = this.globalprojects.findIndex((obj: Project) => obj.id === objdata.id)
     const project = this.globalprojects[index];
-    if (this.checkBalanceAndProcessTransaction(project)) {
+    if (this.checkBalanceAndProcessTransaction(project, this.profile)) {
       this.globalprojects[index].submit_status = 'conformed';
       this.globalprojects[index].status = 'completed';
       this.updateproject(this.globalprojects[index]);
@@ -202,30 +202,29 @@ export class ManageProjectComponent {
       console.error('Error in transaction');
     }
   }
-
-  private checkBalanceAndProcessTransaction(project: Project): boolean {
+  private checkBalanceAndProcessTransaction(project: Project, profile: profile): boolean {
+    // console.log(profile.cash + ' ' + project.cost)
     if (this.profile.cash >= project.cost) {
       this.toster.success('trasaction done Funds');
-      // const transaction: Transaction = {
-      //   from_uid: this.uid,
-      //   type: 'cash',
-      //   to_id: project.assign_to,
-      //   utr: '',
-      //   amount: project.cost,
-      //   description: `Project Completed: ${project.title}`,
-      //   login_user: this.token.getUser().uid,
-      //   createdTime: new Date().toString()
-      // };
-
-      // this.subTransactionApi(transaction);
+      const transaction: Transaction = {
+        from_uid: this.uid,
+        type: 'cash',
+        to_id: project.assign_to,
+        utr: '',
+        amount: project.cost,
+        description: `Project Completed: ${project.title}`,
+        login_user: this.token.getUser().uid,
+        createdTime: new Date().toString()
+      };
+      this.subTransactionApi(transaction);
       return true;
     } else {
       this.toster.error('Insufficient Funds');
       return false;
     }
   }
-
   private subTransactionApi(transaction: Transaction) {
+    this.loading = true
     this.collectionservice.addDocumnet('transaction', transaction).subscribe({
       next: () => {
         if (transaction.type === 'cash') {
@@ -236,6 +235,7 @@ export class ManageProjectComponent {
       error: (error) => {
         console.error(error);
         this.toster.error('Transaction failed');
+        this.loading = false
       }
     })
   }
@@ -244,9 +244,7 @@ export class ManageProjectComponent {
 
     this.collectionservice.updateDocument('profile', id, profile).subscribe({
       next: () => {
-        this.toster.success('Profile updated successfully');
-        this.ngOnInit();
-        this.loading = false;
+        // this.toster.success('Profile updated successfully');
       },
       error: (err) => {
         console.error(err);
