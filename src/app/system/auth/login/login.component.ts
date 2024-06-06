@@ -38,11 +38,11 @@ export class LoginComponent {
   }
   // login api
   private loginauthapi(login: login) {
-    console.log(login)
+    // console.log(login)
     this.loading = true
     this.authService.login(login.email, login.password).subscribe({
       next: (data) => {
-        console.log(data)
+        // console.log(data)
         if (data && data.token) {
           this.loading = false
           this.tokenstorage.saveUser(data)

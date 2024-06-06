@@ -69,15 +69,25 @@ export class MessagesComponent {
     this.loading = true
     this.collectionService.getData('conversation').subscribe({
       next: (data: Conversation_detail[]) => {
-        this.conversation = data.filter((item: Conversation_detail) => this.token.getUser().role === 'freelancer' ? item.cid === this.token.getUser().uid : item.uid === this.token.getUser().uid)
-        if (this.conversation.length != 0) {
-          this.loading = false
-          this.selectCustomer(0)
+
+        const user = this.token.getUser();
+        if (user && user.role && user.uid) {
+          this.conversation = data.filter((item: Conversation_detail) =>
+            user.role === 'freelancer' ? item.cid === user.uid : item.uid === user.uid
+          );
+
+          this.loading = false;
+
+          if (this.conversation.length !== 0) {
+            this.selectCustomer(0);
+          } else {
+            console.error('no conversation found');
+          }
+        } else {
+          this.loading = false;
+          console.error('User, role, or UID is null');
         }
-        else {
-          this.loading = false
-          console.error('no conversation found')
-        }
+
       },
       error: err => {
         console.error(err.message)

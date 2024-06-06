@@ -67,7 +67,9 @@ export class ProfileComponent {
     loyalty_coins: 0,
     transaction_rewards: 0,
     subscribe: { plan: '', datetime: '' },
-    trie: ''
+    trie: '',
+    cash: 0,
+    bonus: 0
   }
   fromchangepass = {
     old: '',
@@ -223,7 +225,7 @@ export class ProfileComponent {
     this.loading = true
     this.collectionservice.getData('profile').subscribe({
       next: (data) => {
-        console.log(data)
+        // console.log(data)
         let obj = data.filter((obj: profile) => obj.uid === this.token.getUser().uid)
         if (obj.length != 0) {
           this.formProfile = obj[0]

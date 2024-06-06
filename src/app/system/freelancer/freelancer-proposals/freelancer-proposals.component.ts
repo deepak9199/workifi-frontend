@@ -25,9 +25,9 @@ export class FreelancerProposalsComponent {
     this.collectionservice.getData('profile').subscribe({
       next: (data: profile[]) => {
         this.loading = false
-        console.log(data)
+        // console.log(data)
         this.profile = data.filter((item: profile) => item.proposals.length != 0 && item.uid === this.token.getUser().uid)
-        console.log(this.profile)
+        // console.log(this.profile)
       }
       , error: (err) => {
         this.loading = false

@@ -42,7 +42,9 @@ export class PricingComponent {
     proposals: [],
     id: '',
     subscribe: { plan: '', datetime: '' },
-    trie: ''
+    trie: '',
+    cash: 0,
+    bonus: 0
   }
   constructor(
     private collectionservice: CollectionService,

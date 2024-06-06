@@ -20,7 +20,6 @@ export class NavComponent {
     private dataservice: CollectionService
   ) { }
   ngOnInit() {
-
     this.gettrigertrefresh()
     // this.client = this.ValidatorChecker(this.tokenstorage.getUser()) && this.tokenstorage.getUser().role[0] === 'client';
     this.islogin = this.ValidatorChecker(this.tokenstorage.getToken())
