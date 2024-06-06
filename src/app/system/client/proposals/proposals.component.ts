@@ -6,6 +6,8 @@ import { error } from 'console';
 import { subscribe } from 'diagnostics_channel';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Conversation, Conversation_detail } from '../../../model/message.';
+import { users, users_detail } from '../../../model/user';
 
 @Component({
   selector: 'app-proposals',
@@ -39,6 +41,8 @@ export class ProposalsComponent {
     subscribe: '',
     creatdatetime: ''
   }
+  private userlist: users_detail[] = []
+  private conversationlist: Conversation_detail[] = []
   constructor(
     private collectionservice: CollectionService,
     private token: TokenStorageService,
@@ -47,7 +51,7 @@ export class ProposalsComponent {
   ) { }
 
   ngOnInit() {
-    this.getproposalsapi()
+    this.getuser()
   }
   getproposalsapi() {
     this.loading = true
@@ -85,7 +89,69 @@ export class ProposalsComponent {
       }
     })
   }
-  chat() {
+  chat(data: proposal) {
+    // console.log({ cid: data.uid, cname: this.getname(data.uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(data.uid, this.userlist).phone, uid: this.token.getUser().uid })
+    this.addconverstaionapi({ cid: data.uid, cname: this.getname(data.uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(data.uid, this.userlist).phone, uid: this.token.getUser().uid })
     this.router.navigate(['/message'])
+  }
+  private addconverstaionapi(data: Conversation) {
+    let checkconversation: Conversation_detail[] = this.conversationlist.filter((obj: Conversation_detail) => obj.uid === data.uid)
+    if (checkconversation.length == 0) {
+      this.collectionservice.addDocumnet('conversation', data).subscribe({
+        next: data => {
+          console.log('Conversation is added successfuly')
+        },
+        error: err => {
+          console.error(err.message)
+        }
+      })
+    }
+    else {
+      console.error('conversation already exist')
+    }
+
+  }
+  private getuser() {
+    this.loading = true
+    this.collectionservice.getData('users').subscribe({
+      next: (data: users_detail[]) => {
+        // console.log(data)
+        this.userlist = data
+        this.getuserconversation()
+      },
+      error: err => {
+        console.error(err)
+        this.loading = false
+      }
+    })
+  }
+  getname(id: string, list: users_detail[]) {
+    let result = {
+      name: '',
+      phone: ''
+    }
+    let finddata: users_detail[] = list.filter((obj: users_detail) => obj.uid === id)
+    if (finddata.length != 0) {
+      result.name = finddata[0].name
+      result.phone = finddata[0].contact
+    }
+    else {
+      console.error('user not found')
+    }
+    return result
+  }
+  private getuserconversation() {
+    this.loading = true
+    this.collectionservice.getData('conversation').subscribe({
+      next: (data: Conversation_detail[]) => {
+        // console.log(data)
+        this.conversationlist = data
+        this.getproposalsapi()
+      },
+      error: err => {
+        console.error(err)
+        this.loading = false
+      }
+    })
   }
 }

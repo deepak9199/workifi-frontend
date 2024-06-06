@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
 import { profile } from '../../../model/profile';
+import { Conversation, Conversation_detail } from '../../../model/message.';
+import { users_detail } from '../../../model/user';
 
 @Component({
   selector: 'app-freelancer-submit-proposal',
@@ -76,6 +78,8 @@ export class FreelancerSubmitProposalComponent {
     cover_letter: '',
     creatdatetime: ''
   }
+  private userlist: users_detail[] = []
+  private conversationlist: Conversation_detail[] = []
   constructor(
     private collectionservice: CollectionService,
     private sharedservice: SharedService,
@@ -119,7 +123,7 @@ export class FreelancerSubmitProposalComponent {
       const jsonData = this.sharedservice.getdata();
       if (jsonData !== null) {
         this.projects = JSON.parse(jsonData);
-        this.getprofileapi()
+        this.getuser()
       } else {
         this.toster.error("Received null data from shared service.");
       }
@@ -170,6 +174,71 @@ export class FreelancerSubmitProposalComponent {
         this.loading = false
       },
 
+    })
+  }
+  chat(data: Project) {
+    // console.log({ cid: data.uid, cname: this.getname(data.uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(data.uid, this.userlist).phone, uid: this.token.getUser().uid })
+    this.addconverstaionapi({ cid: this.token.getUser().uid, cname: this.getname(this.token.getUser().uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(this.token.getUser().uid, this.userlist).phone, uid: this.projects.uid })
+    this.router.navigate(['/message'])
+  }
+  private addconverstaionapi(data: Conversation) {
+    let checkconversation: Conversation_detail[] = this.conversationlist.filter((obj: Conversation_detail) => this.token.getUser().role === 'freelancer' ? obj.cid === this.token.getUser().uid : obj.uid === this.token.getUser().uid)
+    if (checkconversation.length == 0) {
+      this.collectionservice.addDocumnet('conversation', data).subscribe({
+        next: data => {
+          console.log('Conversation is added successfuly')
+        },
+        error: err => {
+          console.error(err.message)
+        }
+      })
+    }
+    else {
+      console.error('conversation already exist')
+    }
+
+  }
+  private getuser() {
+    this.loading = true
+    this.collectionservice.getData('users').subscribe({
+      next: (data: users_detail[]) => {
+        // console.log(data)
+        this.userlist = data
+        this.getuserconversation()
+      },
+      error: err => {
+        console.error(err)
+        this.loading = false
+      }
+    })
+  }
+  getname(id: string, list: users_detail[]) {
+    let result = {
+      name: '',
+      phone: ''
+    }
+    let finddata: users_detail[] = list.filter((obj: users_detail) => obj.uid === id)
+    if (finddata.length != 0) {
+      result.name = finddata[0].name
+      result.phone = finddata[0].contact
+    }
+    else {
+      console.error('user not found')
+    }
+    return result
+  }
+  private getuserconversation() {
+    this.loading = true
+    this.collectionservice.getData('conversation').subscribe({
+      next: (data: Conversation_detail[]) => {
+        // console.log(data)
+        this.conversationlist = data
+        this.getprofileapi()
+      },
+      error: err => {
+        console.error(err)
+        this.loading = false
+      }
     })
   }
 }
