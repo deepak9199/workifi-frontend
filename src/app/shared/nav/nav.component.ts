@@ -65,12 +65,17 @@ export class NavComponent {
     this.dataservice.getData('profile').subscribe({
       next: (data) => {
         // console.log(data)
-        let obj = data.filter((obj: profile) => obj.uid === this.tokenstorage.getUser().uid)
-        if (obj.length != 0) {
-          this.profile_image = obj[0].image
-        }
-        else {
-          console.log('no profile found')
+        const user = this.tokenstorage.getUser();
+        if (user && user.uid) {
+          const uid = user.uid;
+          let obj = data.filter((obj: profile) => obj.uid === uid);
+          if (obj.length !== 0) {
+            this.profile_image = obj[0].image;
+          } else {
+            console.log('no profile found');
+          }
+        } else {
+          // console.log('User or UID is null');
         }
       },
       error: (error) => {
