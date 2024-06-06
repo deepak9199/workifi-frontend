@@ -32,6 +32,18 @@ export class CollectionService {
     return this.firestore.collection(collectionName).doc(documentId).valueChanges();
   }
 
+  getDatabyuid(collectionName: string, uid: string): Observable<any[]> {
+    return this.firestore.collection(collectionName, ref => ref.where('uid', '==', uid)).snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(action => {
+          const data = action.payload.doc.data() as any;
+          const id = action.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
+  }
+
   // Function to add a document to a Firestore collection
   addDocumnet(collectionName: string, data: any): Observable<any> {
     return new Observable<any>(observer => {

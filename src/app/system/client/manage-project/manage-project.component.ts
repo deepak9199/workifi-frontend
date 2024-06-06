@@ -58,6 +58,7 @@ export class ManageProjectComponent {
   }
   projects: Project[] = []
   activeTab: string = '';
+  private uid: string = ''
   constructor(
     private collectionservice: CollectionService,
     private token: TokenStorageService,
@@ -66,6 +67,7 @@ export class ManageProjectComponent {
   ngOnInit() {
     const user = this.token.getUser()
     if (user && user.uid) {
+      this.uid = user.uid
       this.getuserprofile(user.uid)
     }
     else {
@@ -76,8 +78,8 @@ export class ManageProjectComponent {
     this.loading = true
     this.collectionservice.getData("projects").subscribe({
       next: (data: Project[]) => {
-        this.globalprojects = data
-        console.log(this.globalprojects)
+        this.globalprojects = data.filter((obj: Project) => obj.uid === this.uid)
+        // console.log(this.globalprojects)
         this.projecttabtab('posted')
         this.loading = false
       },
@@ -160,7 +162,7 @@ export class ManageProjectComponent {
     }
   }
   conform(index: number) {
-    if (this.checkbalancetranscation()) {
+    if (this.checkbalancetranscation(this.globalprojects[index].cost)) {
       this.globalprojects[index].submit_status = 'confromed'
       this.globalprojects[index].status = 'completed'
       this.updateproject(this.globalprojects[index])
@@ -182,12 +184,19 @@ export class ManageProjectComponent {
       }
     })
   }
-  checkbalancetranscation(): boolean {
-    return false
+  checkbalancetranscation(cost: number): boolean {
+    if (this.profile.cash <= cost) {
+      
+      return false
+    }
+    else {
+      this.toster.error('Insufficant Fund')
+      return false
+    }
   }
   getuserprofile(uid: string) {
     this.loading = true
-    this.collectionservice.getDocumentById('profile', uid).subscribe({
+    this.collectionservice.getDatabyuid('profile', uid).subscribe({
       next: (data: any) => {
         console.log(data)
         this.profile = data
