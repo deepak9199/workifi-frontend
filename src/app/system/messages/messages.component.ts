@@ -19,7 +19,6 @@ export class MessagesComponent {
   Globle_phone_list_msg: Conversation[] = []
   currentChatMessages: Message[] = []
   messageData: string = ''
-  msg_index: number = 0;
   searchQueryString: string = ''
   role: string = ''
   userlist: users_detail[] = []
@@ -72,6 +71,7 @@ export class MessagesComponent {
 
         const user = this.token.getUser();
         if (user && user.role && user.uid) {
+          console.log(user.uid)
           this.conversation = data.filter((item: Conversation_detail) =>
             user.role === 'freelancer' ? item.cid === user.uid : item.uid === user.uid
           );
@@ -79,7 +79,7 @@ export class MessagesComponent {
           this.loading = false;
 
           if (this.conversation.length !== 0) {
-            this.selectCustomer(0);
+            this.selectCustomer(this.selectedCustomerIndex);
           } else {
             console.error('no conversation found');
           }

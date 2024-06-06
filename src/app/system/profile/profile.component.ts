@@ -195,6 +195,21 @@ export class ProfileComponent {
         console.error('type selection error')
     }
   }
+  addwallet() {
+    this.addTransactionapi
+      (
+        {
+          from_uid: 'Bank',
+          type: 'cash',
+          to_id: this.token.getUser().uid,
+          utr: '',
+          amount: 50,
+          description: 'Cash add',
+          login_user: this.token.getUser().uid,
+          createdTime: new Date().toString()
+        }
+      )
+  }
   private saveprofileapi(data: profile) {
     this.loading = true
     this.collectionservice.addDocumnet('profile', data).subscribe({
@@ -225,10 +240,10 @@ export class ProfileComponent {
     this.loading = true
     this.collectionservice.getData('profile').subscribe({
       next: (data) => {
-        // console.log(data)
         let obj = data.filter((obj: profile) => obj.uid === this.token.getUser().uid)
         if (obj.length != 0) {
           this.formProfile = obj[0]
+          // console.log(this.formProfile)
           this.skilList = this.formProfile.skil
           this.work_experience_list = this.formProfile.work_experience
           this.educationlist = this.formProfile.education
@@ -343,11 +358,18 @@ export class ProfileComponent {
       }
     })
   }
-  private addTransactionapi(data: Transaction) {
-    this.collectionservice.addDocumnet('transaction', data).subscribe({
+  private addTransactionapi(datat: Transaction) {
+    this.collectionservice.addDocumnet('transaction', datat).subscribe({
       next: (data: any) => {
-        console.log(data)
-        this.updateprofileapi(this.formProfile, this.profileid)
+        // console.log(data)
+        if (datat.type === 'cash') {
+          this.formProfile.cash = this.formProfile.cash + datat.amount
+          // console.log(this.formProfile)
+          this.updateprofileapi(this.formProfile, this.profileid)
+        }
+        else {
+          this.updateprofileapi(this.formProfile, this.profileid)
+        }
       },
       error: (error: any) => {
         console.log(error)
@@ -366,7 +388,6 @@ export class ProfileComponent {
     }
     return totalAmount;
   }
-
   private determineTier(workValue: number): string {
     if (workValue >= 4000000) {
       return 'Tier I';
@@ -378,7 +399,6 @@ export class ProfileComponent {
       return 'No Tier';
     }
   }
-
   private updateFreelancerTier(freelancer: profile, transactions: Transaction[]): profile {
     const totalWorkValue = this.calculateTotalTransactionAmount(freelancer.uid, transactions);
     freelancer.trie = this.determineTier(totalWorkValue);

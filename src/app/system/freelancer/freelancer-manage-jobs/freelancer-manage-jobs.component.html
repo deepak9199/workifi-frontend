@@ -59,10 +59,10 @@
                                                 {{projectsdata.pricetype}} </span></td>
                                         <td>
                                             <div class="d-flex">
-                                                <a *ngIf="projectsdata.submit_status===''" (click)="submit(i)"
+                                                <a *ngIf="projectsdata.submit_status!='submit'" (click)="submit(i)"
                                                     class="ud-btn btn-thm">Submit<i
                                                         class="fal fa-arrow-right-long"></i></a>
-                                                <a *ngIf="projectsdata.submit_status!=''"
+                                                <a *ngIf="projectsdata.submit_status ==='submit'"
                                                     class=" ud-btn btn-thm">Submited<i
                                                         class="fal fa-arrow-right-long"></i></a>
                                             </div>
@@ -104,10 +104,8 @@
                                                 {{projectsdata.pricetype}} </span></td>
                                         <td>
                                             <div class="d-flex">
-                                                <a class="icon me-2" id="edit" data-bs-toggle="modal"
-                                                    data-bs-target="#proposalModal">
-                                                    <span class="flaticon-pencil"> Completed
-                                                    </span></a>
+                                                <a id="edit">
+                                                    Completed</a>
                                             </div>
                                         </td>
                                     </tr>

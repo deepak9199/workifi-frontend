@@ -44,17 +44,29 @@ export class CreateProjectComponent {
 
   }
   createproject() {
-    console.log(this.formcreateproject)
-    this.formcreateproject.uid = this.token.getUser().uid
-    this.formcreateproject.status = 'pending'
-    console.log(this.formcreateproject)
-    this.createProjectApi(this.formcreateproject)
+    const user = this.token.getUser();
+    if (user && user.uid) {
+      console.log(this.formcreateproject)
+      this.formcreateproject.uid = user.uid
+      this.formcreateproject.status = 'pending'
+      console.log(this.formcreateproject)
+      this.createProjectApi(this.formcreateproject)
+    } else {
+      console.error('User or UID is null');
+    }
   }
   createPubliceproject() {
-    console.log(this.formcreateproject)
-    this.formcreateproject.uid = this.token.getUser().uid
-    this.formcreateproject.status = 'posted'
-    this.createProjectApi(this.formcreateproject)
+    const user = this.token.getUser();
+    if (user && user.uid) {
+      console.log(this.formcreateproject)
+      this.formcreateproject.uid = user.uid;
+      this.formcreateproject.status = 'posted'
+      this.createProjectApi(this.formcreateproject)
+    } else {
+      console.error('User or UID is null');
+    }
+
+
   }
   private createProjectApi(data: createProject) {
     this.loading = true

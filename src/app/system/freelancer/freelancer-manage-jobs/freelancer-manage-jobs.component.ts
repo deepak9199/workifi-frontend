@@ -31,13 +31,13 @@ export class FreelancerManageJobsComponent {
   ngOnInit() {
     this.getprojectsapi()
   }
-
   // api call for workinghours
   private getprojectsapi() {
     this.loading = true
     this.collectionservice.getData("projects").subscribe({
       next: (data: Project[]) => {
         this.globalprojects = data.filter((item: Project) => item.assign_to === this.token.getUser().uid)
+        console.log(this.globalprojects)
         this.projecttabtab('ongoing')
         this.loading = false
       },
@@ -121,5 +121,19 @@ export class FreelancerManageJobsComponent {
   }
   submit(index: number) {
     this.globalprojects[index].submit_status = 'submit'
+    this.updateproject(this.globalprojects[index])
+  }
+  updateproject(data: Project) {
+    this.loading = true
+    this.collectionservice.updateDocument('projects', data.id, data).subscribe({
+      next: (data) => {
+        this.toster.success('Accepted')
+        this.loading = false
+      },
+      error: (err) => {
+        this.toster.error(err)
+        this.loading = false
+      }
+    })
   }
 }

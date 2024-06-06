@@ -65,33 +65,65 @@ export class ProposalToFreelancerComponent {
     this.callshareddata()
   }
   submitproposal() {
-    this.formProposals.uid = this.token.getUser().uid
-    this.formProposals.creatdatetime = new Date().toString()
-    this.finalsubmit(this.formProposals)
+    const user = this.token.getUser();
+    if (user && user.uid) {
+      this.formProposals.uid = user.uid;
+      this.formProposals.creatdatetime = new Date().toString();
+      this.finalsubmit(this.formProposals);
+    } else {
+      console.error('User or UID is null');
+    }
+
   }
   submitaproposal() {
-    let proposal: proposal = {
-      uid: this.token.getUser().uid,
-      message: '',
-      date_time: (new Date().toString()),
-      creatdatetime: ''
+    const user = this.token.getUser();
+    if (user && user.uid) {
+      let proposal: proposal = {
+        uid: user.uid,
+        message: '',
+        date_time: new Date().toString(),
+        creatdatetime: ''
+      };
+      this.finalsubmit(proposal);
+    } else {
+      console.error('User or UID is null');
     }
-    this.finalsubmit(proposal)
-  }
 
+  }
   finalsubmit(data: proposal) {
-    let proposals: proposal[] = []
-    // proposals = this.profile.proposals
-    let index: number = proposals.findIndex((item: proposal) => item.uid === this.token.getUser().uid)
-    if (index > -1) {
-      proposals[index] = data
+    // Ensure this.profile.proposals is not null or undefined
+    let proposals: proposal[] = this.profile.proposals || [];
+
+    // Retrieve the user object
+    const user = this.token.getUser();
+
+    // Check if user and user.uid are valid
+    if (user && user.uid) {
+      // Find the index of the proposal with the same uid
+      let index: number = proposals.findIndex((item: proposal) => item.uid === user.uid);
+
+      // If a proposal with the same uid is found, update it
+      if (index > -1) {
+        proposals[index] = data;
+      }
+      // If no proposal with the same uid is found, add the new proposal
+      else {
+        proposals.push(data);
+      }
+
+      // Update the profile's proposals with the modified proposals array
+      this.profile.proposals = proposals;
+
+      // Log the updated profile
+      console.log(this.profile);
+
+      // Call the API to update the project
+      this.updateprojectapi(this.profile.id, this.profile);
     }
+    // Handle case where user or user.uid is null
     else {
-      proposals.push(data)
+      console.error('User or UID is null');
     }
-    this.profile.proposals = proposals
-    console.log(this.profile)
-    this.updateprojectapi(this.profile.id, this.profile)
   }
   callshareddata() {
     if (this.ValidatorChecker(this.sharedservice.getdata())) {

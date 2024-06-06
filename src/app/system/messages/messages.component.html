@@ -125,9 +125,10 @@
                     <div *ngIf="conversation.length!=0" class="mi_text">
                         <div class="message_input">
                             <form class="d-flex align-items-center"><input class="form-control"
-                                    [(ngModel)]="messageData" (keyup.enter)="sendmessage(messageData,msg_index)"
-                                    name="messageData" id="messageData" placeholder="Type a Message"
-                                    type="search"><button (click)="sendmessage(messageData,msg_index)" type="button"
+                                    [(ngModel)]="messageData"
+                                    (keyup.enter)="sendmessage(messageData,selectedCustomerIndex)" name="messageData"
+                                    id="messageData" placeholder="Type a Message" type="search"><button
+                                    (click)="sendmessage(messageData,selectedCustomerIndex)" type="button"
                                     class="btn ud-btn btn-thm">Send Message<i
                                         class="fal fa-arrow-right-long"></i></button></form>
                         </div>

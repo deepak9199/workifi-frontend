@@ -184,20 +184,29 @@ export class FreelancerSubmitProposalComponent {
     this.router.navigate(['/message'])
   }
   private addconverstaionapi(data: Conversation) {
-    let checkconversation: Conversation_detail[] = this.conversationlist.filter((obj: Conversation_detail) => this.token.getUser().role === 'freelancer' ? obj.cid === this.token.getUser().uid : obj.uid === this.token.getUser().uid)
-    if (checkconversation.length == 0) {
-      this.collectionservice.addDocumnet('conversation', data).subscribe({
-        next: data => {
-          console.log('Conversation is added successfuly')
-        },
-        error: err => {
-          console.error(err.message)
-        }
-      })
+    const user = this.token.getUser();
+
+    if (user && user.role && user.uid) {
+      let checkconversation: Conversation_detail[] = this.conversationlist.filter((obj: Conversation_detail) =>
+        user.role === 'freelancer' ? obj.cid === user.uid : obj.uid === user.uid
+      );
+
+      if (checkconversation.length === 0) {
+        this.collectionservice.addDocumnet('conversation', data).subscribe({
+          next: data => {
+            console.log('Conversation is added successfully');
+          },
+          error: err => {
+            console.error(err.message);
+          }
+        });
+      } else {
+        console.error('Conversation already exists');
+      }
+    } else {
+      console.error('User, role, or UID is null');
     }
-    else {
-      console.error('conversation already exist')
-    }
+
 
   }
   private getuser() {

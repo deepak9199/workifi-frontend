@@ -26,7 +26,7 @@ export class FreelancerProjectListComponent {
     this.loading = true
     this.collectionservice.getData('projects').subscribe({
       next: (data: Project[]) => {
-        this.projects = data
+        this.projects = data.filter((obj: Project) => obj.status === 'posted')
         this.projects = this.sortByDate(this.projects)
         this.globleprojects = this.projects
         this.loading = false

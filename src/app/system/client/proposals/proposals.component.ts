@@ -91,8 +91,32 @@ export class ProposalsComponent {
   }
   chat(data: proposal) {
     // console.log({ cid: data.uid, cname: this.getname(data.uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(data.uid, this.userlist).phone, uid: this.token.getUser().uid })
-    this.addconverstaionapi({ cid: data.uid, cname: this.getname(data.uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(data.uid, this.userlist).phone, uid: this.token.getUser().uid })
-    this.router.navigate(['/message'])
+    const user = this.token.getUser();
+
+    if (user && user.uid) {
+      const uid = user.uid;
+      const conversationData = {
+        cid: data.uid,
+        cname: this.getname(data.uid, this.userlist).name,
+        lastmessagedatetime: '',
+        messages: [],
+        phoneno: this.getname(data.uid, this.userlist).phone,
+        uid: uid
+      };
+
+      // Assuming this.addconverstaionapi and this.getname return promises
+      Promise.all([
+        this.getname(data.uid, this.userlist),
+        this.addconverstaionapi(conversationData)
+      ]).then(([nameData, response]) => {
+        this.router.navigate(['/message']);
+      }).catch(error => {
+        console.error(error);
+      });
+    } else {
+      console.error('User or UID is null');
+    }
+
   }
   private addconverstaionapi(data: Conversation) {
     let checkconversation: Conversation_detail[] = this.conversationlist.filter((obj: Conversation_detail) => obj.uid === data.uid)
