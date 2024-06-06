@@ -4,9 +4,10 @@ import { CollectionService } from '../../../shared/_service/collection.service';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
 import { ToastrService } from 'ngx-toastr';
 import { users } from '../../../model/user';
-import { profile } from '../../../model/profile';
+import { getprofile, profile } from '../../../model/profile';
 import { subscribe } from 'diagnostics_channel';
 import { Token } from '@angular/compiler';
+import { Transaction } from '../../../model/Transaction ';
 
 @Component({
   selector: 'app-manage-project',
@@ -23,7 +24,7 @@ export class ManageProjectComponent {
   outgoingprojects: boolean = false
   cancelprojects: boolean = false
   globalprojects: Project[] = []
-  profile: profile = {
+  profile: getprofile = {
     points: 0,
     uid: '',
     loyalty_coins: 0,
@@ -54,7 +55,8 @@ export class ManageProjectComponent {
     education: [],
     work_experience: [],
     award: [],
-    proposals: []
+    proposals: [],
+    id: ''
   }
   projects: Project[] = []
   activeTab: string = '';
@@ -161,16 +163,7 @@ export class ManageProjectComponent {
       }
     }
   }
-  conform(index: number) {
-    if (this.checkbalancetranscation(this.globalprojects[index].cost)) {
-      this.globalprojects[index].submit_status = 'confromed'
-      this.globalprojects[index].status = 'completed'
-      this.updateproject(this.globalprojects[index])
-    }
-    else {
-      this.toster.error('error in transation')
-    }
-  }
+
   updateproject(data: Project) {
     this.loading = true
     this.collectionservice.updateDocument('projects', data.id, data).subscribe({
@@ -184,16 +177,7 @@ export class ManageProjectComponent {
       }
     })
   }
-  checkbalancetranscation(cost: number): boolean {
-    if (this.profile.cash <= cost) {
-      
-      return false
-    }
-    else {
-      this.toster.error('Insufficant Fund')
-      return false
-    }
-  }
+
   getuserprofile(uid: string) {
     this.loading = true
     this.collectionservice.getDatabyuid('profile', uid).subscribe({
@@ -207,5 +191,68 @@ export class ManageProjectComponent {
         this.loading = false
       }
     })
+  }
+  conform(index: number) {
+    const project = this.globalprojects[index];
+    if (this.checkBalanceAndProcessTransaction(project)) {
+      this.globalprojects[index].submit_status = 'conformed';
+      this.globalprojects[index].status = 'completed';
+      this.updateproject(this.globalprojects[index]);
+    } else {
+      console.error('Error in transaction');
+    }
+  }
+
+  private checkBalanceAndProcessTransaction(project: Project): boolean {
+    if (this.profile.cash >= project.cost) {
+      this.toster.success('trasaction done Funds');
+      // const transaction: Transaction = {
+      //   from_uid: this.uid,
+      //   type: 'cash',
+      //   to_id: project.assign_to,
+      //   utr: '',
+      //   amount: project.cost,
+      //   description: `Project Completed: ${project.title}`,
+      //   login_user: this.token.getUser().uid,
+      //   createdTime: new Date().toString()
+      // };
+
+      // this.subTransactionApi(transaction);
+      return true;
+    } else {
+      this.toster.error('Insufficient Funds');
+      return false;
+    }
+  }
+
+  private subTransactionApi(transaction: Transaction) {
+    this.collectionservice.addDocumnet('transaction', transaction).subscribe({
+      next: () => {
+        if (transaction.type === 'cash') {
+          this.profile.cash -= transaction.amount;
+          this.updateProfileApi(this.profile, this.profile.id);
+        }
+      },
+      error: (error) => {
+        console.error(error);
+        this.toster.error('Transaction failed');
+      }
+    })
+  }
+  private updateProfileApi(profile: getprofile, id: string) {
+    this.loading = true;
+
+    this.collectionservice.updateDocument('profile', id, profile).subscribe({
+      next: () => {
+        this.toster.success('Profile updated successfully');
+        this.ngOnInit();
+        this.loading = false;
+      },
+      error: (err) => {
+        console.error(err);
+        this.loading = false;
+      }
+    })
+
   }
 }
