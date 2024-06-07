@@ -30,8 +30,15 @@ export class MessagesComponent {
     private toster: ToastrService, // Added NgZone
   ) { }
   ngOnInit() {
-    this.role = this.token.getUser().role
-    this.getuser()
+    const user = this.token.getUser();
+
+    if (user && user.role) {
+      this.role = user.role;
+      this.getuser();
+    } else {
+      console.error('User role is null or undefined');
+    }
+
   }
   // Method to select a different customer
   selectCustomer(index: number) {
@@ -71,7 +78,7 @@ export class MessagesComponent {
 
         const user = this.token.getUser();
         if (user && user.role && user.uid) {
-          console.log(user.uid)
+          // console.log(user.uid)
           this.conversation = data.filter((item: Conversation_detail) =>
             user.role === 'freelancer' ? item.cid === user.uid : item.uid === user.uid
           );

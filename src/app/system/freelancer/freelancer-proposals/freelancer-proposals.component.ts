@@ -12,13 +12,21 @@ import { profile } from '../../../model/profile';
 export class FreelancerProposalsComponent {
   loading: boolean = false
   profile: profile[] = []
+  private uid: string = ''
   constructor(
     private collectionservice: CollectionService,
     private token: TokenStorageService
   ) { }
 
   ngOnInit() {
-    this.getproposalsapi()
+    const user = this.token.getUser()
+    if (user && user.uid) {
+      this.uid = user.uid
+      this.getproposalsapi()
+    }
+    else {
+      console.error('Uid is null')
+    }
   }
   getproposalsapi() {
     this.loading = true
@@ -26,7 +34,7 @@ export class FreelancerProposalsComponent {
       next: (data: profile[]) => {
         this.loading = false
         // console.log(data)
-        this.profile = data.filter((item: profile) => item.proposals.length != 0 && item.uid === this.token.getUser().uid)
+        this.profile = data.filter((item: profile) => item.proposals.length != 0 && item.uid === this.uid)
         // console.log(this.profile)
       }
       , error: (err) => {

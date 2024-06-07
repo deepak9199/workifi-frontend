@@ -80,6 +80,7 @@ export class FreelancerSubmitProposalComponent {
     cover_letter: '',
     creatdatetime: ''
   }
+  private uid: string = ''
   private userlist: users_detail[] = []
   private conversationlist: Conversation_detail[] = []
   constructor(
@@ -90,16 +91,23 @@ export class FreelancerSubmitProposalComponent {
     private token: TokenStorageService
   ) { }
   ngOnInit() {
-    this.callshareddata()
+    const user = this.token.getUser()
+    if (user && user.uid) {
+      this.uid = user.uid
+      this.callshareddata()
+    }
+    else {
+      console.error('Uid is null')
+    }
   }
   submitproposal() {
-    this.formProposals.uid = this.token.getUser().uid
+    this.formProposals.uid = this.uid
     this.formProposals.creatdatetime = new Date().toString()
     this.finalsubmit(this.formProposals)
   }
   submitaproposal() {
     let proposal: proposal = {
-      uid: this.token.getUser().uid,
+      uid: this.uid,
       hourly_price: this.projects.cost,
       Estimated_Hours: this.projects.projectduration,
       cover_letter: '',
@@ -110,7 +118,7 @@ export class FreelancerSubmitProposalComponent {
   finalsubmit(data: proposal) {
     let proposals: proposal[] = []
     proposals = this.projects.proposals
-    let index: number = proposals.findIndex((item: proposal) => item.uid === this.token.getUser().uid)
+    let index: number = proposals.findIndex((item: proposal) => item.uid === this.uid)
     if (index > -1) {
       proposals[index] = data
     }
@@ -179,8 +187,7 @@ export class FreelancerSubmitProposalComponent {
     })
   }
   chat(data: Project) {
-    // console.log({ cid: data.uid, cname: this.getname(data.uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(data.uid, this.userlist).phone, uid: this.token.getUser().uid })
-    this.addconverstaionapi({ cid: this.token.getUser().uid, cname: this.getname(this.token.getUser().uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(this.token.getUser().uid, this.userlist).phone, uid: this.projects.uid })
+    this.addconverstaionapi({ cid: this.uid, cname: this.getname(this.uid, this.userlist).name, lastmessagedatetime: '', messages: [], phoneno: this.getname(this.uid, this.userlist).phone, uid: this.projects.uid })
     this.router.navigate(['/message'])
   }
   private addconverstaionapi(data: Conversation) {

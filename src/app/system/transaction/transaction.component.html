@@ -1,47 +1,7 @@
-<div class="container">
+<app-loading *ngIf="loading"></app-loading>
+<div *ngIf="!loading" class="container">
     <div class="dashboard__content hover-bgc-color">
         <div class="row pb40">
-            <div class="col-lg-12">
-                <div class="dashboard_navigationbar d-block d-lg-none">
-                    <div class="dropdown"><button class="dropbtn"><i class="fa fa-bars pr10"></i> Dashboard
-                            Navigation</button>
-                        <ul class="dropdown-content ">
-                            <li>
-                                <p class="fz15 fw400 ff-heading mt30 pl30">Start</p>
-                            </li>
-                            <li class=""><a href="/dashboard"><i class="flaticon-home mr10"></i>Dashboard</a></li>
-                            <li class=""><a href="/proposal"><i class="flaticon-document mr10"></i>My Proposals</a></li>
-                            <li class=""><a href="/saved"><i class="flaticon-like mr10"></i>Saved</a></li>
-                            <li class=""><a href="/message"><i class="flaticon-chat mr10"></i>Message</a></li>
-                            <li class=""><a href="/reviews"><i class="flaticon-review-1 mr10"></i>Reviews</a></li>
-                            <li class=""><a href="/invoice"><i class="flaticon-receipt mr10"></i>Invoice</a></li>
-                            <li class=""><a href="/payouts"><i class="flaticon-dollar mr10"></i>Payouts</a></li>
-                            <li class="mobile-dasboard-menu-active"><a href="/statements"><i
-                                        class="flaticon-web mr10"></i>Statements</a></li>
-                            <li>
-                                <p class="fz15 fw400 ff-heading mt30 pl30">Organize and Manage</p>
-                            </li>
-                            <li class=""><a href="/manage-services"><i class="flaticon-presentation mr10"></i>Manage
-                                    Services</a></li>
-                            <li class=""><a href="/manage-jobs"><i class="flaticon-briefcase mr10"></i>Manage Jobs</a>
-                            </li>
-                            <li class=""><a href="/manage-projects"><i class="flaticon-content mr10"></i>Manage
-                                    Project</a>
-                            </li>
-                            <li class=""><a href="/add-services"><i class="flaticon-document mr10"></i>Add Services</a>
-                            </li>
-                            <li class=""><a href="/create-projects"><i class="flaticon-content mr10"></i>Create
-                                    Project</a>
-                            </li>
-                            <li>
-                                <p class="fz15 fw400 ff-heading mt30 pl30">Account</p>
-                            </li>
-                            <li class=""><a href="/my-profile"><i class="flaticon-photo mr10"></i>My Profile</a></li>
-                            <li class=""><a href="/login"><i class="flaticon-logout mr10"></i>Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <div class="col-lg-12">
                 <div class="dashboard_title_area">
                     <h2>Statements</h2>
@@ -53,9 +13,8 @@
             <div class="col-sm-6 col-xxl-3">
                 <div class="d-flex align-items-center justify-content-between statistics_funfact">
                     <div class="details">
-                        <div class="fz15">Net Income</div>
-                        <div class="title">$1.928</div>
-                        <div class="text fz14"><span class="text-thm">$99</span> New Earning</div>
+                        <div class="fz15">Total Transaction</div>
+                        <div class="title">Rs {{totatAmountAdd(transaction)}} </div>
                     </div>
                     <div class="icon text-center"><i class="flaticon-income"></i></div>
                 </div>
@@ -65,7 +24,6 @@
                     <div class="details">
                         <div class="fz15">Withdrawn</div>
                         <div class="title">$912</div>
-                        <div class="text fz14"><span class="text-thm">80+</span> New Completed</div>
                     </div>
                     <div class="icon text-center"><i class="flaticon-withdraw"></i></div>
                 </div>
@@ -75,7 +33,6 @@
                     <div class="details">
                         <div class="fz15">Pending Clearance</div>
                         <div class="title">$820</div>
-                        <div class="text fz14"><span class="text-thm">35+</span> New Queue</div>
                     </div>
                     <div class="icon text-center"><i class="flaticon-review"></i></div>
                 </div>
@@ -85,7 +42,6 @@
                     <div class="details">
                         <div class="fz15">Available for Withdrawal</div>
                         <div class="title">$8.000</div>
-                        <div class="text fz14"><span class="text-thm">290+</span> New Review</div>
                     </div>
                     <div class="icon text-center"><i class="flaticon-review-1"></i></div>
                 </div>
@@ -99,93 +55,25 @@
                             <thead class="t-head">
                                 <tr>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Type</th>
-                                    <th scope="col">Detail</th>
-                                    <th scope="col">Price</th>
+                                    <th scope="col">type</th>
+                                    <th scope="col">From</th>
+                                    <th scope="col">To</th>
+                                    <th scope="col">Details</th>
                                     <th scope="col">Amount</th>
                                 </tr>
                             </thead>
                             <tbody class="t-body">
-                                <tr>
-                                    <th scope="row">April 9, 2023</th>
-                                    <td class="vam"><span class="pending-style style4">Service Purchased</span></td>
-                                    <td class="vam">I will design website UI UX in adobe xd or figma</td>
-                                    <td class="vam">$829</td>
-                                    <td class="vam">$829</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">April 9, 2023</th>
-                                    <td class="vam"><span class="pending-style style4">Service Purchased</span></td>
-                                    <td class="vam">I will design website UI UX in adobe xd or figma</td>
-                                    <td class="vam">$829</td>
-                                    <td class="vam">$829</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">April 9, 2023</th>
-                                    <td class="vam"><span class="pending-style style5">Wallet Topup</span></td>
-                                    <td class="vam">I will design website UI UX in adobe xd or figma</td>
-                                    <td class="vam">$829</td>
-                                    <td class="vam">$829</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">April 9, 2023</th>
-                                    <td class="vam"><span class="pending-style style5">Wallet Topup</span></td>
-                                    <td class="vam">I will design website UI UX in adobe xd or figma</td>
-                                    <td class="vam">$829</td>
-                                    <td class="vam">$829</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">April 9, 2023</th>
-                                    <td class="vam"><span class="pending-style style5">Wallet Topup</span></td>
-                                    <td class="vam">I will design website UI UX in adobe xd or figma</td>
-                                    <td class="vam">$829</td>
-                                    <td class="vam">$829</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">April 9, 2023</th>
-                                    <td class="vam"><span class="pending-style style4">Service Purchased</span></td>
-                                    <td class="vam">I will design website UI UX in adobe xd or figma</td>
-                                    <td class="vam">$829</td>
-                                    <td class="vam">$829</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">April 9, 2023</th>
-                                    <td class="vam"><span class="pending-style style5">Wallet Topup</span></td>
-                                    <td class="vam">I will design website UI UX in adobe xd or figma</td>
-                                    <td class="vam">$829</td>
-                                    <td class="vam">$829</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">April 9, 2023</th>
-                                    <td class="vam"><span class="pending-style style5">Wallet Topup</span></td>
-                                    <td class="vam">I will design website UI UX in adobe xd or figma</td>
-                                    <td class="vam">$829</td>
-                                    <td class="vam">$829</td>
+                                <tr *ngFor="let obj of transaction">
+                                    <th scope="row"> {{formatDateconv(obj.createdTime)}} |
+                                        {{formatTimeconv(obj.createdTime)}} </th>
+                                    <td class="vam"><span class="pending-style style4"> {{obj.type}} </span></td>
+                                    <td class="vam"> {{obj.from_uid}} </td>
+                                    <td class="vam"> {{obj.to_id}} </td>
+                                    <td class="vam"> {{obj.description}} </td>
+                                    <td class="vam"> {{obj.amount}} </td>
                                 </tr>
                             </tbody>
                         </table>
-                        <div class="mt30">
-                            <div class="mbp_pagination text-center  ">
-                                <ul class="page_navigation">
-                                    <li class="page-item"><a class="page-link"><span
-                                                class="fas fa-angle-left"></span></a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link">1</a></li>
-                                    <li class="page-item active" aria-current="page"><a class="page-link">2 <span
-                                                class="sr-only">(current)</span></a></li>
-                                    <li class="page-item"><a class="page-link">3</a></li>
-                                    <li class="page-item"><a class="page-link">4</a></li>
-                                    <li class="page-item"><a class="page-link">5</a></li>
-                                    <li class="page-item"><a class="page-link">...</a></li>
-                                    <li class="page-item"><a class="page-link">20</a></li>
-                                    <li class="page-item"><a class="page-link"><span
-                                                class="fas fa-angle-right"></span></a>
-                                    </li>
-                                </ul>
-                                <p class="mt10 mb-0 pagination_page_count text-center">1 – 20 of 300+ property available
-                                </p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

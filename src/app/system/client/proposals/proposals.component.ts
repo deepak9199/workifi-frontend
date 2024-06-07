@@ -41,6 +41,7 @@ export class ProposalsComponent {
     subscribe: '',
     creatdatetime: ''
   }
+  private uid: string = ''
   private userlist: users_detail[] = []
   private conversationlist: Conversation_detail[] = []
   constructor(
@@ -51,14 +52,21 @@ export class ProposalsComponent {
   ) { }
 
   ngOnInit() {
-    this.getuser()
+    const user = this.token.getUser()
+    if (user && user.uid) {
+      this.uid = user.uid
+      this.getuser()
+    }
+    else {
+      console.error('Uid is null')
+    }
   }
   getproposalsapi() {
     this.loading = true
     this.collectionservice.getData('projects').subscribe({
       next: (data: Project[]) => {
         this.loading = false
-        this.projects = data.filter((item: Project) => item.proposals.length != 0 && item.uid === this.token.getUser().uid)
+        this.projects = data.filter((item: Project) => item.proposals.length != 0 && item.uid === this.uid)
         // console.log(this.projects)
       }
       , error: (err) => {

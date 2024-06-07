@@ -85,6 +85,7 @@ export class ProfileComponent {
   awadsList: award[] = []
   uploadProgress: number = 0
   role: string = ''
+  private uid: string = ''
   amount: number = 0
   constructor(
     private collectionservice: CollectionService,
@@ -95,18 +96,24 @@ export class ProfileComponent {
     private sharedservice: SharedService
   ) { }
   ngOnInit() {
+    const user = this.token.getUser();
+    if (this.ValidatorChecker(user)) {
+      if (user && user.role && user.uid) {
+        this.role = user.role;
+        this.uid = user.uid
+        this.formProfile.email = user.userCredential.user.email;
+        this.formProfile.username = user.name;
+        this.formProfile.phone = user.phone;
+        this.getprofileapi();
+        this.trigertrefreshnavbar();
+      } else {
+        console.error('User role is null or undefined');
+        this.route.navigate(['/']);
+      }
+    } else {
+      this.route.navigate(['/']);
+    }
 
-    if (this.ValidatorChecker(this.token.getUser())) {
-      this.role = this.token.getUser().role
-      this.formProfile.email = this.token.getUser().userCredential.user.email
-      this.formProfile.username = this.token.getUser().name
-      this.formProfile.phone = this.token.getUser().phone
-      this.getprofileapi()
-      this.trigertrefreshnavbar()
-    }
-    else {
-      this.route.navigate(['/'])
-    }
   }
   private ValidatorChecker(data: any) {
     if (typeof data === "undefined" || data === null || data === '') {
@@ -144,28 +151,36 @@ export class ProfileComponent {
     }
   }
   savedata() {
-    if (this.formProfile.pan_card_no != '') {
-      this.formProfile.uid = this.token.getUser().uid
-      this.formProfile.uid = this.token.getUser().uid
-      if (this.token.getUser().role === 'freelancer') {
-        this.formProfile.loyalty_coins = 50
+    if (this.formProfile.pan_card_no !== '') {
+      const user = this.token.getUser();
+
+      if (user && user.uid) {
+        this.formProfile.uid = user.uid;
+
+        if (user.role === 'freelancer') {
+          this.formProfile.loyalty_coins = 50;
+        } else if (user.role === 'client') {
+          this.formProfile.loyalty_coins = 0;
+        }
+
+        const currentDateTime = new Date().toString();
+        this.formProfile.created_date_time = currentDateTime;
+        this.formProfile.updated_date_time = currentDateTime;
+        this.formProfile.education = this.educationlist;
+        this.formProfile.skil = this.skilList; // corrected 'skil' to 'skill'
+        this.formProfile.work_experience = this.work_experience_list;
+        this.formProfile.award = this.awadsList; // corrected 'awad' to 'award'
+        this.formProfile.status = 'active';
+
+        console.log('created');
+        this.saveprofileapi(this.formProfile);
+      } else {
+        console.error('User uid is null or undefined');
       }
-      else if (this.token.getUser().role === 'client') {
-        this.formProfile.loyalty_coins = 0
-      }
-      this.formProfile.created_date_time = (new Date()).toString()
-      this.formProfile.updated_date_time = (new Date()).toString()
-      this.formProfile.education = this.educationlist
-      this.formProfile.skil = this.skilList
-      this.formProfile.work_experience = this.work_experience_list
-      this.formProfile.award = this.awadsList
-      this.formProfile.status = 'active'
-      console.log('created')
-      this.saveprofileapi(this.formProfile)
+    } else {
+      this.toster.error('Pan Card no. is required');
     }
-    else {
-      this.toster.error('Pan Card no. is required')
-    }
+
 
   }
   updatedata(id: string) {
@@ -202,11 +217,11 @@ export class ProfileComponent {
         {
           from_uid: 'Bank',
           type: 'cash',
-          to_id: this.token.getUser().uid,
+          to_id: this.uid,
           utr: '',
           amount: this.amount,
           description: 'Cash add',
-          login_user: this.token.getUser().uid,
+          login_user: this.uid,
           createdTime: new Date().toString()
         }
       )
@@ -241,7 +256,7 @@ export class ProfileComponent {
     this.loading = true
     this.collectionservice.getData('profile').subscribe({
       next: (data) => {
-        let obj = data.filter((obj: profile) => obj.uid === this.token.getUser().uid)
+        let obj = data.filter((obj: profile) => obj.uid === this.uid)
         if (obj.length != 0) {
           this.formProfile = obj[0]
           // console.log(this.formProfile)
@@ -284,7 +299,7 @@ export class ProfileComponent {
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
-      this.collectionservice.uploadFile(file, 'users/' + this.token.getUser().uid + '/profile').subscribe(
+      this.collectionservice.uploadFile(file, 'users/' + this.uid + '/profile').subscribe(
         (progress) => {
           // this.uploadProgress = progress;
           console.log('Upload progress:', progress);
@@ -294,7 +309,7 @@ export class ProfileComponent {
         },
         () => {
           console.log('Upload complete');
-          this.collectionservice.getDownloadUrl('users/' + this.token.getUser().uid + '/profile/' + file.name).subscribe(
+          this.collectionservice.getDownloadUrl('users/' + this.uid + '/profile/' + file.name).subscribe(
             (url) => {
               this.formProfile.image = url;
               console.log('Download URL:', url);
@@ -327,26 +342,20 @@ export class ProfileComponent {
   private getTransactionapi() {
     this.collectionservice.getData('transaction').subscribe({
       next: (data: Transaction_detail[]) => {
-        // let sum: number = 0
-        // this.Transactionlist = data.filter((item: Transaction) => (item.to_id === this.token.getUser().uid && (item.type === 'project')))
-        // this.Transactionlist.map((item: Transaction) => {
-        //   sum = sum + item.amount
-        // })
-        // this.formProfile.transaction_rewards = sum / 10000
+
         this.transactions = data
         this.formProfile = this.updateFreelancerTier(this.formProfile, this.transactions);
-        let transaction_rewards_count = data.filter((item: Transaction) => (item.to_id === this.token.getUser().uid && item.type === 'project')).reduce((sum, item: Transaction) => sum + item.amount, 0) / 10000;
-        // this.formProfile.transaction_rewards = data.filter((item: Transaction) => (item.to_id === this.token.getUser().uid && item.type === 'project')).reduce((sum, item: Transaction) => sum + item.amount, 0) / 10000;
+        let transaction_rewards_count = data.filter((item: Transaction) => (item.to_id === this.uid && item.type === 'project')).reduce((sum, item: Transaction) => sum + item.amount, 0) / 10000;
         if (this.formProfile.transaction_rewards < transaction_rewards_count) {
           this.formProfile.transaction_rewards = transaction_rewards_count
           this.addTransactionapi({
             from_uid: 'Auto',
             type: 'transaction_reward',
-            to_id: this.token.getUser().uid,
+            to_id: this.uid,
             utr: '',
             amount: 100 * 0.20,
             description: 'Transaction reward Above 10000',
-            login_user: this.token.getUser().uid,
+            login_user: this.uid,
             createdTime: new Date().toString()
           });
         }

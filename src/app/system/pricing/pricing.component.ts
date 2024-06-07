@@ -53,7 +53,13 @@ export class PricingComponent {
   ) { }
 
   ngOnInit(): void {
-    this.getprofiledetails(this.token.getUser().uid)
+    const user = this.token.getUser()
+    if (user && user.uid) {
+      this.getprofiledetails(user.uid)
+    }
+    else {
+      console.error('Uid is null')
+    }
   }
   selectsubscribefun(data: string) {
     switch (data) {

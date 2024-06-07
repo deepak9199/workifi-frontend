@@ -17,24 +17,30 @@ export class HomeComponent {
 
   ngOnInit() {
     if (this.ValidatorChecker(this.tokenstorage.getToken())) {
-      switch (this.tokenstorage.getUser().role) {
-        case 'client':
-          // Assuming tokenstorage is accessible and getUser() returns an object with a 'role' array
-          this.router.navigate(['/client/home']);
-          break;
+      const user = this.tokenstorage.getUser();
 
-        case 'freelancer':
-          this.router.navigate(['/freelancer/projectlist']);
-          break;
+      if (user && user.role) {
+        switch (user.role) {
+          case 'client':
+            this.router.navigate(['/client/home']);
+            break;
 
-        default:
-          this.router.navigate(['/']).then(() => {
-            this.toster.error('Role not Matched'); // Assuming toster is accessible and has an error method
-          });
+          case 'freelancer':
+            this.router.navigate(['/freelancer/projectlist']);
+            break;
 
+          default:
+            this.router.navigate(['/']).then(() => {
+              this.toster.error('Role not Matched');
+            });
+        }
+      } else {
+        console.error('User or user role is null or undefined');
       }
-
+    } else {
+      console.error('Token validation failed');
     }
+
   }
 
   private ValidatorChecker(data: any) {

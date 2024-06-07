@@ -213,7 +213,7 @@ export class ManageProjectComponent {
         utr: '',
         amount: project.cost,
         description: `Project Completed: ${project.title}`,
-        login_user: this.token.getUser().uid,
+        login_user: this.uid,
         createdTime: new Date().toString()
       };
       this.subTransactionApi(transaction);

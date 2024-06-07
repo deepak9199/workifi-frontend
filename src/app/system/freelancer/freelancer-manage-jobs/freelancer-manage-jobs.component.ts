@@ -22,6 +22,7 @@ export class FreelancerManageJobsComponent {
   globalprojects: Project[] = []
   projects: Project[] = []
   activeTab: string = '';
+  private uid: string = ''
   constructor(
     private collectionservice: CollectionService,
     private toster: ToastrService,
@@ -29,14 +30,21 @@ export class FreelancerManageJobsComponent {
   ) { }
 
   ngOnInit() {
-    this.getprojectsapi()
+    const user = this.token.getUser()
+    if (user && user.uid) {
+      this.uid = user.uid
+      this.getprojectsapi()
+    }
+    else {
+      console.error('uId is null')
+    }
   }
   // api call for workinghours
   private getprojectsapi() {
     this.loading = true
     this.collectionservice.getData("projects").subscribe({
       next: (data: Project[]) => {
-        this.globalprojects = data.filter((item: Project) => item.assign_to === this.token.getUser().uid)
+        this.globalprojects = data.filter((item: Project) => item.assign_to === this.uid)
         console.log(this.globalprojects)
         this.projecttabtab('ongoing')
         this.loading = false
