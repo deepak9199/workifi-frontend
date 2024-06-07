@@ -399,11 +399,14 @@ export class ProfileComponent {
     return totalAmount;
   }
   private determineTier(workValue: number): string {
-    if (workValue >= 4000000) {
+    if (Number(workValue) >= 4000000) {
+      console.log(workValue)
       return 'Tier I';
-    } else if (workValue >= 2000000) {
+    } else if (Number(workValue) >= 2000000) {
+      console.log(workValue)
       return 'Tier II';
-    } else if (workValue >= 1000000) {
+    } else if (Number(workValue) >= 1000000) {
+      console.log(workValue)
       return 'Tier III';
     } else {
       return 'No Tier';
