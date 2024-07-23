@@ -41,6 +41,7 @@ import { NoPageFoundComponent } from './system/no-page-found/no-page-found.compo
 import { TransactionComponent } from './system/transaction/transaction.component';
 import { FreelancerManageJobsComponent } from './system/freelancer/freelancer-manage-jobs/freelancer-manage-jobs.component';
 import { PricingComponent } from './system/pricing/pricing.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +76,7 @@ import { PricingComponent } from './system/pricing/pricing.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    CarouselModule.forRoot(),
     CoreModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,

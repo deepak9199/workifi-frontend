@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './freelancer-list.component.html',
   styleUrl: './freelancer-list.component.css'
 })
+
 export class FreelancerListComponent {
   loading: boolean = false
   profile: getprofile[] = []
@@ -67,5 +68,4 @@ export class FreelancerListComponent {
   private getSortedUserData(data: any[]): any[] {
     return data.sort((a, b) => this.customSort(a, b));
   }
-
 }
