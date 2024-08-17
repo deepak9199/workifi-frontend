@@ -1,0 +1,25 @@
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    background: #fff;
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+    font-size: large;
+}
+
+ul {
+    margin: 20px 0;
+    padding: 0;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+p {
+    margin: 10px 0;
+}

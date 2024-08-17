@@ -23,6 +23,7 @@ import { FreelancerManageJobsComponent } from '../system/freelancer/freelancer-m
 import { PricingComponent } from '../system/pricing/pricing.component';
 import { PrivacyPolicyComponent } from '../system/privacy-policy/privacy-policy.component';
 import { RefundPoliciesComponent } from '../system/refund-policies/refund-policies.component';
+import { TermsAndConditionsComponent } from '../system/terms-and-conditions/terms-and-conditions.component';
 
 const routes: Routes = [
 
@@ -104,7 +105,7 @@ const routes: Routes = [
     path: 'refundpolicy', component: RefundPoliciesComponent
   },
   {
-    path: 'termsandcondition', component: RefundPoliciesComponent
+    path: 'termsandcondition', component: TermsAndConditionsComponent
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
