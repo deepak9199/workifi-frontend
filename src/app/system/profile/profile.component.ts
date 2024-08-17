@@ -69,13 +69,36 @@ export class ProfileComponent {
     subscribe: { plan: '', datetime: '' },
     trie: '',
     cash: 0,
-    bonus: 0
+    bonus: 0,
+    currency: ''
   }
   fromchangepass = {
     old: '',
     new: '',
     confrom: ''
   }
+  currencies = [
+    { code: "INR", symbol: "₹" },
+    { code: "USD", symbol: "$" },
+    { code: "GBP", symbol: "£" },
+    { code: "EURO", symbol: "€" },
+    { code: "YEN", symbol: "¥" },
+    { code: "AED", symbol: "د.إ" },
+    { code: "CNY", symbol: "CN¥" },
+    { code: "SAR", symbol: "﷼" },
+    { code: "KRW", symbol: "₩" },
+    { code: "RUB", symbol: "₽" },
+    { code: "LUF", symbol: "F" }, // Luxembourg Franc symbol is not widely recognized
+    { code: "ZAR", symbol: "R" },
+    { code: "CAD", symbol: "C$" },
+    { code: "SGD", symbol: "S$" },
+    { code: "MYR", symbol: "RM" },
+    { code: "BDT", symbol: "৳" },
+    { code: "LKR", symbol: "Rs" },
+    { code: "NPR", symbol: "Rs" },
+    { code: "AUD", symbol: "A$" }
+  ];
+
   private profileid: string = ''
   skilList: string[] = []
   educationlist: education[] = []
@@ -212,19 +235,24 @@ export class ProfileComponent {
     }
   }
   addwallet() {
-    this.addTransactionapi
-      (
-        {
-          from_uid: 'Bank',
-          type: 'cash',
-          to_id: this.uid,
-          utr: '',
-          amount: this.amount,
-          description: 'Cash add',
-          login_user: this.uid,
-          createdTime: new Date().toString()
-        }
-      )
+    if (this.formProfile.pan_card_no != '') {
+      this.addTransactionapi
+        (
+          {
+            from_uid: 'Bank',
+            type: 'cash',
+            to_id: this.uid,
+            utr: '',
+            amount: this.amount,
+            description: 'Cash add',
+            login_user: this.uid,
+            createdTime: new Date().toString()
+          }
+        )
+    }
+    else {
+      this.toster.error("Please Update Pan Card no. First")
+    }
   }
   private saveprofileapi(data: profile) {
     this.loading = true
@@ -242,6 +270,7 @@ export class ProfileComponent {
   }
   private updateprofileapi(data: profile, id: string) {
     this.loading = true
+    console.log(data)
     this.collectionservice.updateDocument('profile', id, data).subscribe((data) => {
       this.toster.success('Profile Update Successfully')
       this.ngOnInit()

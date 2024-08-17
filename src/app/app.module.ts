@@ -42,6 +42,9 @@ import { TransactionComponent } from './system/transaction/transaction.component
 import { FreelancerManageJobsComponent } from './system/freelancer/freelancer-manage-jobs/freelancer-manage-jobs.component';
 import { PricingComponent } from './system/pricing/pricing.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { RefundPoliciesComponent } from './system/refund-policies/refund-policies.component';
+import { TermsAndConditionsComponent } from './system/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyPolicyComponent } from './system/privacy-policy/privacy-policy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,6 +73,9 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     TransactionComponent,
     FreelancerManageJobsComponent,
     PricingComponent,
+    RefundPoliciesComponent,
+    TermsAndConditionsComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     BrowserModule,

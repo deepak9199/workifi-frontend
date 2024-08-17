@@ -47,7 +47,8 @@ export class TransactionComponent {
     work_experience: [],
     award: [],
     proposals: [],
-    id: ''
+    id: '',
+    currency: ''
   }
   constructor(
     private collectionservice: CollectionService,

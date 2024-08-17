@@ -56,7 +56,8 @@ export class ManageProjectComponent {
     work_experience: [],
     award: [],
     proposals: [],
-    id: ''
+    id: '',
+    currency: ''
   }
   projects: Project[] = []
   activeTab: string = '';

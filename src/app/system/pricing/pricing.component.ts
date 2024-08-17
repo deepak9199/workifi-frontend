@@ -44,7 +44,8 @@ export class PricingComponent {
     subscribe: { plan: '', datetime: '' },
     trie: '',
     cash: 0,
-    bonus: 0
+    bonus: 0,
+    currency: ''
   }
   constructor(
     private collectionservice: CollectionService,

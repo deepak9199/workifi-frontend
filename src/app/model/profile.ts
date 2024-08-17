@@ -31,7 +31,7 @@ export interface profile {
     work_experience: work_experience[]
     award: award[]
     proposals: proposal[]
-
+    currency: string
 }
 
 export interface getprofile {
@@ -67,6 +67,7 @@ export interface getprofile {
     work_experience: work_experience[]
     award: award[]
     proposals: proposal[]
+    currency: string
 }
 export interface subscribe {
     datetime: string

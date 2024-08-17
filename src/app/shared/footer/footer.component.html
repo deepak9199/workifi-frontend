@@ -5,8 +5,10 @@
                 <div class="col-md-7">
                     <div
                         class="d-block text-center text-md-start justify-content-center justify-content-md-start d-md-flex align-items-center mb-3 mb-md-0">
-                        <a class="fz17 fw500 mr15-md mr30 text-white" href="#">Terms of Service</a><a
-                            class="fz17 fw500 mr15-md mr30 text-white" href="#">Privacy Policy</a>
+                        <a class="fz17 fw500 mr15-md mr30 text-white" [routerLink]="['/termsandcondition']">Terms of
+                            Conditions</a><a class="fz17 fw500 mr15-md mr30 text-white"
+                            [routerLink]="['/privacypolicy']">Privacy
+                            Policy</a>
                     </div>
                 </div>
                 <div class="col-md-5">
@@ -24,8 +26,9 @@
                 <div class="col-sm-6 col-lg-3">
                     <div class="link-style1 mb-4 mb-sm-5 ">
                         <h5 class="mb15 text-white">About</h5>
-                        <div class="link-list"><a href="#">Careers</a><a href="#">Press &amp; News</a><a
-                                href="#">Partnerships</a><a href="#">Privacy Policy</a><a href="#">Terms of
+                        <div class="link-list"><a [routerLink]="['/refundpolicy']">Refund Policy</a><a href="#">Press
+                                &amp; News</a><a href="#">Partnerships</a><a [routerLink]="['/privacypolicy']">Privacy
+                                Policy</a><a [routerLink]="['/termsandcondition']">Terms of
                                 Service</a><a href="#">Investor Relations</a>
                         </div>
                     </div>

@@ -71,7 +71,8 @@ export class FreelancerSubmitProposalComponent {
     subscribe: { plan: '', datetime: '' },
     trie: '',
     cash: 0,
-    bonus: 0
+    bonus: 0,
+    currency: ''
   }
   formProposals: proposal = {
     uid: '',

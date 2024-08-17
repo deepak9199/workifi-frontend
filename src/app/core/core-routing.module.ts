@@ -21,6 +21,8 @@ import { NoPageFoundComponent } from '../system/no-page-found/no-page-found.comp
 import { TransactionComponent } from '../system/transaction/transaction.component';
 import { FreelancerManageJobsComponent } from '../system/freelancer/freelancer-manage-jobs/freelancer-manage-jobs.component';
 import { PricingComponent } from '../system/pricing/pricing.component';
+import { PrivacyPolicyComponent } from '../system/privacy-policy/privacy-policy.component';
+import { RefundPoliciesComponent } from '../system/refund-policies/refund-policies.component';
 
 const routes: Routes = [
 
@@ -94,6 +96,15 @@ const routes: Routes = [
     {
       role: 'freelancer'
     }
+  },
+  {
+    path: 'privacypolicy', component: PrivacyPolicyComponent
+  },
+  {
+    path: 'refundpolicy', component: RefundPoliciesComponent
+  },
+  {
+    path: 'termsandcondition', component: RefundPoliciesComponent
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'

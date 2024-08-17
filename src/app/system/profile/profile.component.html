@@ -83,17 +83,33 @@
                                 <div class="col-sm-6">
                                     <div class="mb20">
                                         <div class="form-style1">
+                                            <label class="heading-color ff-heading fw500 mb10">currency</label>
+                                            <div class="bootselect-multiselect">
+                                                <select [(ngModel)]="formProfile.currency" id="currency" name="currency"
+                                                    class="form-control">
+                                                    <option value="" selected>Select</option>
+                                                    <option *ngFor="let curobj of currencies" [value]="curobj.code">
+                                                        {{curobj.code}} {{curobj.symbol}}</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="mb20">
+                                        <div class="form-style1">
                                             <label class="heading-color ff-heading fw500 mb10">Hourly Rate</label>
                                             <div class="bootselect-multiselect">
                                                 <select [(ngModel)]="formProfile.hourly_rate" id="hourly_rate"
                                                     name="hourly_rate" class="form-control">
                                                     <option value="" selected>Select</option>
-                                                    <option value="$50">$50</option>
-                                                    <option value="$60">$60</option>
-                                                    <option value="$70">$70</option>
-                                                    <option value="$80">$80</option>
-                                                    <option value="$90">$90</option>
-                                                    <option value="$100">$100</option>
+                                                    <option value="50">50</option>
+                                                    <option value="60">60</option>
+                                                    <option value="70">70</option>
+                                                    <option value="80">80</option>
+                                                    <option value="90">90</option>
+                                                    <option value="100">100</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -598,11 +614,11 @@
                         <div class="col">
                             <div class="mb-3">
                                 <label class="form-label">Cash :</label>
-                                <input disabled [(ngModel)]="formProfile.loyalty_coins" id="loyalty_coins"
-                                    name="loyalty_coins" class="form-control" type="number">
-                                <label class="form-label">loyalty coins :</label>
                                 <input disabled [(ngModel)]="formProfile.cash" id="cash" name="cash"
                                     class="form-control" type="number">
+                                <label class="form-label">loyalty coins :</label>
+                                <input disabled [(ngModel)]="formProfile.loyalty_coins" id="loyalty_coins"
+                                    name="loyalty_coins" class="form-control" type="number">
                                 <label class="form-label">Bonus :</label>
                                 <input disabled [(ngModel)]="formProfile.bonus" id="bonus" name="bonus"
                                     class="form-control" type="number">
