@@ -24,6 +24,8 @@ import { PricingComponent } from '../system/pricing/pricing.component';
 import { PrivacyPolicyComponent } from '../system/privacy-policy/privacy-policy.component';
 import { RefundPoliciesComponent } from '../system/refund-policies/refund-policies.component';
 import { TermsAndConditionsComponent } from '../system/terms-and-conditions/terms-and-conditions.component';
+import { ContactUsComponent } from '../system/contact-us/contact-us.component';
+import { GuidanceComponent } from '../system/guidance/guidance.component';
 
 const routes: Routes = [
 
@@ -99,7 +101,13 @@ const routes: Routes = [
     }
   },
   {
+    path: 'guidance', component: GuidanceComponent
+  },
+  {
     path: 'privacypolicy', component: PrivacyPolicyComponent
+  },
+  {
+    path: 'contactus', component: ContactUsComponent
   },
   {
     path: 'refundpolicy', component: RefundPoliciesComponent

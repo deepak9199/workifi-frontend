@@ -8,7 +8,7 @@
                     <div class="col-auto px-0">
                         <div class="d-flex align-items-center justify-content-between">
                             <div class="logos"><a class="header-logo logo2" [routerLink]="['/']"><img alt="Header Logo"
-                                        loading="lazy" width="133" height="40" decoding="async" data-nimg="1"
+                                        loading="lazy" height="40" decoding="async" data-nimg="1"
                                         style="color:transparent" src="assets/img/logo/logo.png" /></a>
                             </div>
                             <ul class="ace-responsive-menu ui-navigation menu-without-paddingy ">
@@ -24,35 +24,35 @@
                                                     class="arrow "></span></a>
                                             <ul class="sub-menu">
                                                 <li class="">
-                                                    <a>Development and IT</a>
+                                                    <a [routerLink]="['/login']">Development and IT</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Design and creative</a>
+                                                    <a [routerLink]="['/login']">Design and creative</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Sales and Marketing</a>
+                                                    <a [routerLink]="['/login']">Sales and Marketing</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Writing and Translation</a>
+                                                    <a [routerLink]="['/login']">Writing and Translation</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Admin & Customer Support</a>
+                                                    <a [routerLink]="['/login']">Admin & Customer Support</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Finance & Accounting</a>
+                                                    <a [routerLink]="['/login']">Finance & Accounting</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>HR & Training</a>
+                                                    <a [routerLink]="['/login']">HR & Training</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Legal</a>
+                                                    <a [routerLink]="['/login']">Legal</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Engineering &
+                                                    <a [routerLink]="['/login']">Engineering &
                                                         Architecture</a>
                                                 </li>
                                                 <li class="">
-                                                    <a href="">Hire Freelancers</a>
+                                                    <a [routerLink]="['/login']">Hire Freelancers</a>
                                                 </li>
 
                                             </ul>
@@ -62,19 +62,19 @@
                                                     class="arrow "></span></a>
                                             <ul class="sub-menu">
                                                 <li class="">
-                                                    <a>Logo Design</a>
+                                                    <a [routerLink]="['/login']">Logo Design</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>WordPress</a>
+                                                    <a [routerLink]="['/login']">WordPress</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Social Media Management</a>
+                                                    <a [routerLink]="['/login']">Social Media Management</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Video Editing</a>
+                                                    <a [routerLink]="['/login']">Video Editing</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>SEO</a>
+                                                    <a [routerLink]="['/login']">SEO</a>
                                                 </li>
 
 
@@ -86,22 +86,22 @@
                                                     class="arrow "></span></a>
                                             <ul class="sub-menu">
                                                 <li class="">
-                                                    <a>Web Programming</a>
+                                                    <a [routerLink]="['/login']">Web Programming</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>AI & Machine Learning</a>
+                                                    <a [routerLink]="['/login']">AI & Machine Learning</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Marketing Strategy</a>
+                                                    <a [routerLink]="['/login']">Marketing Strategy</a>
                                                 </li>
                                                 <li class="">
 
 
 
-                                                    <a>Social Media Marketing</a>
+                                                    <a [routerLink]="['/login']">Social Media Marketing</a>
                                                 </li>
                                                 <li class="">
-                                                    <a>Website Builders & CMS</a>
+                                                    <a [routerLink]="['/login']">Website Builders & CMS</a>
                                                 </li>
                                             </ul>
                                         </li>
@@ -112,21 +112,24 @@
                                         <span class="arrow "></span></a>
                                     <ul class="sub-menu  ">
                                         <li class="menu-active ">
-                                            <a><span class="title">Way to Earn</span><span class="title "></span></a>
+                                            <a [routerLink]="['/guidance']"><span class="title">Grab work for your
+                                                    skill</span><span class="title "></span></a>
 
                                         </li>
                                         <li class="menu-active ">
-                                            <a><span class="title">Grab work for your skill</span><span
-                                                    class="title "></span></a>
-
+                                            <a><span class="title">Win work with</span><span class="arrow "></span></a>
+                                            <ul class="sub-menu">
+                                                <li class="">
+                                                    <a [routerLink]="['/guidance']">Increase your visibility and grab
+                                                        more
+                                                        work opporunities by posting ads on our website. Boost your
+                                                        profile by running ads.
+                                                        Contact us at successworkifest.com</a>
+                                                </li>
+                                            </ul>
                                         </li>
-                                        <li class="menu-active ">
-                                            <a><span class="title">Win work with ads</span><span
-                                                    class="title "></span></a>
-
-                                        </li>
-                                        <li class="menu-active "><a href="become-seller.php"><span class="title">Join
-                                                    Freelancer Plus</span></a>
+                                        <li class="menu-active "><a [routerLink]="['/pricing']"><span class="title">Join
+                                                    Standard or premium pla</span></a>
                                         </li>
                                     </ul>
                                 </li>
@@ -135,18 +138,28 @@
                                         <span class="arrow "></span></a>
                                     <ul class="sub-menu  ">
                                         <li class="menu-active ">
-                                            <a><span class="title">Success Story</span><span class="title "></span></a>
+                                            <a [routerLink]="['/guidance']"><span class="title">Company
+                                                    Overview</span><span class="title "></span></a>
 
                                         </li>
                                         <li class="menu-active ">
-                                            <a><span class="title">Reviews</span><span class="title "></span></a>
+                                            <a [routerLink]="['/login']"><span class="title">Success Story</span><span
+                                                    class="title "></span></a>
 
                                         </li>
                                         <li class="menu-active ">
-                                            <a><span class="title">How to Hire</span><span class="title "></span></a>
+                                            <a [routerLink]="['/login']"><span class="title">Reviews</span><span
+                                                    class="title "></span></a>
 
                                         </li>
-                                        <li class="menu-active "><a><span class=" title">How to Grab
+                                        <li class="menu-active ">
+                                            <a [routerLink]="['/guidance']"><span class="title">How to Hire</span><span
+                                                    class="title "></span></a>
+
+                                        </li>
+                                        <li class="menu-active "><a [routerLink]="['/guidance']"><span
+                                                    class=" title">How
+                                                    to Grab
                                                     work</span></a>
                                         </li>
 
@@ -157,59 +170,24 @@
 
                                     <ul class="sub-menu  ">
                                         <li class="menu-active ">
-                                            <a><span class="title">How to Hire</span><span class="title "></span></a>
-
-                                        </li>
-                                        <li class="menu-active ">
-                                            <a><span class="title">How to Grab Work</span><span
+                                            <a [routerLink]="['/guidance']"><span class="title">How to Hire</span><span
                                                     class="title "></span></a>
 
                                         </li>
                                         <li class="menu-active ">
-                                            <a><span class="title">FEQ</span><span class="title "></span></a>
+                                            <a [routerLink]="['/guidance']"><span class="title">How to Grab
+                                                    Work</span><span class="title "></span></a>
 
                                         </li>
-                                    </ul>
-                                </li>
-                                <li class="visible_list menu-active  "><a class="list-item
-                                    "><span class="title">Category</span> <span class="arrow "></span></a>
+                                        <li class="menu-active ">
+                                            <a [routerLink]="['/login']"><span class="title">FAQ</span><span
+                                                    class="title "></span></a>
 
-                                    <ul class="sub-menu  ">
-                                        <li class="">
-                                            <a>Development and IT</a>
-                                        </li>
-                                        <li class="">
-                                            <a>Design and creative</a>
-                                        </li>
-                                        <li class="">
-                                            <a>Sales and Marketing</a>
-                                        </li>
-                                        <li class="">
-                                            <a>Writing and Translation</a>
-                                        </li>
-                                        <li class="">
-                                            <a>Admin & Customer Support</a>
-                                        </li>
-                                        <li class="">
-                                            <a>Finance & Accounting</a>
-                                        </li>
-                                        <li class="">
-                                            <a>HR & Training</a>
-                                        </li>
-                                        <li class="">
-                                            <a>Legal</a>
-                                        </li>
-                                        <li class="">
-                                            <a>Engineering &
-                                                Architecture</a>
-                                        </li>
-                                        <li class="">
-                                            <a href="">Hire Freelancers</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="visible_list menu-active  ">
-                                    <a class="list-item"><span class="title">Core Business Solution</span> <span
+                                    <a class="list-item"><span class="title"> Core Business Solutions </span> <span
                                             class="arrow "></span></a>
 
                                     <ul class="sub-menu  ">
@@ -232,6 +210,11 @@
                                 </li>
                                 <li class="visible_list menu-active  ">
                                     <a class="list-item" [routerLink]="['/pricing']"><span class="title">Pricing</span>
+                                    </a>
+                                </li>
+                                <li class="visible_list menu-active  ">
+                                    <a class="list-item" [routerLink]="['/contactus']"><span class="title">Contact
+                                            Us</span>
                                     </a>
                                 </li>
                             </ul>

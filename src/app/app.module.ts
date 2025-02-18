@@ -45,6 +45,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { RefundPoliciesComponent } from './system/refund-policies/refund-policies.component';
 import { TermsAndConditionsComponent } from './system/terms-and-conditions/terms-and-conditions.component';
 import { PrivacyPolicyComponent } from './system/privacy-policy/privacy-policy.component';
+import { ContactUsComponent } from './system/contact-us/contact-us.component';
+import { GuidanceComponent } from './system/guidance/guidance.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,6 +78,8 @@ import { PrivacyPolicyComponent } from './system/privacy-policy/privacy-policy.c
     RefundPoliciesComponent,
     TermsAndConditionsComponent,
     PrivacyPolicyComponent,
+    ContactUsComponent,
+    GuidanceComponent,
   ],
   imports: [
     BrowserModule,
