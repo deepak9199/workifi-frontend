@@ -40,8 +40,12 @@ export class CreateProjectComponent {
     private toster: ToastrService,
     private token: TokenStorageService
   ) { }
-  ngOnInit() {
 
+  ngOnInit() {
+    this.scrollToTop()  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   createproject() {
     const user = this.token.getUser();

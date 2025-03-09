@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class TermsAndConditionsComponent {
 
+  constructor() { }
+
+  ngOnInit() {
+    this.scrollToTop()  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
 }

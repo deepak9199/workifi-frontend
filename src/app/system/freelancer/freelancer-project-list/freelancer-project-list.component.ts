@@ -21,6 +21,12 @@ export class FreelancerProjectListComponent {
   ) { }
   ngOnInit() {
     this.getprojectapi()
+    this.scrollToTop()
+  }
+
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   private getprojectapi() {
     this.loading = true

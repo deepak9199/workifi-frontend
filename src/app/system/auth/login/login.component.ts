@@ -29,6 +29,7 @@ export class LoginComponent {
   ) { }
 
   ngOnInit() {
+    this.scrollToTop()
   }
 
   // login function
@@ -95,5 +96,10 @@ export class LoginComponent {
 
     }
   }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
 
 }

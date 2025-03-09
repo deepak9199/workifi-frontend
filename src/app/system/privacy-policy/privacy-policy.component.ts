@@ -6,5 +6,12 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrl: './privacy-policy.component.css',
 })
 export class PrivacyPolicyComponent {
+  constructor() { }
 
+  ngOnInit() {
+    this.scrollToTop()  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

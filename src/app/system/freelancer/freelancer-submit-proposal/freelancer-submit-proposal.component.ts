@@ -100,6 +100,12 @@ export class FreelancerSubmitProposalComponent {
     else {
       console.error('Uid is null')
     }
+    this.scrollToTop()
+  }
+
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   submitproposal() {
     this.formProposals.uid = this.uid

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './refund-policies.component.css'
 })
 export class RefundPoliciesComponent {
+  constructor() { }
 
+  ngOnInit() {
+    this.scrollToTop()  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

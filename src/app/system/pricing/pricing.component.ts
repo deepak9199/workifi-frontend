@@ -61,6 +61,11 @@ export class PricingComponent {
     else {
       console.error('Uid is null')
     }
+    this.scrollToTop()
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   selectsubscribefun(data: string) {
     switch (data) {

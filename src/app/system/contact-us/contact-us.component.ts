@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './contact-us.component.css'
 })
 export class ContactUsComponent {
+  constructor() { }
 
+  ngOnInit() {
+    this.scrollToTop()  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

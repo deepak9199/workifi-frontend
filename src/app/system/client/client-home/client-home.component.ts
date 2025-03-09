@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrl: './client-home.component.css'
 })
 export class ClientHomeComponent {
+  constructor() { }
 
+  ngOnInit() {
+    this.scrollToTop()  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

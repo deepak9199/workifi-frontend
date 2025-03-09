@@ -76,6 +76,12 @@ export class ManageProjectComponent {
     else {
       console.error('User Id is null')
     }
+    this.scrollToTop()
+  }
+
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   private getprojectsapi() {
     this.loading = true

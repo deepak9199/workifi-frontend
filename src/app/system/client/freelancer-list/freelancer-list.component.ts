@@ -20,6 +20,12 @@ export class FreelancerListComponent {
   ) { }
   ngOnInit() {
     this.getprofileapi()
+    this.scrollToTop()
+  }
+
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   private getprofileapi() {
     this.loading = true

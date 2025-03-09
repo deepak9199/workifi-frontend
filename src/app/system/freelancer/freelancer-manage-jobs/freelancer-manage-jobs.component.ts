@@ -38,6 +38,13 @@ export class FreelancerManageJobsComponent {
     else {
       console.error('uId is null')
     }
+    this.scrollToTop()
+  }
+
+
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   // api call for workinghours
   private getprojectsapi() {

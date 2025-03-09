@@ -60,6 +60,12 @@ export class ProposalsComponent {
     else {
       console.error('Uid is null')
     }
+    this.scrollToTop()
+  }
+
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   getproposalsapi() {
     this.loading = true

@@ -38,7 +38,11 @@ export class MessagesComponent {
     } else {
       console.error('User role is null or undefined');
     }
+    this.scrollToToppage()
+  }
 
+  scrollToToppage(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   // Method to select a different customer
   selectCustomer(index: number) {

@@ -64,6 +64,12 @@ export class ProposalToFreelancerComponent {
   ) { }
   ngOnInit() {
     this.callshareddata()
+    this.scrollToTop()
+  }
+
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   submitproposal() {
     const user = this.token.getUser();

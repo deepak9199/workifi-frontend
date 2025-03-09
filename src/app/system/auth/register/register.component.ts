@@ -18,6 +18,9 @@ export class RegisterComponent {
     private toster: ToastrService,
     private sharedservice: SharedService) { }
 
+  ngOnInit() {
+    this.scrollToTop()  }
+
   register(email: string, password: string, name: string, contact: string): void {
 
     if (typeof this.sharedservice.getdata() != 'undefined' && this.sharedservice.getdata() != null && this.sharedservice.getdata() != '') {
@@ -50,7 +53,7 @@ export class RegisterComponent {
           if (userCredential) {
             // Registration successful, handle success
             // console.log('Registration successful:', userCredential.user?.uid);
-            // create user 
+            // create user
             let user: users = {
               contact: contact,
               createdTime: userCredential.user?.metadata.creationTime || "",
@@ -87,4 +90,8 @@ export class RegisterComponent {
         },
       });
   }
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
 }

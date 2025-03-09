@@ -40,9 +40,13 @@ export class HomeComponent {
     } else {
       console.error('Token validation failed');
     }
-
+    this.scrollToTop()
   }
 
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   private ValidatorChecker(data: any) {
     if (typeof data === "undefined" || data === null || data === '') {
       return false

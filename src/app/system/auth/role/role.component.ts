@@ -16,6 +16,12 @@ export class RoleComponent {
 
   }
 
+  ngOnInit() {
+    this.scrollToTop()  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   clickclient() {
     this.optionname = 'Sign Up as a client'
   }

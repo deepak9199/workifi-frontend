@@ -63,8 +63,13 @@ export class TransactionComponent {
       this.uid = user.uid
       this.getprofile(this.uid)
     }
+    this.scrollToTop()
   }
 
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
   private gettarnsactionapi(uid: string) {
     this.loading = true
     this.collectionservice.getData('transaction').subscribe({
