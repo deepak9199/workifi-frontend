@@ -47,6 +47,9 @@ import { TermsAndConditionsComponent } from './system/terms-and-conditions/terms
 import { PrivacyPolicyComponent } from './system/privacy-policy/privacy-policy.component';
 import { ContactUsComponent } from './system/contact-us/contact-us.component';
 import { GuidanceComponent } from './system/guidance/guidance.component';
+import { Guidance2Component } from './system/guidance2/guidance2.component';
+import { FaqComponent } from './system/faq/faq.component';
+import { CompanyOverVireComponent } from './system/company-over-vire/company-over-vire.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +83,9 @@ import { GuidanceComponent } from './system/guidance/guidance.component';
     PrivacyPolicyComponent,
     ContactUsComponent,
     GuidanceComponent,
+    Guidance2Component,
+    FaqComponent,
+    CompanyOverVireComponent,
   ],
   imports: [
     BrowserModule,

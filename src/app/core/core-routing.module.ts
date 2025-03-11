@@ -26,6 +26,9 @@ import { RefundPoliciesComponent } from '../system/refund-policies/refund-polici
 import { TermsAndConditionsComponent } from '../system/terms-and-conditions/terms-and-conditions.component';
 import { ContactUsComponent } from '../system/contact-us/contact-us.component';
 import { GuidanceComponent } from '../system/guidance/guidance.component';
+import { Guidance2Component } from '../system/guidance2/guidance2.component';
+import { FaqComponent } from '../system/faq/faq.component';
+import { CompanyOverVireComponent } from '../system/company-over-vire/company-over-vire.component';
 
 const routes: Routes = [
 
@@ -102,6 +105,15 @@ const routes: Routes = [
   },
   {
     path: 'guidance', component: GuidanceComponent
+  },
+  {
+    path: 'faq', component: FaqComponent
+  },
+  {
+    path: 'companyoverview', component: CompanyOverVireComponent
+  },
+  {
+    path: 'guidance2', component: Guidance2Component
   },
   {
     path: 'privacypolicy', component: PrivacyPolicyComponent
