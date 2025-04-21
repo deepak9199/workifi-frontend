@@ -50,6 +50,7 @@ import { GuidanceComponent } from './system/guidance/guidance.component';
 import { Guidance2Component } from './system/guidance2/guidance2.component';
 import { FaqComponent } from './system/faq/faq.component';
 import { CompanyOverVireComponent } from './system/company-over-vire/company-over-vire.component';
+import { KycPolicyComponent } from './system/kyc-policy/kyc-policy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +87,7 @@ import { CompanyOverVireComponent } from './system/company-over-vire/company-ove
     Guidance2Component,
     FaqComponent,
     CompanyOverVireComponent,
+    KycPolicyComponent,
   ],
   imports: [
     BrowserModule,

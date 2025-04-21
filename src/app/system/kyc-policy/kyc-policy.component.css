@@ -1,0 +1,33 @@
+.container {
+    max-width: 1080px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    color: #0073e6;
+    border-bottom: 2px solid #0073e6;
+    padding-bottom: 5px;
+  }
+  h3 {
+    color: #005bb5;
+  }
+  p {
+    margin-bottom: 15px;
+  }
+  a {
+    color: #0073e6;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .faq {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  

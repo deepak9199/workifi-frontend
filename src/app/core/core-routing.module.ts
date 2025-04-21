@@ -29,6 +29,7 @@ import { GuidanceComponent } from '../system/guidance/guidance.component';
 import { Guidance2Component } from '../system/guidance2/guidance2.component';
 import { FaqComponent } from '../system/faq/faq.component';
 import { CompanyOverVireComponent } from '../system/company-over-vire/company-over-vire.component';
+import { KycPolicyComponent } from '../system/kyc-policy/kyc-policy.component';
 
 const routes: Routes = [
 
@@ -126,6 +127,9 @@ const routes: Routes = [
   },
   {
     path: 'termsandcondition', component: TermsAndConditionsComponent
+  },
+  {
+    path: 'kycpolicy', component: KycPolicyComponent
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
