@@ -1,210 +1,174 @@
 <app-loading *ngIf="loading"></app-loading>
 <div *ngIf="!loading" class="body_content">
 
-    <section class="breadcumb-section pt-0">
-        <div
-            class="cta-service-v1 cta-banner mx-auto maxw1700 pt120 pb120 bdrs16 position-relative overflow-hidden d-flex align-items-center mx20-lg px30-lg">
-            <img alt="left-top" loading="lazy" width="198" height="226" decoding="async" data-nimg="1"
-                class="left-top-img wow zoomIn" alt="right-bottom" loading="lazy" width="255" height="181"
-                decoding="async" data-nimg="1" style="color: transparent; visibility: visible;"><img
-                alt="vector-service" loading="lazy" width="532" height="300" decoding="async" data-nimg="1"
-                class="service-v1-vector bounce-y d-none d-xl-block" srcset="assets/images/vector-service-v1.webp"
-                style="color: transparent;">
-            <div class="container">
-                <div class="row wow fadeInUp" style="visibility: visible;">
-                    <div class="col-xl-7">
-                        <div class="position-relative">
-                            <h2>Projects List</h2>
-                            <p class="text mb30">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
-                        </div>
-                        <div class="advance-search-tab bgc-white p10 bdrs4 zi1 position-relative">
-                            <div class="row">
-                                <div class="col-md-8 col-xl-9">
-                                    <div class="advance-search-field ">
-                                        <form class="form-search position-relative">
-                                            <div class="box-search bb1-sm"><span
-                                                    class="icon far fa-magnifying-glass"></span>
-                                                <input #searchquery (keyup)="filterItems(searchquery.value)"
-                                                    class="form-control" placeholder="What are you looking for?"
-                                                    type="text" name="search">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-xl-3">
-                                    <div class="text-center text-xl-start"><button class="ud-btn btn-thm w-100"
-                                            type="button">Search</button></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <section class="breadcumb-section pt-0">
+    <div
+      class="cta-service-v1 cta-banner mx-auto maxw1700 pt120 pb120 bdrs16 position-relative overflow-hidden d-flex align-items-center mx20-lg px30-lg">
+      <img alt="left-top" loading="lazy" width="198" height="226" decoding="async" data-nimg="1"
+        class="left-top-img wow zoomIn" alt="right-bottom" loading="lazy" width="255" height="181" decoding="async"
+        data-nimg="1" style="color: transparent; visibility: visible;"><img alt="vector-service" loading="lazy"
+        width="532" height="300" decoding="async" data-nimg="1" class="service-v1-vector bounce-y d-none d-xl-block"
+        srcset="assets/images/vector-service-v1.webp" style="color: transparent;">
+      <div class="container">
+        <div class="row wow fadeInUp" style="visibility: visible;">
+          <div class="col-xl-7">
+            <div class="position-relative">
+              <h2>Projects List</h2>
+              <p class="text mb30">Browse through all the projects currently available in the system.</p>
             </div>
-        </div>
-    </section>
-    <section class="pt30 pb90">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="list-sidebar-style1 d-none d-lg-block">
-                        <div class="accordion" id="accordionExample">
-                            <div class="card mb20 pb10 mt-0">
-                                <div class="card-header" id="heading0">
-                                    <h4><button class="btn btn-link ps-0 pt-0 collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse0" aria-expanded="false"
-                                            aria-controls="collapse0">Category</button></h4>
-                                </div>
-                                <div id="collapse0" class="collapse show" aria-labelledby="heading0"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body card-body px-0 pt-0">
-                                        <div class="checkbox-style1 mb15"><label class="custom_checkbox">UX
-                                                Designer<input type="checkbox"><span class="checkmark"></span><span
-                                                    class="right-tags">(1,945)</span></label><label
-                                                class="custom_checkbox">Web Developers<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(8,136)</span></label><label
-                                                class="custom_checkbox">Illustrators<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(917)</span></label><label
-                                                class="custom_checkbox">Node.js<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(240)</span></label><label
-                                                class="custom_checkbox">Project Managers<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(2,460)</span></label></div><a
-                                            class="text-thm">+20 more</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb20 pb10">
-                                <div class="card-header" id="heading0">
-                                    <h4><button class="btn btn-link ps-0 collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse02" aria-expanded="false"
-                                            aria-controls="collapse02">Skills</button></h4>
-                                </div>
-                                <div id="collapse02" class="collapse show" aria-labelledby="heading0"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body card-body px-0 pt-0">
-                                        <div class="card-body card-body px-0 pt-0">
-                                            <div class="checkbox-style1 mb15"><label class="custom_checkbox">Adobe
-                                                    Photoshop<input type="checkbox"><span class="checkmark"></span><span
-                                                        class="right-tags">(1,945)</span></label><label
-                                                    class="custom_checkbox">Figma<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(8,15)</span></label><label
-                                                    class="custom_checkbox">Sketch<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(654)</span></label><label
-                                                    class="custom_checkbox">Adobe XD<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(323)</span></label><label
-                                                    class="custom_checkbox">Balsamiq<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(2,455)</span></label></div><a
-                                                class="text-thm" href="#">+20 more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb20 pb5">
-                                <div class="card-header" id="heading2">
-                                    <h4><button class="btn btn-link ps-0 collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false"
-                                            aria-controls="collapse2">Location</button></h4>
-                                </div>
-                                <div id="collapse2" class="collapse show" aria-labelledby="heading2"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body card-body px-0 pt-0">
-                                        <div class="card-body card-body px-0 pt-0">
-                                            <div class="default-box-shadow1 mb30">
-                                                <div class="search_area"><input class="form-control"
-                                                        placeholder="Search" type="text" value=""><label><span
-                                                            class="flaticon-loupe"></span></label></div>
-                                            </div>
-                                            <div class="checkbox-style1 mb15"><label class="custom_checkbox">United
-                                                    States<input type="checkbox"><span class="checkmark"></span><span
-                                                        class="right-tags">(1,945)</span></label><label
-                                                    class="custom_checkbox">United Kingdom<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(8,136)</span></label><label
-                                                    class="custom_checkbox">Canada<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(917)</span></label><label
-                                                    class="custom_checkbox">Germany<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(240)</span></label><label
-                                                    class="custom_checkbox">Turkey<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(2,460)</span></label></div><a
-                                                class="text-thm">+20 more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb20 pb5">
-                                <div class="card-header" id="heading3">
-                                    <h4><button class="btn btn-link ps-0 collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false"
-                                            aria-controls="collapse3">Languange</button></h4>
-                                </div>
-                                <div id="collapse3" class="collapse show" aria-labelledby="heading3"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body card-body px-0 pt-0">
-                                        <div class="card-body card-body px-0 pt-0">
-                                            <div class="checkbox-style1 mb15"><label
-                                                    class="custom_checkbox">Turkish<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(1,945)</span></label><label
-                                                    class="custom_checkbox">English<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(8,15)</span></label><label
-                                                    class="custom_checkbox">Italian<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(654)</span></label><label
-                                                    class="custom_checkbox">Spanish<input type="checkbox"><span
-                                                        class="checkmark"></span><span
-                                                        class="right-tags">(323)</span></label></div><a
-                                                class="text-thm">+20 more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card mb20 pb5">
-                                <div class="card-header" id="heading4">
-                                    <h4><button class="btn btn-link ps-0 collapsed" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false"
-                                            aria-controls="collapse4">English Level</button></h4>
-                                </div>
-                                <div id="collapse4" class="collapse show" aria-labelledby="heading4"
-                                    data-parent="#accordionExample">
-                                    <div class="card-body card-body px-0 pt-0">
-                                        <div class="checkbox-style1"><label class="custom_checkbox">Basic level<input
-                                                    type="checkbox"><span class="checkmark"></span><span
-                                                    class="right-tags">(1,945)</span></label><label
-                                                class="custom_checkbox">Bilingual<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(8,136)</span></label><label
-                                                class="custom_checkbox">Fluent<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(917)</span></label><label
-                                                class="custom_checkbox">Native<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(240)</span></label></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <div class="advance-search-tab bgc-white p10 bdrs4 zi1 position-relative">
+              <div class="row">
+                <div class="col-md-8 col-xl-9">
+                  <div class="advance-search-field ">
+                    <form class="form-search position-relative">
+                      <div class="box-search bb1-sm"><span class="icon far fa-magnifying-glass"></span>
+                        <input #searchquery (keyup)="filterItems(searchquery.value)" class="form-control"
+                          placeholder="What are you looking for?" type="text" name="search">
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                <div class="col-lg-9">
-                    <div class="row align-items-center mb20">
-                        <div class="col-md-6">
-                            <div class="text-center text-md-start">
-                                <p class="text mb-0 mb10-sm"><span class="fw500"> {{projects.length}} </span> services
-                                    available</p>
-                            </div>
-                        </div>
-                        <!-- <div class="col-md-6">
+                <div class="col-md-4 col-xl-3">
+                  <div class="text-center text-xl-start"><button class="ud-btn btn-thm w-100"
+                      type="button">Search</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pt30 pb90">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="list-sidebar-style1 d-none d-lg-block">
+            <div class="accordion" id="accordionExample">
+              <div class="card mb20 pb10 mt-0">
+                <div class="card-header" id="heading0">
+                  <h4><button class="btn btn-link ps-0 pt-0 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse0" aria-expanded="false" aria-controls="collapse0">Category</button></h4>
+                </div>
+                <div id="collapse0" class="collapse show" aria-labelledby="heading0" data-parent="#accordionExample">
+                  <div class="card-body card-body px-0 pt-0">
+                    <div class="checkbox-style1 mb15"><label class="custom_checkbox">UX
+                        Designer<input type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(1,945)</span></label><label class="custom_checkbox">Web Developers<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(8,136)</span></label><label class="custom_checkbox">Illustrators<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(917)</span></label><label class="custom_checkbox">Node.js<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(240)</span></label><label class="custom_checkbox">Project Managers<input
+                          type="checkbox"><span class="checkmark"></span><span class="right-tags">(2,460)</span></label>
+                    </div><a class="text-thm">+20 more</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb20 pb10">
+                <div class="card-header" id="heading0">
+                  <h4><button class="btn btn-link ps-0 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse02" aria-expanded="false" aria-controls="collapse02">Skills</button></h4>
+                </div>
+                <div id="collapse02" class="collapse show" aria-labelledby="heading0" data-parent="#accordionExample">
+                  <div class="card-body card-body px-0 pt-0">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="checkbox-style1 mb15"><label class="custom_checkbox">Adobe
+                          Photoshop<input type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(1,945)</span></label><label class="custom_checkbox">Figma<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(8,15)</span></label><label class="custom_checkbox">Sketch<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(654)</span></label><label class="custom_checkbox">Adobe XD<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(323)</span></label><label class="custom_checkbox">Balsamiq<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(2,455)</span></label></div><a class="text-thm" href="#">+20 more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb20 pb5">
+                <div class="card-header" id="heading2">
+                  <h4><button class="btn btn-link ps-0 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">Location</button></h4>
+                </div>
+                <div id="collapse2" class="collapse show" aria-labelledby="heading2" data-parent="#accordionExample">
+                  <div class="card-body card-body px-0 pt-0">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="default-box-shadow1 mb30">
+                        <div class="search_area"><input class="form-control" placeholder="Search" type="text"
+                            value=""><label><span class="flaticon-loupe"></span></label></div>
+                      </div>
+                      <div class="checkbox-style1 mb15"><label class="custom_checkbox">United
+                          States<input type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(1,945)</span></label><label class="custom_checkbox">United Kingdom<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(8,136)</span></label><label class="custom_checkbox">Canada<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(917)</span></label><label class="custom_checkbox">Germany<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(240)</span></label><label class="custom_checkbox">Turkey<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(2,460)</span></label></div><a class="text-thm">+20 more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb20 pb5">
+                <div class="card-header" id="heading3">
+                  <h4><button class="btn btn-link ps-0 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">Languange</button>
+                  </h4>
+                </div>
+                <div id="collapse3" class="collapse show" aria-labelledby="heading3" data-parent="#accordionExample">
+                  <div class="card-body card-body px-0 pt-0">
+                    <div class="card-body card-body px-0 pt-0">
+                      <div class="checkbox-style1 mb15"><label class="custom_checkbox">Turkish<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(1,945)</span></label><label class="custom_checkbox">English<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(8,15)</span></label><label class="custom_checkbox">Italian<input
+                            type="checkbox"><span class="checkmark"></span><span
+                            class="right-tags">(654)</span></label><label class="custom_checkbox">Spanish<input
+                            type="checkbox"><span class="checkmark"></span><span class="right-tags">(323)</span></label>
+                      </div><a class="text-thm">+20 more</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card mb20 pb5">
+                <div class="card-header" id="heading4">
+                  <h4><button class="btn btn-link ps-0 collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">English Level</button>
+                  </h4>
+                </div>
+                <div id="collapse4" class="collapse show" aria-labelledby="heading4" data-parent="#accordionExample">
+                  <div class="card-body card-body px-0 pt-0">
+                    <div class="checkbox-style1"><label class="custom_checkbox">Basic level<input type="checkbox"><span
+                          class="checkmark"></span><span class="right-tags">(1,945)</span></label><label
+                        class="custom_checkbox">Bilingual<input type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(8,136)</span></label><label class="custom_checkbox">Fluent<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(917)</span></label><label class="custom_checkbox">Native<input
+                          type="checkbox"><span class="checkmark"></span><span class="right-tags">(240)</span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="row align-items-center mb20">
+            <div class="col-md-6">
+              <div class="text-center text-md-start">
+                <p class="text mb-0 mb10-sm"><span class="fw500"> {{projects.length}} </span> services
+                  available</p>
+              </div>
+            </div>
+            <!-- <div class="col-md-6">
                             <div
                                 class="page_control_shorting d-md-flex align-items-center justify-content-center justify-content-md-end">
                                 <div class="dropdown-lists d-block d-lg-none me-2 mb10-sm">
@@ -243,212 +207,187 @@
                                 </div>
                             </div>
                         </div> -->
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-lg-12">
+              <div *ngFor="let projectobj of projects"
+                class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
+                <div class="col-lg-8 ps-0">
+                  <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
+                    <div class="thumb w60 position-relative rounded-circle mb15-md"><img alt="rounded-circle"
+                        loading="lazy" width="60" height="60" decoding="async" data-nimg="1"
+                        class="rounded-circle mx-auto" src="assets/client-1b9ce.png" style="color: transparent;"><span
+                        class="online-badge2"></span></div>
+                    <div class="details ml15 ml0-md mb15-md">
+                      <h5 class="title mb-3"> {{projectobj.title}} </h5>
+                      <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
+                          class="flaticon-place fz16 vam text-thm2 me-1"></i>
+                        {{projectobj.country}}
+                      </p>
+                      <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
+                          class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
+                        {{projectobj.projectduration}} </p>
+                      <p class="mb-0 fz14 list-inline-item mb5-sm"><i
+                          class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
+                        {{projectobj.proposals.length}} </p>
+                      <p class="text mt10"> {{projectobj.projectdetail}} </p>
+                      <div class="skill-tags d-flex align-items-center justify-content-start">
+                        <span class="tag "> {{projectobj.skills}} </span>
+                      </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 col-lg-12">
-                            <div *ngFor="let projectobj of projects"
-                                class="freelancer-style1 bdr1 hover-box-shadow row ms-0 align-items-lg-center">
-                                <div class="col-lg-8 ps-0">
-                                    <div class="d-lg-flex bdrr1 bdrn-xl pr15 pr0-lg">
-                                        <div class="thumb w60 position-relative rounded-circle mb15-md"><img
-                                                alt="rounded-circle" loading="lazy" width="60" height="60"
-                                                decoding="async" data-nimg="1" class="rounded-circle mx-auto"
-                                                src="assets/client-1b9ce.png" style="color: transparent;"><span
-                                                class="online-badge2"></span></div>
-                                        <div class="details ml15 ml0-md mb15-md">
-                                            <h5 class="title mb-3"> {{projectobj.title}} </h5>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-place fz16 vam text-thm2 me-1"></i>
-                                                {{projectobj.country}}
-                                            </p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm pe-1"><i
-                                                    class="flaticon-30-days fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                {{projectobj.projectduration}} </p>
-                                            <p class="mb-0 fz14 list-inline-item mb5-sm"><i
-                                                    class="flaticon-contract fz16 vam text-thm2 me-1 bdrl1 pl15 pl0-xs bdrn-xs"></i>
-                                                {{projectobj.proposals.length}} </p>
-                                            <p class="text mt10"> {{projectobj.projectdetail}} </p>
-                                            <div class="skill-tags d-flex align-items-center justify-content-start">
-                                                <span class="tag "> {{projectobj.skills}} </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
-                                    <div class="details">
-                                        <div class="text-lg-end">
-                                            <h4>Rs {{projectobj.cost}} </h4>
-                                            <p class="text">Hourly Rate</p>
-                                        </div>
-                                        <div class="d-grid mt15"><a (click)="route(projectobj)"
-                                                class="ud-btn btn-light-thm">Send Proposal<i
-                                                    class="fal fa-arrow-right-long"></i></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <div class="lefttside-hidden-bar">
-        <div class="hsidebar-header bdrb1">
-            <h4 class="list-title">All filters</h4>
-            <div class="sidebar-close-icon"><span class="far fa-times"></span></div>
-        </div>
-        <div class="hsidebar-content">
-            <div class="widget-wrapper">
-                <div class="sidebar-accordion">
-                    <div class="accordion" id="accordionExample2">
-                        <div class="card mb20 pb10">
-                            <div class="card-header" id="headingZero">
-                                <h4><button class="btn btn-link ps-0 collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseZero" aria-expanded="false"
-                                        aria-controls="collapseZero">Category</button></h4>
-                            </div>
-                            <div id="collapseZero" class="collapse show" aria-labelledby="headingZero"
-                                data-parent="#accordionExample">
-                                <div class="card-body card-body px-0 pt-0">
-                                    <div class="checkbox-style1 mb15"><label class="custom_checkbox">UX Designer<input
-                                                type="checkbox"><span class="checkmark"></span><span
-                                                class="right-tags">(1,945)</span></label><label
-                                            class="custom_checkbox">Web Developers<input type="checkbox"><span
-                                                class="checkmark"></span><span
-                                                class="right-tags">(8,136)</span></label><label
-                                            class="custom_checkbox">Illustrators<input type="checkbox"><span
-                                                class="checkmark"></span><span
-                                                class="right-tags">(917)</span></label><label
-                                            class="custom_checkbox">Node.js<input type="checkbox"><span
-                                                class="checkmark"></span><span
-                                                class="right-tags">(240)</span></label><label
-                                            class="custom_checkbox">Project Managers<input type="checkbox"><span
-                                                class="checkmark"></span><span class="right-tags">(2,460)</span></label>
-                                    </div><a class="text-thm">+20 more</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb20 pb10">
-                            <div class="card-header" id="headingZero2">
-                                <h4><button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseZero2" aria-expanded="true"
-                                        aria-controls="collapseZero2">Skills</button></h4>
-                            </div>
-                            <div id="collapseZero2" class="collapse show" aria-labelledby="headingZero2"
-                                data-parent="#accordionExample">
-                                <div class="card-body card-body px-0 pt-0">
-                                    <div class="card-body card-body px-0 pt-0">
-                                        <div class="checkbox-style1 mb15"><label class="custom_checkbox">Adobe
-                                                Photoshop<input type="checkbox"><span class="checkmark"></span><span
-                                                    class="right-tags">(1,945)</span></label><label
-                                                class="custom_checkbox">Figma<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(8,15)</span></label><label
-                                                class="custom_checkbox">Sketch<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(654)</span></label><label
-                                                class="custom_checkbox">Adobe XD<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(323)</span></label><label
-                                                class="custom_checkbox">Balsamiq<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(2,455)</span></label></div><a class="text-thm"
-                                            href="#">+20 more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb20 pb5">
-                            <div class="card-header" id="headingTwos">
-                                <h4><button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseTwos" aria-expanded="true"
-                                        aria-controls="collapseTwos">Location</button></h4>
-                            </div>
-                            <div id="collapseTwos" class="collapse show" aria-labelledby="headingTwos"
-                                data-parent="#accordionExample">
-                                <div class="card-body card-body px-0 pt-0">
-                                    <div class="card-body card-body px-0 pt-0">
-                                        <div class="default-box-shadow1 mb30">
-                                            <div class="search_area"><input class="form-control" placeholder="Search"
-                                                    type="text" value=""><label><span
-                                                        class="flaticon-loupe"></span></label></div>
-                                        </div>
-                                        <div class="checkbox-style1 mb15"><label class="custom_checkbox">United
-                                                States<input type="checkbox"><span class="checkmark"></span><span
-                                                    class="right-tags">(1,945)</span></label><label
-                                                class="custom_checkbox">United Kingdom<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(8,136)</span></label><label
-                                                class="custom_checkbox">Canada<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(917)</span></label><label
-                                                class="custom_checkbox">Germany<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(240)</span></label><label
-                                                class="custom_checkbox">Turkey<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(2,460)</span></label></div><a
-                                            class="text-thm">+20 more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb20 pb5">
-                            <div class="card-header" id="headingThrees">
-                                <h4><button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseThrees" aria-expanded="true"
-                                        aria-controls="collapseThrees">Languange</button></h4>
-                            </div>
-                            <div id="collapseThrees" class="collapse show" aria-labelledby="headingThrees"
-                                data-parent="#accordionExample">
-                                <div class="card-body card-body px-0 pt-0">
-                                    <div class="card-body card-body px-0 pt-0">
-                                        <div class="checkbox-style1 mb15"><label class="custom_checkbox">Turkish<input
-                                                    type="checkbox"><span class="checkmark"></span><span
-                                                    class="right-tags">(1,945)</span></label><label
-                                                class="custom_checkbox">English<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(8,15)</span></label><label
-                                                class="custom_checkbox">Italian<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(654)</span></label><label
-                                                class="custom_checkbox">Spanish<input type="checkbox"><span
-                                                    class="checkmark"></span><span
-                                                    class="right-tags">(323)</span></label></div><a class="text-thm">+20
-                                            more</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb20 pb5">
-                            <div class="card-header" id="headingFours">
-                                <h4><button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#collapseFours" aria-expanded="true"
-                                        aria-controls="collapseFours">English Level</button></h4>
-                            </div>
-                            <div id="collapseFours" class="collapse show" aria-labelledby="headingFours"
-                                data-parent="#accordionExample">
-                                <div class="card-body card-body px-0 pt-0">
-                                    <div class="checkbox-style1"><label class="custom_checkbox">Basic level<input
-                                                type="checkbox"><span class="checkmark"></span><span
-                                                class="right-tags">(1,945)</span></label><label
-                                            class="custom_checkbox">Bilingual<input type="checkbox"><span
-                                                class="checkmark"></span><span
-                                                class="right-tags">(8,136)</span></label><label
-                                            class="custom_checkbox">Fluent<input type="checkbox"><span
-                                                class="checkmark"></span><span
-                                                class="right-tags">(917)</span></label><label
-                                            class="custom_checkbox">Native<input type="checkbox"><span
-                                                class="checkmark"></span><span class="right-tags">(240)</span></label>
-                                    </div><a class="text-thm">+20 more</a>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-lg-4 ps-0 ps-xl-3 pe-0">
+                  <div class="details">
+                    <div class="text-lg-end">
+                      <h4>Rs {{projectobj.cost}} </h4>
+                      <p class="text">Hourly Rate</p>
                     </div>
+                    <div class="d-grid mt15"><a (click)="route(projectobj)" class="ud-btn btn-light-thm">Send Proposal<i
+                          class="fal fa-arrow-right-long"></i></a></div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="hiddenbar-body-ovelay"></div>
-    <a class="scrollToHome "><i class="fas fa-angle-up"></i></a>
+  </section>
+  <div class="lefttside-hidden-bar">
+    <div class="hsidebar-header bdrb1">
+      <h4 class="list-title">All filters</h4>
+      <div class="sidebar-close-icon"><span class="far fa-times"></span></div>
+    </div>
+    <div class="hsidebar-content">
+      <div class="widget-wrapper">
+        <div class="sidebar-accordion">
+          <div class="accordion" id="accordionExample2">
+            <div class="card mb20 pb10">
+              <div class="card-header" id="headingZero">
+                <h4><button class="btn btn-link ps-0 collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseZero" aria-expanded="false" aria-controls="collapseZero">Category</button>
+                </h4>
+              </div>
+              <div id="collapseZero" class="collapse show" aria-labelledby="headingZero"
+                data-parent="#accordionExample">
+                <div class="card-body card-body px-0 pt-0">
+                  <div class="checkbox-style1 mb15"><label class="custom_checkbox">UX Designer<input
+                        type="checkbox"><span class="checkmark"></span><span
+                        class="right-tags">(1,945)</span></label><label class="custom_checkbox">Web Developers<input
+                        type="checkbox"><span class="checkmark"></span><span
+                        class="right-tags">(8,136)</span></label><label class="custom_checkbox">Illustrators<input
+                        type="checkbox"><span class="checkmark"></span><span
+                        class="right-tags">(917)</span></label><label class="custom_checkbox">Node.js<input
+                        type="checkbox"><span class="checkmark"></span><span
+                        class="right-tags">(240)</span></label><label class="custom_checkbox">Project Managers<input
+                        type="checkbox"><span class="checkmark"></span><span class="right-tags">(2,460)</span></label>
+                  </div><a class="text-thm">+20 more</a>
+                </div>
+              </div>
+            </div>
+            <div class="card mb20 pb10">
+              <div class="card-header" id="headingZero2">
+                <h4><button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseZero2" aria-expanded="true" aria-controls="collapseZero2">Skills</button>
+                </h4>
+              </div>
+              <div id="collapseZero2" class="collapse show" aria-labelledby="headingZero2"
+                data-parent="#accordionExample">
+                <div class="card-body card-body px-0 pt-0">
+                  <div class="card-body card-body px-0 pt-0">
+                    <div class="checkbox-style1 mb15"><label class="custom_checkbox">Adobe
+                        Photoshop<input type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(1,945)</span></label><label class="custom_checkbox">Figma<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(8,15)</span></label><label class="custom_checkbox">Sketch<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(654)</span></label><label class="custom_checkbox">Adobe XD<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(323)</span></label><label class="custom_checkbox">Balsamiq<input
+                          type="checkbox"><span class="checkmark"></span><span class="right-tags">(2,455)</span></label>
+                    </div><a class="text-thm" href="#">+20 more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb20 pb5">
+              <div class="card-header" id="headingTwos">
+                <h4><button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwos" aria-expanded="true" aria-controls="collapseTwos">Location</button>
+                </h4>
+              </div>
+              <div id="collapseTwos" class="collapse show" aria-labelledby="headingTwos"
+                data-parent="#accordionExample">
+                <div class="card-body card-body px-0 pt-0">
+                  <div class="card-body card-body px-0 pt-0">
+                    <div class="default-box-shadow1 mb30">
+                      <div class="search_area"><input class="form-control" placeholder="Search" type="text"
+                          value=""><label><span class="flaticon-loupe"></span></label></div>
+                    </div>
+                    <div class="checkbox-style1 mb15"><label class="custom_checkbox">United
+                        States<input type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(1,945)</span></label><label class="custom_checkbox">United Kingdom<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(8,136)</span></label><label class="custom_checkbox">Canada<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(917)</span></label><label class="custom_checkbox">Germany<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(240)</span></label><label class="custom_checkbox">Turkey<input
+                          type="checkbox"><span class="checkmark"></span><span class="right-tags">(2,460)</span></label>
+                    </div><a class="text-thm">+20 more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb20 pb5">
+              <div class="card-header" id="headingThrees">
+                <h4><button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThrees" aria-expanded="true"
+                    aria-controls="collapseThrees">Languange</button></h4>
+              </div>
+              <div id="collapseThrees" class="collapse show" aria-labelledby="headingThrees"
+                data-parent="#accordionExample">
+                <div class="card-body card-body px-0 pt-0">
+                  <div class="card-body card-body px-0 pt-0">
+                    <div class="checkbox-style1 mb15"><label class="custom_checkbox">Turkish<input type="checkbox"><span
+                          class="checkmark"></span><span class="right-tags">(1,945)</span></label><label
+                        class="custom_checkbox">English<input type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(8,15)</span></label><label class="custom_checkbox">Italian<input
+                          type="checkbox"><span class="checkmark"></span><span
+                          class="right-tags">(654)</span></label><label class="custom_checkbox">Spanish<input
+                          type="checkbox"><span class="checkmark"></span><span class="right-tags">(323)</span></label>
+                    </div><a class="text-thm">+20
+                      more</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb20 pb5">
+              <div class="card-header" id="headingFours">
+                <h4><button class="btn btn-link ps-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFours" aria-expanded="true" aria-controls="collapseFours">English
+                    Level</button></h4>
+              </div>
+              <div id="collapseFours" class="collapse show" aria-labelledby="headingFours"
+                data-parent="#accordionExample">
+                <div class="card-body card-body px-0 pt-0">
+                  <div class="checkbox-style1"><label class="custom_checkbox">Basic level<input type="checkbox"><span
+                        class="checkmark"></span><span class="right-tags">(1,945)</span></label><label
+                      class="custom_checkbox">Bilingual<input type="checkbox"><span class="checkmark"></span><span
+                        class="right-tags">(8,136)</span></label><label class="custom_checkbox">Fluent<input
+                        type="checkbox"><span class="checkmark"></span><span
+                        class="right-tags">(917)</span></label><label class="custom_checkbox">Native<input
+                        type="checkbox"><span class="checkmark"></span><span class="right-tags">(240)</span></label>
+                  </div><a class="text-thm">+20 more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hiddenbar-body-ovelay"></div>
+  <a class="scrollToHome "><i class="fas fa-angle-up"></i></a>
 </div>
