@@ -8,7 +8,8 @@ import { AuthService } from '../../shared/_service/auth.service';
 import { Transaction, Transaction_detail } from '../../model/Transaction ';
 import { error } from 'console';
 import { SharedService } from '../../shared/_service/shared.service';
-
+import { PayemntGetwayService } from '../../shared/_service/payemnt-getway.service';
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -116,7 +117,8 @@ export class ProfileComponent {
     private token: TokenStorageService,
     private route: Router,
     private auth: AuthService,
-    private sharedservice: SharedService
+    private sharedservice: SharedService,
+    private paymentservice: PayemntGetwayService
   ) { }
   ngOnInit() {
     const user = this.token.getUser();
@@ -235,7 +237,7 @@ export class ProfileComponent {
     }
   }
   addwallet() {
-    if (this.formProfile.pan_card_no != '') {
+    if (this.formProfile.pan_card_no != '' && this.formProfile.phone != 0) {
       this.addTransactionapi
         (
           {
@@ -398,22 +400,36 @@ export class ProfileComponent {
     })
   }
   private addTransactionapi(datat: Transaction) {
-    this.collectionservice.addDocumnet('transaction', datat).subscribe({
-      next: (data: any) => {
-        // console.log(data)
-        if (datat.type === 'cash') {
-          this.formProfile.cash = this.formProfile.cash + datat.amount
-          // console.log(this.formProfile)
-          this.updateprofileapi(this.formProfile, this.profileid)
-        }
-        else {
-          this.updateprofileapi(this.formProfile, this.profileid)
-        }
+    this.makePayment(this.formProfile.phone.toString(), datat.amount, datat.utr)
+    // this.collectionservice.addDocumnet('transaction', datat).subscribe({
+    //   next: (data: any) => {
+    //     // console.log(data)
+    //     if (datat.type === 'cash') {
+    //       this.formProfile.cash = this.formProfile.cash + datat.amount
+    //       // console.log(this.formProfile)
+    //       this.updateprofileapi(this.formProfile, this.profileid)
+    //     }
+    //     else {
+    //       this.updateprofileapi(this.formProfile, this.profileid)
+    //     }
+    //   },
+    //   error: (error: any) => {
+    //     console.log(error)
+    //   }
+    // })
+  }
+  // payment gateway
+  private makePayment(phone: string, amount: number, transactionId: string) {
+    this.loading = true
+    this.paymentservice.initiatePayment(phone, amount, transactionId).subscribe(
+      response => {
+        window.location.href = response.data.instrumentResponse.redirectInfo.url
       },
-      error: (error: any) => {
-        console.log(error)
+      error => {
+        this.toster.error('Payment initiation failed:', error);
+        this.loading = false
       }
-    })
+    );
   }
   private trigertrefreshnavbar() {
     this.sharedservice.triggerFunction();
@@ -445,5 +461,9 @@ export class ProfileComponent {
     const totalWorkValue = this.calculateTotalTransactionAmount(freelancer.uid, transactions);
     freelancer.trie = this.determineTier(totalWorkValue);
     return freelancer;
+  }
+  private generateTransactionId(): string {
+    let id = uuidv4();
+    return id
   }
 }

@@ -51,6 +51,7 @@ import { Guidance2Component } from './system/guidance2/guidance2.component';
 import { FaqComponent } from './system/faq/faq.component';
 import { CompanyOverVireComponent } from './system/company-over-vire/company-over-vire.component';
 import { KycPolicyComponent } from './system/kyc-policy/kyc-policy.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,6 +95,7 @@ import { KycPolicyComponent } from './system/kyc-policy/kyc-policy.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     CarouselModule.forRoot(),
     CoreModule,
     AngularFireModule.initializeApp(firebaseConfig),
