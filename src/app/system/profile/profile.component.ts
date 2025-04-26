@@ -242,9 +242,9 @@ export class ProfileComponent {
         (
           {
             from_uid: 'Bank',
-            type: 'cash',
+            type: 'Online',
             to_id: this.uid,
-            utr: '',
+            utr: this.generateTransactionId(),
             amount: this.amount,
             description: 'Cash add',
             login_user: this.uid,
@@ -401,29 +401,30 @@ export class ProfileComponent {
   }
   private addTransactionapi(datat: Transaction) {
     this.makePayment(this.formProfile.phone.toString(), datat.amount, datat.utr)
-    // this.collectionservice.addDocumnet('transaction', datat).subscribe({
-    //   next: (data: any) => {
-    //     // console.log(data)
-    //     if (datat.type === 'cash') {
-    //       this.formProfile.cash = this.formProfile.cash + datat.amount
-    //       // console.log(this.formProfile)
-    //       this.updateprofileapi(this.formProfile, this.profileid)
-    //     }
-    //     else {
-    //       this.updateprofileapi(this.formProfile, this.profileid)
-    //     }
-    //   },
-    //   error: (error: any) => {
-    //     console.log(error)
-    //   }
-    // })
+    this.collectionservice.addDocumnet('transaction', datat).subscribe({
+      next: (data: any) => {
+        // console.log(data)
+        if (datat.type === 'cash') {
+          this.formProfile.cash = this.formProfile.cash + datat.amount
+          // console.log(this.formProfile)
+          this.updateprofileapi(this.formProfile, this.profileid)
+        }
+        else {
+          this.updateprofileapi(this.formProfile, this.profileid)
+        }
+      },
+      error: (error: any) => {
+        console.log(error)
+      }
+    })
   }
   // payment gateway
   private makePayment(phone: string, amount: number, transactionId: string) {
     this.loading = true
-    this.paymentservice.initiatePayment(phone, amount, transactionId).subscribe(
+    this.paymentservice.initiatePayment('9199731275', amount, transactionId).subscribe(
       response => {
-        window.location.href = response.data.instrumentResponse.redirectInfo.url
+        console.log('Payment initiation response:', response);
+        window.location.href = response.redirectUrl
       },
       error => {
         this.toster.error('Payment initiation failed:', error);
