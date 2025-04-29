@@ -57,7 +57,19 @@ export class CollectionService {
         });
     });
   }
-
+  // Function to add a document with a custom ID to a Firestore collection
+  addDocumentWithId(collectionName: string, docId: string, data: any): Observable<any> {
+    return new Observable<any>(observer => {
+      this.firestore.collection(collectionName).doc(docId).set(data)
+        .then(() => {
+          observer.next({ id: docId, ...data });
+          observer.complete();
+        })
+        .catch(error => {
+          observer.error(error);
+        });
+    });
+  }
   deleteDocument(collectionName: string, docId: string): Observable<void> {
     return new Observable<void>(observer => {
       this.firestore.collection(collectionName).doc(docId).delete()

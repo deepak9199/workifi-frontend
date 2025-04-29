@@ -3,6 +3,8 @@ import { CollectionService } from '../../shared/_service/collection.service';
 import { getprofile, profile } from '../../model/profile';
 import { TokenStorageService } from '../../shared/_service/token-storage.service';
 import { ToastrService } from 'ngx-toastr';
+import { PayemntGetwayService } from '../../shared/_service/payemnt-getway.service';
+import { Transaction } from '../../model/Transaction ';
 
 @Component({
   selector: 'app-pricing',
@@ -50,7 +52,8 @@ export class PricingComponent {
   constructor(
     private collectionservice: CollectionService,
     private token: TokenStorageService,
-    private toster: ToastrService
+    private toster: ToastrService,
+    private paymentservice: PayemntGetwayService
   ) { }
 
   ngOnInit(): void {
@@ -104,4 +107,39 @@ export class PricingComponent {
       }
     })
   }
+  private addTransactionapi(datat: Transaction) {
+
+    this.collectionservice.addDocumentWithId('transaction', datat.utr, datat).subscribe({
+      next: (data: any) => {
+        // console.log(data)
+        if (datat.type === 'Online') {
+          // this.formProfile.cash = this.formProfile.cash + datat.amount
+          this.makePayment(this.profile.phone.toString(), datat.amount, datat.utr, this.profile.id)
+          // console.log(this.formProfile)
+          // this.updateprofileapi(this.formProfile, this.profileid)
+        }
+        else {
+          // this.updateprofileapi(this.formProfile, this.profileid)
+        }
+      },
+      error: (error: any) => {
+        console.log(error)
+      }
+    })
+  }
+  // payment gateway
+  private makePayment(phone: string, amount: number, transactionId: string, profileid: string) {
+    this.loading = true
+    this.paymentservice.initiatePayment('9199731275', amount, transactionId, profileid).subscribe(
+      response => {
+        console.log('Payment initiation response:', response);
+        window.location.href = response.redirectUrl
+      },
+      error => {
+        this.toster.error('Payment initiation failed:', error);
+        this.loading = false
+      }
+    );
+  }
+
 }

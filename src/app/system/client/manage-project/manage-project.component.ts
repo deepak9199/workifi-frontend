@@ -221,7 +221,11 @@ export class ManageProjectComponent {
         amount: project.cost,
         description: `Project Completed: ${project.title}`,
         login_user: this.uid,
-        createdTime: new Date().toString()
+        createdTime: new Date().toString(),
+        payment: {
+          mode: '',
+          status: ''
+        }
       };
       this.subTransactionApi(transaction);
       return true;

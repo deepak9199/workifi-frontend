@@ -5,6 +5,7 @@ export interface Transaction {
     utr: string
     amount: number
     description: string
+    payment: paymentMode
     login_user: string
     createdTime: string
 }
@@ -16,6 +17,11 @@ export interface Transaction_detail {
     utr: string
     description: string
     amount: number
+    payment: paymentMode
     login_user: string
     createdTime: string
+}
+export interface paymentMode {
+    mode: string
+    status: string
 }

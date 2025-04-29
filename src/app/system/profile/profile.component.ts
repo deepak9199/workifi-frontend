@@ -248,6 +248,10 @@ export class ProfileComponent {
             amount: this.amount,
             description: 'Cash add',
             login_user: this.uid,
+            payment: {
+              mode: 'Online',
+              status: 'Pending'
+            },
             createdTime: new Date().toString()
           }
         )
@@ -387,6 +391,10 @@ export class ProfileComponent {
             amount: 100 * 0.20,
             description: 'Transaction reward Above 10000',
             login_user: this.uid,
+            payment: {
+              mode: 'transaction_reward',
+              status: 'complated'
+            },
             createdTime: new Date().toString()
           });
         }
@@ -400,14 +408,15 @@ export class ProfileComponent {
     })
   }
   private addTransactionapi(datat: Transaction) {
-    this.makePayment(this.formProfile.phone.toString(), datat.amount, datat.utr)
-    this.collectionservice.addDocumnet('transaction', datat).subscribe({
+
+    this.collectionservice.addDocumentWithId('transaction', datat.utr, datat).subscribe({
       next: (data: any) => {
         // console.log(data)
-        if (datat.type === 'cash') {
-          this.formProfile.cash = this.formProfile.cash + datat.amount
+        if (datat.type === 'Online') {
+          // this.formProfile.cash = this.formProfile.cash + datat.amount
+          this.makePayment(this.formProfile.phone.toString(), datat.amount, datat.utr, this.profileid)
           // console.log(this.formProfile)
-          this.updateprofileapi(this.formProfile, this.profileid)
+          // this.updateprofileapi(this.formProfile, this.profileid)
         }
         else {
           this.updateprofileapi(this.formProfile, this.profileid)
@@ -419,9 +428,9 @@ export class ProfileComponent {
     })
   }
   // payment gateway
-  private makePayment(phone: string, amount: number, transactionId: string) {
+  private makePayment(phone: string, amount: number, transactionId: string, profileid: string) {
     this.loading = true
-    this.paymentservice.initiatePayment('9199731275', amount, transactionId).subscribe(
+    this.paymentservice.initiatePayment('9199731275', amount, transactionId, profileid).subscribe(
       response => {
         console.log('Payment initiation response:', response);
         window.location.href = response.redirectUrl
