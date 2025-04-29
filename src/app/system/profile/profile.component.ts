@@ -430,7 +430,7 @@ export class ProfileComponent {
   // payment gateway
   private makePayment(phone: string, amount: number, transactionId: string, profileid: string) {
     this.loading = true
-    this.paymentservice.initiatePayment('9199731275', amount, transactionId, profileid).subscribe(
+    this.paymentservice.initiatePayment('9199731275', amount, transactionId, profileid, '').subscribe(
       response => {
         console.log('Payment initiation response:', response);
         window.location.href = response.redirectUrl

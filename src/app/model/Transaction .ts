@@ -7,6 +7,7 @@ export interface Transaction {
     description: string
     payment: paymentMode
     login_user: string
+    plan?: string
     createdTime: string
 }
 export interface Transaction_detail {
@@ -19,6 +20,7 @@ export interface Transaction_detail {
     amount: number
     payment: paymentMode
     login_user: string
+    plan?: string
     createdTime: string
 }
 export interface paymentMode {

@@ -5,7 +5,7 @@ import { TokenStorageService } from '../../shared/_service/token-storage.service
 import { ToastrService } from 'ngx-toastr';
 import { PayemntGetwayService } from '../../shared/_service/payemnt-getway.service';
 import { Transaction } from '../../model/Transaction ';
-
+import { v4 as uuidv4 } from 'uuid';
 @Component({
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
@@ -98,14 +98,32 @@ export class PricingComponent {
   private updateCollection(data: getprofile, subscribe: string) {
     data.subscribe.datetime = new Date().toString()
     data.subscribe.plan = subscribe
-    this.collectionservice.updateDocument('profile', data.id, data).subscribe({
-      next: (data) => {
-        this.toster.success('Subscribe For Standard_plan')
-      },
-      error: error => {
-        console.error(error.message)
-      }
-    })
+    this.addTransactionapi
+      (
+        {
+          from_uid: 'Bank',
+          type: 'Online',
+          to_id: this.profile.uid,
+          utr: this.generateTransactionId(),
+          amount: data.subscribe.plan == 'Standard' ? 200 : data.subscribe.plan == 'Premium' ? 500 : 0,
+          description: 'Cash add',
+          login_user: this.profile.uid,
+          payment: {
+            mode: 'Online',
+            status: 'Pending'
+          },
+          plan: data.subscribe.plan,
+          createdTime: new Date().toString()
+        }
+      )
+    // this.collectionservice.updateDocument('profile', data.id, data).subscribe({
+    //   next: (data) => {
+    //     this.toster.success('Subscribe For Standard_plan')
+    //   },
+    //   error: error => {
+    //     console.error(error.message)
+    //   }
+    // })
   }
   private addTransactionapi(datat: Transaction) {
 
@@ -114,7 +132,7 @@ export class PricingComponent {
         // console.log(data)
         if (datat.type === 'Online') {
           // this.formProfile.cash = this.formProfile.cash + datat.amount
-          this.makePayment(this.profile.phone.toString(), datat.amount, datat.utr, this.profile.id)
+          this.makePayment(this.profile.phone.toString(), datat.amount, datat.utr, this.profile.id, datat.plan || '')
           // console.log(this.formProfile)
           // this.updateprofileapi(this.formProfile, this.profileid)
         }
@@ -128,18 +146,28 @@ export class PricingComponent {
     })
   }
   // payment gateway
-  private makePayment(phone: string, amount: number, transactionId: string, profileid: string) {
+  private makePayment(phone: string, amount: number, transactionId: string, profileid: string, plan: string) {
     this.loading = true
-    this.paymentservice.initiatePayment('9199731275', amount, transactionId, profileid).subscribe(
-      response => {
-        console.log('Payment initiation response:', response);
-        window.location.href = response.redirectUrl
-      },
-      error => {
-        this.toster.error('Payment initiation failed:', error);
-        this.loading = false
-      }
-    );
-  }
+    if (plan) {
+      console.log(plan)
+      this.paymentservice.initiatePayment(phone, amount, transactionId, profileid, plan).subscribe(
+        response => {
+          console.log('Payment initiation response:', response);
+          window.location.href = response.redirectUrl
+        },
+        error => {
+          this.toster.error('Payment initiation failed:', error);
+          this.loading = false
+        }
+      );
+    }
+    else {
+      this.toster.error('Plan not selected')
+    }
 
+  }
+  private generateTransactionId(): string {
+    let id = uuidv4();
+    return id
+  }
 }
