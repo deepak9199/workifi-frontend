@@ -29,8 +29,12 @@
                             </div>
                             <div class="profile-content ml20 ml0-xs">
                                 <div class="d-flex align-items-center my-3">
+                                    <label [hidden]="formProfile.subscribe.plan ? false : true"><a
+                                            class="upload-btn ml10">
+                                            {{ formProfile.subscribe.plan ? formProfile.subscribe.plan : ''}}</a>
+                                    </label>
                                     <a data-bs-toggle="modal" href="#walletModalToggle"
-                                        class="tag-delt text-thm2 "><span class="flaticon-wallet text-thm2"></span></a>
+                                        class="tag-delt text-thm2 ml10"><span class="flaticon-wallet text-thm2 "></span></a>
                                     <a (click)="onDeleteFile(formProfile.image)" class="tag-delt text-thm2 ml10"><span
                                             class="flaticon-delete text-thm2"></span></a>
                                     <label><input accept=".png, .jpg, .jpeg" class="d-none" type="file"

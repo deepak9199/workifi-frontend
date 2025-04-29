@@ -52,6 +52,7 @@ import { FaqComponent } from './system/faq/faq.component';
 import { CompanyOverVireComponent } from './system/company-over-vire/company-over-vire.component';
 import { KycPolicyComponent } from './system/kyc-policy/kyc-policy.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ForgetPasswordComponent } from './system/auth/forget-password/forget-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,6 +90,7 @@ import { HttpClientModule } from '@angular/common/http';
     FaqComponent,
     CompanyOverVireComponent,
     KycPolicyComponent,
+    ForgetPasswordComponent,
   ],
   imports: [
     BrowserModule,

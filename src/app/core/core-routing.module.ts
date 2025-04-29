@@ -30,11 +30,13 @@ import { Guidance2Component } from '../system/guidance2/guidance2.component';
 import { FaqComponent } from '../system/faq/faq.component';
 import { CompanyOverVireComponent } from '../system/company-over-vire/company-over-vire.component';
 import { KycPolicyComponent } from '../system/kyc-policy/kyc-policy.component';
+import { ForgetPasswordComponent } from '../system/auth/forget-password/forget-password.component';
 
 const routes: Routes = [
 
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'forgetpass', component: ForgetPasswordComponent },
   { path: 'logout', component: LogoutComponent },
   { path: 'signup', component: RegisterComponent },
   { path: 'role', component: RoleComponent },
