@@ -10,7 +10,7 @@ export class PayemntGetwayService {
 
   constructor(private http: HttpClient) { }
   initiatePayment(phone: string, amount: number, transactionId: string, profileid: string, plan: string): Observable<any> {
-    return this.http.get('http://127.0.0.1:5001/workifest-ecd6d/us-central1/app/pay?phone=' + phone + '&amount=' + amount + '&transactionId=' + transactionId + '&profileid=' + profileid + '&plan=' + plan, {});
+    return this.http.get('https://us-central1-workifest-ecd6d.cloudfunctions.net/app/pay?phone=' + phone + '&amount=' + amount + '&transactionId=' + transactionId + '&profileid=' + profileid + '&plan=' + plan, {});
   }
 
 }

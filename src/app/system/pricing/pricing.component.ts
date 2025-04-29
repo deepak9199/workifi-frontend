@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { PayemntGetwayService } from '../../shared/_service/payemnt-getway.service';
 import { Transaction } from '../../model/Transaction ';
 import { v4 as uuidv4 } from 'uuid';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
@@ -53,7 +54,8 @@ export class PricingComponent {
     private collectionservice: CollectionService,
     private token: TokenStorageService,
     private toster: ToastrService,
-    private paymentservice: PayemntGetwayService
+    private paymentservice: PayemntGetwayService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -98,32 +100,31 @@ export class PricingComponent {
   private updateCollection(data: getprofile, subscribe: string) {
     data.subscribe.datetime = new Date().toString()
     data.subscribe.plan = subscribe
-    this.addTransactionapi
-      (
-        {
-          from_uid: 'Bank',
-          type: 'Online',
-          to_id: this.profile.uid,
-          utr: this.generateTransactionId(),
-          amount: data.subscribe.plan == 'Standard' ? 200 : data.subscribe.plan == 'Premium' ? 500 : 0,
-          description: 'Cash add',
-          login_user: this.profile.uid,
-          payment: {
-            mode: 'Online',
-            status: 'Pending'
-          },
-          plan: data.subscribe.plan,
-          createdTime: new Date().toString()
-        }
-      )
-    // this.collectionservice.updateDocument('profile', data.id, data).subscribe({
-    //   next: (data) => {
-    //     this.toster.success('Subscribe For Standard_plan')
-    //   },
-    //   error: error => {
-    //     console.error(error.message)
-    //   }
-    // })
+    if (this.profile.uid) {
+      this.addTransactionapi
+        (
+          {
+            from_uid: 'Bank',
+            type: 'Online',
+            to_id: this.profile.uid,
+            utr: this.generateTransactionId(),
+            amount: data.subscribe.plan == 'Standard' ? 200 : data.subscribe.plan == 'Premium' ? 500 : 0,
+            description: 'Cash add',
+            login_user: this.profile.uid,
+            payment: {
+              mode: 'Online',
+              status: 'Pending'
+            },
+            plan: data.subscribe.plan,
+            createdTime: new Date().toString()
+          }
+        )
+    }
+    else {
+      this.router.navigate(['/login'])
+
+    }
+
   }
   private addTransactionapi(datat: Transaction) {
 
