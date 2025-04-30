@@ -71,9 +71,12 @@
                                                 {{projectsdata.pricetype}} </span></td>
                                         <td>
                                             <div class="d-flex">
-                                                <a *ngIf="projectsdata.submit_status===''"
-                                                    class="ud-btn btn-thm">Posted<i
+                                                <a (click)="deleteprojet(projectsdata.id)"
+                                                    class="ud-btn btn-thm">Delete<i
                                                         class="fal fa-arrow-right-long"></i></a>
+                                                <!-- <a *ngIf="projectsdata.submit_status===''"
+                                                    class="ud-btn btn-thm">Posted<i
+                                                        class="fal fa-arrow-right-long"></i></a> -->
 
                                             </div>
                                         </td>

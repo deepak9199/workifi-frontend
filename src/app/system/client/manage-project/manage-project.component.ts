@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { booleanAttribute, Component } from '@angular/core';
 import { Project } from '../../../model/projects';
 import { CollectionService } from '../../../shared/_service/collection.service';
 import { TokenStorageService } from '../../../shared/_service/token-storage.service';
@@ -263,5 +263,18 @@ export class ManageProjectComponent {
       }
     })
 
+  }
+  deleteprojet(id: string) {
+    this.loading = true
+    this.collectionservice.deleteDocument('projects', id).subscribe({
+      next: () => {
+        this.toster.success('Project Deleted successfully');
+        this.loading = false
+      },
+      error: (err) => {
+        console.error(err);
+        this.loading = false;
+      }
+    })
   }
 }

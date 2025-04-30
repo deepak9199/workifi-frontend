@@ -7,7 +7,7 @@
 
                     <div class="col-lg-9">
                         <div class="dashboard_title_area">
-                            <h2>Creat Project</h2>
+                            <h2>Create Project</h2>
 
                         </div>
                     </div>
@@ -53,6 +53,10 @@
                                                             <option value="Business">Business</option>
                                                             <option value="Lifestyle">Lifestyle</option>
                                                             <option value="Trending">Trending</option>
+                                                            <option value="Trending">Finance</option>
+                                                            <option value="Trending">legal</option>
+                                                            <option value="Trending">Taxation</option>
+                                                            <option value="Trending">Others</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -229,7 +233,10 @@
                                                 <div class="form-style1">
                                                     <label class="heading-color ff-heading fw500 mb10">Skills</label>
                                                     <div class="bootselect-multiselect">
-                                                        <select [(ngModel)]="formcreateproject.skills" id="skills"
+                                                        <input type="text" class="form-control"
+                                                            [(ngModel)]="formcreateproject.skills" id="skills"
+                                                            name="skills">
+                                                        <!-- <select [(ngModel)]="formcreateproject.skills" id="skills"
                                                             name="skills" class="form-control">
                                                             <option value="select">Select</option>
                                                             <option value="figma">Figma</option>
@@ -237,7 +244,7 @@
                                                             <option value="css">CSS</option>
                                                             <option value="html">HTML</option>
                                                             <option value="bootstrap">Bootstrap</option>
-                                                        </select>
+                                                        </select> -->
                                                     </div>
 
                                                 </div>
